@@ -172,7 +172,7 @@
           ]),
           h("div", { class: "report__tags" }, [
             isLatest ? h("span", { class: "pill pill--available", text: "Latest" }) : null,
-            rep.status && rep.status !== "Final" ? h("span", { class: "pill pill--loi", text: rep.status }) : null
+            rep.status ? h("span", { class: "pill " + (/draft/i.test(rep.status) ? "pill--loi" : "pill--type"), text: rep.status }) : null
           ])
         ]),
         h("dl", { class: "report__stats" }, (rep.stats || []).reduce(function (acc, st) {

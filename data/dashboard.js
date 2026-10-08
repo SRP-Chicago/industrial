@@ -49,7 +49,7 @@ window.DASHBOARD_DATA = {
     contact: "Hannah Webster",
     // The Quarter market reports, newest first. file is a PDF path or link.
     reports: [
-      { quarter: "Q2 2026", title: "The Quarter — Chicago Industrial", file: "research/Q2_2026_CHI_Industrial_Quarter_Report.pdf", status: "Final",
+      { quarter: "Q2 2026", title: "The Quarter — Chicago Industrial", file: "research/Q2_2026_CHI_Industrial_Quarter_Report.pdf", status: "Launched",
         stats: [
           { label: "Total vacancy", value: "5.6%" },
           { label: "Net absorption", value: "3.5M SF" },
@@ -57,7 +57,7 @@ window.DASHBOARD_DATA = {
           { label: "Under construction", value: "18.4M SF" }
         ],
         takeaway: "Vacancy fell to 5.58%, the lowest in a year. The I-80 Joliet Corridor led leasing for the second straight quarter at 3.2M SF, and the construction pipeline grew to 18.4M SF across 60 buildings." },
-      { quarter: "Q1 2026", title: "The Quarter — Chicago Industrial", file: "research/Q1_2026_CHI_Industrial_Quarter_Report_v1.pdf", status: "Draft v1",
+      { quarter: "Q1 2026", title: "The Quarter — Chicago Industrial", file: "research/Q1_2026_CHI_Industrial_Quarter_Report_v1.pdf", status: "Launched",
         stats: [
           { label: "Total vacancy", value: "5.8%" },
           { label: "Net absorption", value: "839K SF" },
