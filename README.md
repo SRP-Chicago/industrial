@@ -1,4 +1,4 @@
-# Stream Industrial — Brokerage & Marketing Hub
+# Stream Industrial — Brokerage & Marketing Dashboard
 
 One page where the Industrial brokerage and marketing teams can see what's going on:
 
