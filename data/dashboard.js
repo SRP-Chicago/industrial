@@ -24,15 +24,15 @@ window.DASHBOARD_DATA = {
   // priority: High | Normal | Low
   // type: Flyer | BOV / OM | Pitch Deck | Tour Book | Social | Email Blast | Case Study | Signage | Website
   queue: [
-    { title: "Pitch deck — 3PL user requirement", property: "Sample: I-55 Logistics Center", type: "Pitch Deck", owner: "Marketing Coordinator", broker: "Brian Duffy", status: "In Progress", priority: "High", due: "2026-10-12", link: "" },
-    { title: "Leasing flyer refresh (new availability)", property: "Sample: O'Hare Cargo Park Bldg 2", type: "Flyer", owner: "Graphic Designer", broker: "Ben Dickey", status: "In Review", priority: "Normal", due: "2026-10-10", link: "" },
+    { title: "Pitch deck — 3PL user requirement", property: "Sample: I-55 Logistics Center", type: "Pitch Deck", owner: "Kaitlyn Maloney", broker: "Brian Duffy", status: "In Progress", priority: "High", due: "2026-10-12", link: "" },
+    { title: "Leasing flyer refresh (new availability)", property: "Sample: O'Hare Cargo Park Bldg 2", type: "Flyer", owner: "Celia Burch", broker: "Ben Dickey", status: "In Review", priority: "Normal", due: "2026-10-10", link: "" },
     { title: "BOV — single-tenant NNN", property: "Sample: Elk Grove Distribution", type: "BOV / OM", owner: "Hannah Webster", broker: "Joe Connor", status: "Requested", priority: "High", due: "2026-10-20", link: "" },
-    { title: "Tour book — 5 building I-80 tour", property: "Client: Sample Manufacturer", type: "Tour Book", owner: "Marketing Coordinator", broker: "Brian Duffy", status: "Requested", priority: "Normal", due: "2026-10-15", link: "" },
-    { title: "LinkedIn carousel — Q3 leasing wins", property: "Team", type: "Social", owner: "Marketing Manager", broker: "Team", status: "In Progress", priority: "Normal", due: "2026-10-17", link: "" },
-    { title: "Email blast — spec building delivery", property: "Sample: Joliet Gateway Bldg A", type: "Email Blast", owner: "Marketing Manager", broker: "Ben Dickey", status: "Requested", priority: "Low", due: "2026-10-28", link: "" },
-    { title: "Case study — 450K SF build-to-suit", property: "Sample: Romeoville Commerce Ctr", type: "Case Study", owner: "Graphic Designer", broker: "Joe Connor", status: "In Review", priority: "Normal", due: "2026-10-09", link: "" },
-    { title: "Site signage — For Lease banner", property: "Sample: Bolingbrook Crossing", type: "Signage", owner: "Marketing Coordinator", broker: "Brian Duffy", status: "Complete", priority: "Normal", due: "2026-10-03", link: "" },
-    { title: "Property website launch", property: "Sample: I-55 Logistics Center", type: "Website", owner: "Marketing Manager", broker: "Brian Duffy", status: "Complete", priority: "High", due: "2026-09-30", link: "" }
+    { title: "Tour book — 5 building I-80 tour", property: "Client: Sample Manufacturer", type: "Tour Book", owner: "Kaitlyn Maloney", broker: "Brian Duffy", status: "Requested", priority: "Normal", due: "2026-10-15", link: "" },
+    { title: "LinkedIn carousel — Q3 leasing wins", property: "Team", type: "Social", owner: "Michael Krzewicki", broker: "Team", status: "In Progress", priority: "Normal", due: "2026-10-17", link: "" },
+    { title: "Email blast — spec building delivery", property: "Sample: Joliet Gateway Bldg A", type: "Email Blast", owner: "Michael Krzewicki", broker: "Ben Dickey", status: "Requested", priority: "Low", due: "2026-10-28", link: "" },
+    { title: "Case study — 450K SF build-to-suit", property: "Sample: Romeoville Commerce Ctr", type: "Case Study", owner: "Celia Burch", broker: "Joe Connor", status: "In Review", priority: "Normal", due: "2026-10-09", link: "" },
+    { title: "Site signage — For Lease banner", property: "Sample: Bolingbrook Crossing", type: "Signage", owner: "Kaitlyn Maloney", broker: "Brian Duffy", status: "Complete", priority: "Normal", due: "2026-10-03", link: "" },
+    { title: "Property website launch", property: "Sample: I-55 Logistics Center", type: "Website", owner: "Michael Krzewicki", broker: "Brian Duffy", status: "Complete", priority: "High", due: "2026-09-30", link: "" }
   ],
 
   // Final, client-ready presentations. type: Pitch | BOV / OM | Tour Book | Market Update | Case Study
@@ -96,6 +96,7 @@ window.DASHBOARD_DATA = {
   ],
 
   // Team roster. group: Brokerage | Marketing | Research
+  // Optional: focus ("Go-to for" line) and photo (square headshot path).
   team: [
     { name: "Brian Duffy", role: "Managing Director", group: "Brokerage", email: "brian.duffy@streamrealty.com", phone: "630.743.3313" },
     { name: "Ben Dickey", role: "Vice President", group: "Brokerage", email: "ben.dickey@streamrealty.com", phone: "224.465.3468" },
@@ -105,9 +106,11 @@ window.DASHBOARD_DATA = {
     { name: "Kennedy Arundel", role: "Associate", group: "Brokerage", email: "kennedy.arundel@streamrealty.com", phone: "773.580.1107" },
     { name: "Alyssa Aucoin", role: "Analyst", group: "Brokerage", email: "alyssa.aucoin@streamrealty.com", phone: "630.450.6837" },
     { name: "Liz Megginson", role: "Transaction Manager", group: "Brokerage", email: "liz.megginson@streamrealty.com", phone: "224.343.0090" },
-    { name: "Marketing Manager", role: "Marketing Manager", group: "Marketing", email: "", phone: "" },
-    { name: "Marketing Coordinator", role: "Marketing Coordinator", group: "Marketing", email: "", phone: "" },
-    { name: "Graphic Designer", role: "Graphic Designer", group: "Marketing", email: "", phone: "" },
+    { name: "Marissa Rupert", role: "Strategic Marketing Director", group: "Marketing", email: "marissa.rupert@streamrealty.com", phone: "224.595.3797", focus: "Strategy, brand standards, campaign direction", photo: "assets/team/marissa-rupert.jpg" },
+    { name: "Jason Thompson", role: "Senior Creative Manager", group: "Marketing", email: "jason.thompson@streamrealty.com", phone: "", focus: "Creative direction, concepting and content strategy", photo: "assets/team/jason-thompson.jpg" },
+    { name: "Michael Krzewicki", role: "Creative Manager", group: "Marketing", email: "michael.krzewicki@streamrealty.com", phone: "312.900.0339", focus: "Property marketing, branding and business development presentations", photo: "assets/team/michael-krzewicki.jpg" },
+    { name: "Celia Burch", role: "Senior Graphic Designer", group: "Marketing", email: "celia.burch@streamrealty.com", phone: "213.418.4102", focus: "Design, layout and collateral", photo: "assets/team/celia-burch.jpg" },
+    { name: "Kaitlyn Maloney", role: "Senior Marketing Coordinator", group: "Marketing", email: "kaitlyn.maloney@streamrealty.com", phone: "773.372.2912", focus: "Intake, scheduling and project coordination", photo: "assets/team/kaitlyn-maloney.jpg" },
     { name: "Hannah Webster", role: "Senior Research Analyst", group: "Research", email: "hannah.webster@streamrealty.com", phone: "815.505.1234" }
   ]
 };

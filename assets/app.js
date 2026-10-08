@@ -253,12 +253,16 @@
         var contact = [];
         if (m.email) contact.push(h("a", { href: "mailto:" + m.email, text: m.email }));
         if (m.phone) contact.push((contact.length ? " · " : ""), h("a", { href: "tel:" + m.phone.replace(/[^0-9+]/g, ""), text: m.phone }));
+        var avatar = m.photo
+          ? h("img", { class: "avatar avatar--photo", src: m.photo, alt: "", loading: "lazy" })
+          : h("div", { class: "avatar", "aria-hidden": "true", text: initials });
         panel.appendChild(h("div", { class: "member" }, [
-          h("div", { class: "avatar", "aria-hidden": "true", text: initials }),
+          avatar,
           h("div", null, [
             h("div", { class: "member__name", text: m.name }),
             h("div", { class: "member__role", text: m.role }),
-            contact.length ? h("div", { class: "member__contact" }, contact) : null
+            contact.length ? h("div", { class: "member__contact" }, contact) : null,
+            m.focus ? h("div", { class: "member__focus" }, [h("span", { text: "Go-to for " }), m.focus]) : null
           ])
         ]));
       });
