@@ -274,8 +274,6 @@ table.portfolio { width: 100%; border-collapse: collapse; }
 /* ---------- Footer ---------- */
 .footer { background: var(--navy); color: #fff; padding: 26px 0; }
 .footer__inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center; }
-.footer__tagline { font: italic 700 16px var(--serif); letter-spacing: .01em; margin: 0; }
-.footer__tagline sup { font-size: .55em; }
 .footer__note { margin: 0; font-size: 13px; color: var(--light-gray); }
 .footer a { color: #fff; }
 
