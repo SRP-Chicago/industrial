@@ -1,0 +1,121 @@
+/*
+ * Stream Industrial — Brokerage & Marketing Hub content.
+ *
+ * This is the ONLY file you need to edit to update the dashboard.
+ * Every entry below is a plain object; copy an existing one, change the
+ * values, and keep the commas between entries. Dates are YYYY-MM-DD.
+ * Links can be SharePoint / OneDrive / Box / website URLs. Use "" when a
+ * link doesn't exist yet and the button will be hidden.
+ *
+ * When the placeholder content has been replaced, set meta.sampleData to
+ * false to hide the "Sample data" banner.
+ */
+window.DASHBOARD_DATA = {
+  meta: {
+    lastUpdated: "2026-10-08",
+    sampleData: true,
+    // Where the "+ New marketing request" button goes (Microsoft Form, email, etc.)
+    requestLink: "mailto:?subject=Industrial%20Marketing%20Request"
+  },
+
+  // Short notes shown on the Overview panel (newest first).
+  updates: [
+    { date: "2026-10-07", text: "Q3 Chicago Industrial market stats are loaded into The Quarter template — pull from Resources." },
+    { date: "2026-10-02", text: "New tour book template (landscape) added to Resources. Please use for all Q4 tours." },
+    { date: "2026-09-28", text: "Reminder: final decks go into Final Presentations within 2 business days of the pitch." }
+  ],
+
+  // Marketing queue. status: Requested | In Progress | In Review | Complete
+  // priority: High | Normal | Low
+  // type: Flyer | BOV / OM | Pitch Deck | Tour Book | Social | Email Blast | Case Study | Signage | Website
+  queue: [
+    { title: "Pitch deck — 3PL user requirement", property: "Sample: I-55 Logistics Center", type: "Pitch Deck", owner: "Marketing Coordinator", broker: "Broker A", status: "In Progress", priority: "High", due: "2026-10-12", link: "" },
+    { title: "Leasing flyer refresh (new availability)", property: "Sample: O'Hare Cargo Park Bldg 2", type: "Flyer", owner: "Graphic Designer", broker: "Broker B", status: "In Review", priority: "Normal", due: "2026-10-10", link: "" },
+    { title: "BOV — single-tenant NNN", property: "Sample: Elk Grove Distribution", type: "BOV / OM", owner: "Research Analyst", broker: "Broker C", status: "Requested", priority: "High", due: "2026-10-20", link: "" },
+    { title: "Tour book — 5 building I-80 tour", property: "Client: Sample Manufacturer", type: "Tour Book", owner: "Marketing Coordinator", broker: "Broker A", status: "Requested", priority: "Normal", due: "2026-10-15", link: "" },
+    { title: "LinkedIn carousel — Q3 leasing wins", property: "Team", type: "Social", owner: "Marketing Manager", broker: "Team", status: "In Progress", priority: "Normal", due: "2026-10-17", link: "" },
+    { title: "Email blast — spec building delivery", property: "Sample: Joliet Gateway Bldg A", type: "Email Blast", owner: "Marketing Manager", broker: "Broker B", status: "Requested", priority: "Low", due: "2026-10-28", link: "" },
+    { title: "Case study — 450K SF build-to-suit", property: "Sample: Romeoville Commerce Ctr", type: "Case Study", owner: "Graphic Designer", broker: "Broker C", status: "In Review", priority: "Normal", due: "2026-10-09", link: "" },
+    { title: "Site signage — For Lease banner", property: "Sample: Bolingbrook Crossing", type: "Signage", owner: "Marketing Coordinator", broker: "Broker A", status: "Complete", priority: "Normal", due: "2026-10-03", link: "" },
+    { title: "Property website launch", property: "Sample: I-55 Logistics Center", type: "Website", owner: "Marketing Manager", broker: "Broker A", status: "Complete", priority: "High", due: "2026-09-30", link: "" }
+  ],
+
+  // Final, client-ready presentations. type: Pitch | BOV / OM | Tour Book | Market Update | Case Study
+  presentations: [
+    { title: "Landlord pitch — 1.2M SF portfolio assignment", client: "Sample Institutional Owner", type: "Pitch", date: "2026-09-24", team: "Broker A, Broker C", outcome: "Won", link: "", notes: "Strong submarket comps section and a 90-day marketing timeline." },
+    { title: "Q3 Chicago Industrial market update", client: "Internal / Clients", type: "Market Update", date: "2026-10-03", team: "Research Analyst", outcome: "", link: "", notes: "Use slides 4–9 for any client meeting this quarter." },
+    { title: "Tenant rep — food & beverage cold storage search", client: "Sample F&B Company", type: "Tour Book", date: "2026-09-12", team: "Broker B", outcome: "Pending", link: "", notes: "" },
+    { title: "BOV — 210K SF Class A bulk", client: "Sample Private Owner", type: "BOV / OM", date: "2026-08-29", team: "Broker C, Research Analyst", outcome: "Won", link: "", notes: "Lease-up scenarios laid out cleanly on one page." },
+    { title: "Developer pitch — spec 300K SF", client: "Sample Developer", type: "Pitch", date: "2026-08-15", team: "Broker A, Broker B", outcome: "Lost", link: "", notes: "Debrief: client wanted more on labor-shed data." }
+  ],
+
+  // Best in class examples. category: Pitch | Flyer | BOV / OM | Tour Book | Social | Case Study | Email
+  best: [
+    { title: "Portfolio pitch — 1.2M SF", category: "Pitch", why: "Leads with the client's goals, not our resume. Clear 90-day plan, one idea per slide.", by: "Broker A + Marketing", link: "" },
+    { title: "Spec bulk building flyer", category: "Flyer", why: "Specs at a glance, strong aerial, drive-time map. Every item a tenant rep asks for on page one.", by: "Graphic Designer", link: "" },
+    { title: "Cold storage tour book", category: "Tour Book", why: "Side-by-side comparison matrix and consistent site pages make it easy to decide.", by: "Marketing Coordinator", link: "" },
+    { title: "Q2 leasing wins carousel", category: "Social", why: "Highest engagement post of the year: bold numbers, short copy, on-brand navy.", by: "Marketing Manager", link: "" }
+  ],
+
+  // Resource library. Each group renders as a card of links.
+  resources: [
+    { group: "Templates", items: [
+      { label: "PowerPoint pitch template", link: "", note: "Fade Smoothly transitions only" },
+      { label: "BOV / Offering Memorandum template", link: "" },
+      { label: "Tour book template (portrait & landscape)", link: "" },
+      { label: "Leasing flyer template", link: "" },
+      { label: "Case study template", link: "" },
+      { label: "Bio templates (1–4 bios)", link: "" },
+      { label: "Color books / floor plan availability", link: "" }
+    ]},
+    { group: "Brand", items: [
+      { label: "Stream brand guidelines", link: "" },
+      { label: "Logos & brand icon", link: "" },
+      { label: "Approved water & topo imagery", link: "" },
+      { label: "Headshots (hi-res + web)", link: "" },
+      { label: "Email signature options", link: "" }
+    ]},
+    { group: "Research & Market Data", items: [
+      { label: "The Quarter — Chicago Industrial", link: "" },
+      { label: "Lease & sale comps tracker", link: "" },
+      { label: "Submarket map (Chicago MSA)", link: "" },
+      { label: "Labor & drive-time data", link: "" }
+    ]},
+    { group: "Social & Digital", items: [
+      { label: "Social templates (IG 1080×1080, LI 1200×627, Story 1080×1920)", link: "" },
+      { label: "Email blast template", link: "" },
+      { label: "Content calendar", link: "" }
+    ]},
+    { group: "Tools & Process", items: [
+      { label: "Marketing request form", link: "" },
+      { label: "Marketing request turnaround times", link: "" },
+      { label: "Deal / pipeline tracker", link: "" },
+      { label: "Signage vendor ordering", link: "" }
+    ]}
+  ],
+
+  // Portfolio. status: Available | Under LOI | Leased | Coming Soon | For Sale
+  // links: any of flyer, website, om, photos, tourBook, map, drive — "" to hide.
+  portfolio: [
+    { name: "Sample: I-55 Logistics Center", address: "Address TBD, Romeoville, IL", submarket: "I-55 Corridor", availableSF: 412000, clearHeight: "40'", status: "Available", broker: "Broker A", links: { flyer: "", website: "", photos: "", map: "", drive: "" } },
+    { name: "Sample: O'Hare Cargo Park Bldg 2", address: "Address TBD, Elk Grove Village, IL", submarket: "O'Hare", availableSF: 86500, clearHeight: "32'", status: "Under LOI", broker: "Broker B", links: { flyer: "", website: "", photos: "", map: "", drive: "" } },
+    { name: "Sample: Joliet Gateway Bldg A", address: "Address TBD, Joliet, IL", submarket: "I-80 / Joliet", availableSF: 625000, clearHeight: "40'", status: "Coming Soon", broker: "Broker B", links: { flyer: "", website: "", photos: "", map: "", drive: "" } },
+    { name: "Sample: Elk Grove Distribution", address: "Address TBD, Elk Grove Village, IL", submarket: "O'Hare", availableSF: 154000, clearHeight: "28'", status: "For Sale", broker: "Broker C", links: { om: "", photos: "", map: "", drive: "" } },
+    { name: "Sample: Bolingbrook Crossing", address: "Address TBD, Bolingbrook, IL", submarket: "I-55 Corridor", availableSF: 0, clearHeight: "36'", status: "Leased", broker: "Broker A", links: { flyer: "", photos: "", drive: "" } },
+    { name: "Sample: Romeoville Commerce Ctr", address: "Address TBD, Romeoville, IL", submarket: "I-55 Corridor", availableSF: 0, clearHeight: "40'", status: "Leased", broker: "Broker C", links: { photos: "", drive: "" } },
+    { name: "Sample: Aurora Business Park", address: "Address TBD, Aurora, IL", submarket: "I-88 / Fox Valley", availableSF: 238000, clearHeight: "36'", status: "Available", broker: "Broker C", links: { flyer: "", website: "", tourBook: "", map: "", drive: "" } },
+    { name: "Sample: Lake County Flex Center", address: "Address TBD, Waukegan, IL", submarket: "Lake County", availableSF: 47200, clearHeight: "24'", status: "Available", broker: "Broker B", links: { flyer: "", map: "", drive: "" } },
+    { name: "Sample: Kenosha Logistics Park", address: "Address TBD, Kenosha, WI", submarket: "SE Wisconsin", availableSF: 520000, clearHeight: "40'", status: "Available", broker: "Broker A", links: { flyer: "", website: "", photos: "", map: "", drive: "" } }
+  ],
+
+  // Team roster. group: Brokerage | Marketing | Research
+  team: [
+    { name: "Broker A", role: "Executive Vice President", group: "Brokerage", email: "", phone: "" },
+    { name: "Broker B", role: "Senior Vice President", group: "Brokerage", email: "", phone: "" },
+    { name: "Broker C", role: "Vice President", group: "Brokerage", email: "", phone: "" },
+    { name: "Marketing Manager", role: "Marketing Manager", group: "Marketing", email: "", phone: "" },
+    { name: "Marketing Coordinator", role: "Marketing Coordinator", group: "Marketing", email: "", phone: "" },
+    { name: "Graphic Designer", role: "Graphic Designer", group: "Marketing", email: "", phone: "" },
+    { name: "Research Analyst", role: "Research Analyst", group: "Research", email: "", phone: "" }
+  ]
+};

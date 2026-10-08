@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stream Industrial Team Hub</title>
+  <meta name="description" content="Stream Industrial Brokerage &amp; Marketing team dashboard — resources, final presentations, best in class, marketing queue and portfolio quick links.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,700&family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="masthead">
+    <div class="wrap masthead__inner">
+      <div class="brand">
+        <span class="brand__eyebrow">Stream Realty Partners · Industrial</span>
+        <h1 class="brand__title">Brokerage &amp; Marketing Hub</h1>
+        <p class="brand__tagline">First, relationships. Then, real estate.</p>
+      </div>
+      <div class="masthead__tools">
+        <label class="search" for="global-search">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <span class="sr-only">Search the hub</span>
+          <input id="global-search" type="search" placeholder="Search properties, decks, resources…" autocomplete="off">
+        </label>
+        <a class="btn btn--light" id="request-link" href="#" target="_blank" rel="noopener">+ New marketing request</a>
+      </div>
+    </div>
+    <nav class="sectionnav" aria-label="Sections">
+      <div class="wrap sectionnav__inner">
+        <a href="#overview">Overview</a>
+        <a href="#queue">In the Queue</a>
+        <a href="#presentations">Final Presentations</a>
+        <a href="#best">Best in Class</a>
+        <a href="#resources">Resources</a>
+        <a href="#portfolio">Portfolio Hub</a>
+        <a href="#team">Team</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="wrap">
+    <div id="sample-banner" class="banner" hidden>
+      <strong>Sample data.</strong> Replace the placeholder entries in <code>data/dashboard.js</code> with the team's real work — see the README for how.
+    </div>
+
+    <section id="overview" class="section" aria-labelledby="overview-h">
+      <div class="section__head">
+        <h2 id="overview-h" class="section__title">Overview</h2>
+        <p class="section__meta" id="last-updated"></p>
+      </div>
+      <div class="stats" id="stats"></div>
+      <div class="overview-grid">
+        <div class="panel">
+          <h3 class="panel__title"><span class="square" aria-hidden="true"></span>Team Updates</h3>
+          <ul class="updates" id="updates"></ul>
+        </div>
+        <div class="panel">
+          <h3 class="panel__title"><span class="square square--orange" aria-hidden="true"></span>Due in the Next 14 Days</h3>
+          <ul class="duesoon" id="due-soon"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="queue" class="section" aria-labelledby="queue-h">
+      <div class="section__head">
+        <h2 id="queue-h" class="section__title">In the Queue</h2>
+        <div class="filters">
+          <label>Type <select id="queue-type"></select></label>
+          <label>Owner <select id="queue-owner"></select></label>
+        </div>
+      </div>
+      <div class="board" id="board"></div>
+    </section>
+
+    <section id="presentations" class="section" aria-labelledby="pres-h">
+      <div class="section__head">
+        <h2 id="pres-h" class="section__title">Final Presentations</h2>
+        <div class="filters">
+          <label>Type <select id="pres-type"></select></label>
+        </div>
+      </div>
+      <div class="cards" id="presentations-list"></div>
+    </section>
+
+    <section id="best" class="section" aria-labelledby="best-h">
+      <div class="section__head">
+        <h2 id="best-h" class="section__title">Best in Class</h2>
+        <p class="section__meta">The work we point to when someone asks “what does great look like?”</p>
+      </div>
+      <div class="cards cards--feature" id="best-list"></div>
+    </section>
+
+    <section id="resources" class="section" aria-labelledby="res-h">
+      <div class="section__head">
+        <h2 id="res-h" class="section__title">Resources</h2>
+        <p class="section__meta">Templates, brand standards, research and tools.</p>
+      </div>
+      <div class="resources" id="resources-list"></div>
+    </section>
+
+    <section id="portfolio" class="section" aria-labelledby="port-h">
+      <div class="section__head">
+        <h2 id="port-h" class="section__title">Portfolio Hub</h2>
+        <div class="filters">
+          <label>Submarket <select id="port-submarket"></select></label>
+          <label>Status <select id="port-status"></select></label>
+        </div>
+      </div>
+      <div class="portfolio-summary" id="portfolio-summary"></div>
+      <div class="table-wrap">
+        <table class="portfolio" id="portfolio-table">
+          <thead>
+            <tr>
+              <th scope="col">Property</th>
+              <th scope="col">Submarket</th>
+              <th scope="col" class="num">Available SF</th>
+              <th scope="col">Clear Ht</th>
+              <th scope="col">Status</th>
+              <th scope="col">Broker Lead</th>
+              <th scope="col">Quick Links</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="team" class="section" aria-labelledby="team-h">
+      <div class="section__head">
+        <h2 id="team-h" class="section__title">Team</h2>
+      </div>
+      <div class="team" id="team-list"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p class="footer__tagline">Changing the landscape of commercial real estate<sup>™</sup></p>
+      <p class="footer__note">Internal use only · Questions on brand: <a href="mailto:nationalmarketing@streamrealty.com">nationalmarketing@streamrealty.com</a></p>
+    </div>
+  </footer>
+
+  <script src="data/dashboard.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
