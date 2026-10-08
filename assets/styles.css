@@ -280,3 +280,39 @@ mark { background: #FFE9B3; color: inherit; padding: 0 1px; }
   .masthead { position: static; }
   .sectionnav, .search, .btn, .filters { display: none; }
 }
+
+/* ---------- Midnight theme ----------
+   Full navy canvas, Pacific Blue as the highlight. Stream Blue is kept off
+   navy surfaces per brand contrast rules. */
+html { background: #00142F; }
+body{background:#00142F;color:#fff}
+.masthead{background:#00142F;border-bottom:1px solid rgba(255,255,255,.08)}
+.sectionnav{background:transparent}
+.section__title,.stat__value,.panel__title,.column__head,.portfolio-summary strong{color:#fff}
+.section__head{border-bottom-color:var(--pacific)}
+.section__meta,.stat__sub,.card__sub,.card__date,.task__prop,.task__people,.prop-addr,.member__role,.date-chip,.duesoon .sub,.res-note,.soon,.filters label,.empty{color:#B1B3B3}
+.stat,.panel,.card,.task,.table-wrap,.portfolio-summary span{background:#04234D;box-shadow:none;border:1px solid rgba(255,255,255,.08);color:#fff}
+.stat{border-top:4px solid var(--pacific)}
+.stat__label,.card__title,.quote,.task__title,.card__notes,.member__name,.prop-name{color:#fff}
+.column{background:#021B3D} .column__count{background:var(--pacific);color:#00142F}
+.updates li,.duesoon li,.resources li,.member,.portfolio td,.portfolio tr{border-color:rgba(255,255,255,.1)}
+.portfolio th{background:#021B3D;border-bottom:2px solid var(--pacific)}
+.portfolio tbody tr:hover{background:#06305F}
+.pill--type{background:rgba(0,176,185,.18);color:#7FE3E8}
+a,.resources li a,.task a{color:#7FE3E8} .muted-link{color:#D9D9D6!important}
+.link-btn{background:var(--pacific);color:#00142F} .link-btn--pending{background:rgba(255,255,255,.08);color:#B1B3B3}
+.qlink{border-color:var(--pacific);color:#7FE3E8} .qlink--off{border-color:rgba(255,255,255,.12);color:#53565A}
+.filters select{background:#04234D;color:#fff;border-color:rgba(255,255,255,.2)}
+.banner{background:#3A2A00;color:#fff}
+.cards--feature .card{border-top:4px solid var(--pacific)}
+.cards--feature .card::after{background:repeating-radial-gradient(circle at 70% 30%,transparent 0 10px,rgba(0,176,185,.12) 10px 11px)}
+.avatar{background:var(--pacific);color:#00142F}
+.footer{background:#000B1C}
+.task{border-left-color:var(--pacific)} .task--high{border-left-color:var(--orange)}
+.square{background:var(--pacific)} .square--orange{background:var(--orange)}
+.pill--sale { background: #fff; color: var(--navy); }
+.qlink--off { border-color: rgba(255,255,255,.12); color: rgba(255,255,255,.35); }
+code { background: rgba(255,255,255,.1); }
+mark { background: rgba(255,184,28,.35); color: #fff; }
+.footer a { color: #fff; }
+.search input { color: #000; }

@@ -45,7 +45,7 @@ Dates are `YYYY-MM-DD`. Items due within 3 days are flagged, and overdue items a
 
 ## Brand
 
-Follows the Stream Realty Partners brand standards: Stream Navy is the main color with Stream Blue as an accent, secondary colors are used only for status pills, headlines are in Merriweather, body text is in Nunito Sans, and body copy is black.
+Uses the "Midnight" look: a full Stream Navy page with Pacific Blue highlights, Merriweather headlines and Nunito Sans text. Stream Blue is kept off navy surfaces, per the brand contrast rule. The theme is the last block in `assets/styles.css`; delete that block to go back to the light page with a navy header.
 
 ## Files
 
