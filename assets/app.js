@@ -235,6 +235,12 @@
 
   // ---------- team ----------
   function renderTeam() {
+    var photo = D.meta && D.meta.teamPhoto;
+    if (photo) {
+      $("team-photo-img").src = photo;
+      $("team-photo-img").alt = "The Stream Chicago Industrial team";
+      $("team-photo").hidden = false;
+    }
     var box = $("team-list");
     box.innerHTML = "";
     var groups = uniq((D.team || []).map(function (m) { return m.group; }));
@@ -307,6 +313,8 @@
     });
     window.addEventListener("hashchange", function () { showTab(location.hash.slice(1)); });
     showTab(location.hash.slice(1));
+    // Opening a #tab link shouldn't scroll the panel under the header.
+    window.addEventListener("load", function () { window.scrollTo(0, 0); });
   }
 
   // While searching, show how many matches each tab has.

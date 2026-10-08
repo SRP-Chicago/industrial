@@ -15,7 +15,9 @@ window.DASHBOARD_DATA = {
     lastUpdated: "2026-10-08",
     sampleData: true,
     // Where the "+ New marketing request" button goes (Microsoft Form, email, etc.)
-    requestLink: "mailto:?subject=Industrial%20Marketing%20Request"
+    requestLink: "mailto:?subject=Industrial%20Marketing%20Request",
+    // Group photo shown at the top of the Team tab ("" to hide).
+    teamPhoto: "assets/team-photo.jpg"
   },
 
   // Marketing queue. status: Requested | In Progress | In Review | Complete
@@ -98,6 +100,7 @@ window.DASHBOARD_DATA = {
     { name: "Brian Duffy", role: "Managing Director", group: "Brokerage", email: "brian.duffy@streamrealty.com", phone: "630.743.3313" },
     { name: "Ben Dickey", role: "Vice President", group: "Brokerage", email: "ben.dickey@streamrealty.com", phone: "224.465.3468" },
     { name: "Joe Connor", role: "Senior Associate", group: "Brokerage", email: "joe.connor@streamrealty.com", phone: "816.508.0232" },
+    { name: "Mario Macioce", role: "Associate", group: "Brokerage", email: "mario.macioce@streamrealty.com", phone: "312.767.3546" },
     { name: "Broker A", role: "Executive Vice President", group: "Brokerage", email: "", phone: "" },
     { name: "Broker B", role: "Senior Vice President", group: "Brokerage", email: "", phone: "" },
     { name: "Broker C", role: "Vice President", group: "Brokerage", email: "", phone: "" },
