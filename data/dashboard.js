@@ -48,7 +48,10 @@ window.DASHBOARD_DATA = {
   research: {
     contact: "Hannah Webster",
     // The Quarter market reports, newest first. file is a PDF path or link.
+    // status: "Launched" | "In Progress" (stats and file can stay empty until launch)
     reports: [
+      { quarter: "Q3 2026", title: "The Quarter — Chicago Industrial", file: "", status: "In Progress", stats: [],
+        takeaway: "Research is putting together the Q3 2026 report. Stats and the PDF will appear here once it launches." },
       { quarter: "Q2 2026", title: "The Quarter — Chicago Industrial", file: "research/Q2_2026_CHI_Industrial_Quarter_Report.pdf", status: "Launched",
         stats: [
           { label: "Total vacancy", value: "5.6%" },

@@ -162,22 +162,21 @@
     var rl = $("report-list");
     rl.innerHTML = "";
     var reports = (r.reports || []).filter(matches);
-    reports.forEach(function (rep, i) {
-      var isLatest = rep === (r.reports || [])[0];
-      rl.appendChild(h("article", { class: "report" + (isLatest ? " report--latest" : "") }, [
+    reports.forEach(function (rep) {
+      var launched = /launch/i.test(rep.status || "");
+      rl.appendChild(h("article", { class: "report" + (launched ? " report--launched" : " report--pending") }, [
         h("div", { class: "report__top" }, [
           h("div", null, [
             h("div", { class: "report__quarter", text: rep.quarter }),
             h("h4", { class: "report__title", text: rep.title })
           ]),
           h("div", { class: "report__tags" }, [
-            isLatest ? h("span", { class: "pill pill--available", text: "Latest" }) : null,
-            rep.status ? h("span", { class: "pill " + (/draft/i.test(rep.status) ? "pill--loi" : "pill--type"), text: rep.status }) : null
+            rep.status ? h("span", { class: "pill " + (launched ? "pill--available" : "pill--loi"), text: rep.status }) : null
           ])
         ]),
-        h("dl", { class: "report__stats" }, (rep.stats || []).reduce(function (acc, st) {
+        (rep.stats || []).length ? h("dl", { class: "report__stats" }, rep.stats.reduce(function (acc, st) {
           return acc.concat([h("div", null, [h("dd", { text: st.value }), h("dt", { text: st.label })])]);
-        }, [])),
+        }, [])) : null,
         rep.takeaway ? h("p", { class: "report__takeaway", text: rep.takeaway }) : null,
         rep.file ? h("a", { class: "link-btn", href: rep.file, target: "_blank", rel: "noopener", text: "Open report (PDF) ↗" }) : null
       ]));
