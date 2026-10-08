@@ -26,7 +26,7 @@ window.DASHBOARD_DATA = {
   queue: [
     { title: "Pitch deck — 3PL user requirement", property: "Sample: I-55 Logistics Center", type: "Pitch Deck", owner: "Marketing Coordinator", broker: "Broker A", status: "In Progress", priority: "High", due: "2026-10-12", link: "" },
     { title: "Leasing flyer refresh (new availability)", property: "Sample: O'Hare Cargo Park Bldg 2", type: "Flyer", owner: "Graphic Designer", broker: "Broker B", status: "In Review", priority: "Normal", due: "2026-10-10", link: "" },
-    { title: "BOV — single-tenant NNN", property: "Sample: Elk Grove Distribution", type: "BOV / OM", owner: "Research Analyst", broker: "Broker C", status: "Requested", priority: "High", due: "2026-10-20", link: "" },
+    { title: "BOV — single-tenant NNN", property: "Sample: Elk Grove Distribution", type: "BOV / OM", owner: "Hannah Webster", broker: "Broker C", status: "Requested", priority: "High", due: "2026-10-20", link: "" },
     { title: "Tour book — 5 building I-80 tour", property: "Client: Sample Manufacturer", type: "Tour Book", owner: "Marketing Coordinator", broker: "Broker A", status: "Requested", priority: "Normal", due: "2026-10-15", link: "" },
     { title: "LinkedIn carousel — Q3 leasing wins", property: "Team", type: "Social", owner: "Marketing Manager", broker: "Team", status: "In Progress", priority: "Normal", due: "2026-10-17", link: "" },
     { title: "Email blast — spec building delivery", property: "Sample: Joliet Gateway Bldg A", type: "Email Blast", owner: "Marketing Manager", broker: "Broker B", status: "Requested", priority: "Low", due: "2026-10-28", link: "" },
@@ -38,9 +38,9 @@ window.DASHBOARD_DATA = {
   // Final, client-ready presentations. type: Pitch | BOV / OM | Tour Book | Market Update | Case Study
   presentations: [
     { title: "Landlord pitch — 1.2M SF portfolio assignment", client: "Sample Institutional Owner", type: "Pitch", date: "2026-09-24", team: "Broker A, Broker C", outcome: "Won", link: "", notes: "Strong submarket comps section and a 90-day marketing timeline." },
-    { title: "Q3 Chicago Industrial market update", client: "Internal / Clients", type: "Market Update", date: "2026-10-03", team: "Research Analyst", outcome: "", link: "", notes: "Use slides 4–9 for any client meeting this quarter." },
+    { title: "Q3 Chicago Industrial market update", client: "Internal / Clients", type: "Market Update", date: "2026-10-03", team: "Hannah Webster", outcome: "", link: "", notes: "Use slides 4–9 for any client meeting this quarter." },
     { title: "Tenant rep — food & beverage cold storage search", client: "Sample F&B Company", type: "Tour Book", date: "2026-09-12", team: "Broker B", outcome: "Pending", link: "", notes: "" },
-    { title: "BOV — 210K SF Class A bulk", client: "Sample Private Owner", type: "BOV / OM", date: "2026-08-29", team: "Broker C, Research Analyst", outcome: "Won", link: "", notes: "Lease-up scenarios laid out cleanly on one page." },
+    { title: "BOV — 210K SF Class A bulk", client: "Sample Private Owner", type: "BOV / OM", date: "2026-08-29", team: "Broker C, Hannah Webster", outcome: "Won", link: "", notes: "Lease-up scenarios laid out cleanly on one page." },
     { title: "Developer pitch — spec 300K SF", client: "Sample Developer", type: "Pitch", date: "2026-08-15", team: "Broker A, Broker B", outcome: "Lost", link: "", notes: "Debrief: client wanted more on labor-shed data." }
   ],
 
@@ -110,6 +110,6 @@ window.DASHBOARD_DATA = {
     { name: "Marketing Manager", role: "Marketing Manager", group: "Marketing", email: "", phone: "" },
     { name: "Marketing Coordinator", role: "Marketing Coordinator", group: "Marketing", email: "", phone: "" },
     { name: "Graphic Designer", role: "Graphic Designer", group: "Marketing", email: "", phone: "" },
-    { name: "Research Analyst", role: "Research Analyst", group: "Research", email: "", phone: "" }
+    { name: "Hannah Webster", role: "Senior Research Analyst", group: "Research", email: "hannah.webster@streamrealty.com", phone: "815.505.1234" }
   ]
 };
