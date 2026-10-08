@@ -8,6 +8,7 @@ One page where the Industrial brokerage and marketing teams can see what's going
 | **Presentations** | Library of final, client-ready decks (pitches, BOVs, tour books, market updates) with the outcome |
 | **Resources** | Templates, brand standards, research/market data, social, tools & process links |
 | **Portfolio** | Every property with submarket, available SF, clear height, status, broker lead, and quick links (flyer, website, OM, photos, tour book, map, folder). Sortable and filterable |
+| **Research** | The Quarter market reports (PDF) with headline stats, plus research data and tools, and who to ask |
 | **Process** | Step-by-step IND + Marketing processes (pitch, onboarding, collateral, signage, branding, press release, deal announcement, events), showing who owns each step, plus the leads for each active assignment |
 | **Team** | Who's on the brokerage, marketing and research teams |
 
@@ -26,7 +27,7 @@ It's a static site with no build step. Any of these work:
 All content lives in **`data/dashboard.js`**. You don't need to touch the HTML, CSS or JS.
 
 1. Open `data/dashboard.js` (on GitHub, click the pencil icon to edit in the browser).
-2. Find the section you want (`queue`, `presentations`, `resources`, `portfolio`, `process`, `assignmentTeams`, `team`).
+2. Find the section you want (`queue`, `presentations`, `research`, `resources`, `portfolio`, `process`, `assignmentTeams`, `team`).
 3. Copy an existing entry, paste it, and change the values. Keep the comma between entries.
 4. Paste SharePoint/OneDrive/website URLs into `link` / `links` fields. Leave `""` if there's no link yet; the dashboard shows "link needed" or a greyed-out button.
 5. Update `meta.lastUpdated`, then commit.
@@ -53,4 +54,6 @@ index.html          page layout
 assets/styles.css   brand styling
 assets/app.js       rendering, filters, search, sorting
 data/dashboard.js   ← all content (edit this)
+research/           The Quarter PDFs linked from the Research tab
+assets/team/        headshots
 ```

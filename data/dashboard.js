@@ -44,6 +44,45 @@ window.DASHBOARD_DATA = {
     { title: "Developer pitch — spec 300K SF", client: "Sample Developer", type: "Pitch", date: "2026-08-15", team: "Brian Duffy, Ben Dickey", outcome: "Lost", link: "", notes: "Debrief: client wanted more on labor-shed data." }
   ],
 
+  // Research tab: who to ask, plus link groups (same shape as resources).
+  research: {
+    contact: "Hannah Webster",
+    // The Quarter market reports, newest first. file is a PDF path or link.
+    reports: [
+      { quarter: "Q2 2026", title: "The Quarter — Chicago Industrial", file: "research/Q2_2026_CHI_Industrial_Quarter_Report.pdf", status: "Final",
+        stats: [
+          { label: "Total vacancy", value: "5.6%" },
+          { label: "Net absorption", value: "3.5M SF" },
+          { label: "Leasing activity", value: "15.0M SF" },
+          { label: "Under construction", value: "18.4M SF" }
+        ],
+        takeaway: "Vacancy fell to 5.58%, the lowest in a year. The I-80 Joliet Corridor led leasing for the second straight quarter at 3.2M SF, and the construction pipeline grew to 18.4M SF across 60 buildings." },
+      { quarter: "Q1 2026", title: "The Quarter — Chicago Industrial", file: "research/Q1_2026_CHI_Industrial_Quarter_Report_v1.pdf", status: "Draft v1",
+        stats: [
+          { label: "Total vacancy", value: "5.8%" },
+          { label: "Net absorption", value: "839K SF" },
+          { label: "Leasing activity", value: "15.2M SF" },
+          { label: "Under construction", value: "15.0M SF" }
+        ],
+        takeaway: "Vacancy eased to 5.77% from 5.84% in Q4 2025. The I-80 Joliet Corridor posted 5.3M SF of leasing, led by General Mills' 1.5M SF renewal; Ferrara's 998K SF move-out weighed on the I-55 Corridor." }
+    ],
+    groups: [
+      { group: "Market Reports", items: [
+        { label: "Submarket snapshots", link: "" }
+      ]},
+      { group: "Comps & Data", items: [
+        { label: "Lease comps tracker", link: "" },
+        { label: "Sale comps tracker", link: "" },
+        { label: "Availability & vacancy by submarket", link: "" },
+        { label: "Labor & drive-time data", link: "" }
+      ]},
+      { group: "Maps", items: [
+        { label: "Submarket map (Chicago MSA)", link: "" },
+        { label: "Competitive set maps", link: "" }
+      ]}
+    ]
+  },
+
   // Resource library. Each group renders as a card of links.
   resources: [
     { group: "Templates", items: [
@@ -61,12 +100,6 @@ window.DASHBOARD_DATA = {
       { label: "Approved water & topo imagery", link: "" },
       { label: "Headshots (hi-res + web)", link: "" },
       { label: "Email signature options", link: "" }
-    ]},
-    { group: "Research & Market Data", items: [
-      { label: "The Quarter — Chicago Industrial", link: "" },
-      { label: "Lease & sale comps tracker", link: "" },
-      { label: "Submarket map (Chicago MSA)", link: "" },
-      { label: "Labor & drive-time data", link: "" }
     ]},
     { group: "Social & Digital", items: [
       { label: "Social templates (IG 1080×1080, LI 1200×627, Story 1080×1920)", link: "" },

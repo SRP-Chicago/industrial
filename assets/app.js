@@ -138,10 +138,59 @@
 
   // ---------- resources ----------
   function renderResources() {
-    var box = $("resources-list");
+    renderLinkGroups($("resources-list"), D.resources || []);
+  }
+
+  function renderResearch() {
+    var c = $("research-contact");
+    c.innerHTML = "";
+    var r = D.research || {};
+    var person = (D.team || []).filter(function (m) { return m.name === r.contact; })[0];
+    if (person) {
+      var contact = [];
+      if (person.email) contact.push(h("a", { href: "mailto:" + person.email, text: person.email }));
+      if (person.phone) contact.push(" · ", h("a", { href: "tel:" + person.phone.replace(/[^0-9+]/g, ""), text: person.phone }));
+      c.appendChild(h("div", { class: "panel research-contact__card" }, [
+        h("div", { class: "avatar", "aria-hidden": "true", text: person.name.split(/\s+/).map(function (w) { return w[0]; }).join("") }),
+        h("div", null, [
+          h("div", { class: "research-contact__label", text: "Research questions? Ask" }),
+          h("div", { class: "member__name", text: person.name + ", " + person.role }),
+          h("div", { class: "member__contact" }, contact)
+        ])
+      ]));
+    }
+    var rl = $("report-list");
+    rl.innerHTML = "";
+    var reports = (r.reports || []).filter(matches);
+    reports.forEach(function (rep, i) {
+      var isLatest = rep === (r.reports || [])[0];
+      rl.appendChild(h("article", { class: "report" + (isLatest ? " report--latest" : "") }, [
+        h("div", { class: "report__top" }, [
+          h("div", null, [
+            h("div", { class: "report__quarter", text: rep.quarter }),
+            h("h4", { class: "report__title", text: rep.title })
+          ]),
+          h("div", { class: "report__tags" }, [
+            isLatest ? h("span", { class: "pill pill--available", text: "Latest" }) : null,
+            rep.status && rep.status !== "Final" ? h("span", { class: "pill pill--loi", text: rep.status }) : null
+          ])
+        ]),
+        h("dl", { class: "report__stats" }, (rep.stats || []).reduce(function (acc, st) {
+          return acc.concat([h("div", null, [h("dd", { text: st.value }), h("dt", { text: st.label })])]);
+        }, [])),
+        rep.takeaway ? h("p", { class: "report__takeaway", text: rep.takeaway }) : null,
+        rep.file ? h("a", { class: "link-btn", href: rep.file, target: "_blank", rel: "noopener", text: "Open report (PDF) ↗" }) : null
+      ]));
+    });
+    if (!reports.length) rl.appendChild(empty((r.reports || []).length ? null : "No reports yet."));
+
+    renderLinkGroups($("research-list"), r.groups || []);
+  }
+
+  function renderLinkGroups(box, groups) {
     box.innerHTML = "";
     var shown = 0;
-    (D.resources || []).forEach(function (g) {
+    groups.forEach(function (g) {
       var groupHit = state.q && g.group.toLowerCase().indexOf(state.q) !== -1;
       var items = (g.items || []).filter(function (i) { return groupHit || matches(i); });
       if (!items.length) return;
@@ -331,6 +380,7 @@
   function renderFiltered() {
     renderQueue();
     renderPresentations();
+    renderResearch();
     renderResources();
     renderPortfolio();
     renderAssignments();
@@ -345,7 +395,7 @@
   }
 
   // ---------- tabs ----------
-  var TABS = ["queue", "portfolio", "presentations", "resources", "process", "team"];
+  var TABS = ["queue", "portfolio", "presentations", "research", "resources", "process", "team"];
 
   function showTab(id, focus) {
     if (TABS.indexOf(id) === -1) id = TABS[0];
@@ -385,6 +435,7 @@
     var counts = {
       queue: document.querySelectorAll("#board .task").length,
       presentations: document.querySelectorAll("#presentations-list .card").length,
+      research: document.querySelectorAll("#research-list li, #report-list .report").length,
       resources: document.querySelectorAll("#resources-list li").length,
       portfolio: document.querySelectorAll("#portfolio-table .prop-name").length,
       process: document.querySelectorAll("#process-list .proc").length
