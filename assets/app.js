@@ -282,7 +282,7 @@
   }
 
   // ---------- tabs ----------
-  var TABS = ["queue", "presentations", "resources", "portfolio", "team"];
+  var TABS = ["queue", "portfolio", "presentations", "resources", "team"];
 
   function showTab(id, focus) {
     if (TABS.indexOf(id) === -1) id = TABS[0];
