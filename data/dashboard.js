@@ -102,6 +102,7 @@ window.DASHBOARD_DATA = {
     { name: "Joe Connor", role: "Senior Associate", group: "Brokerage", email: "joe.connor@streamrealty.com", phone: "816.508.0232" },
     { name: "Brian Daly", role: "Senior Associate", group: "Brokerage", email: "brian.daly@streamrealty.com", phone: "847.544.6730" },
     { name: "Mario Macioce", role: "Associate", group: "Brokerage", email: "mario.macioce@streamrealty.com", phone: "312.767.3546" },
+    { name: "Kennedy Arundel", role: "Associate", group: "Brokerage", email: "kennedy.arundel@streamrealty.com", phone: "773.580.1107" },
     { name: "Alyssa Aucoin", role: "Analyst", group: "Brokerage", email: "alyssa.aucoin@streamrealty.com", phone: "630.450.6837" },
     { name: "Liz Megginson", role: "Transaction Manager", group: "Brokerage", email: "liz.megginson@streamrealty.com", phone: "224.343.0090" },
     { name: "Marketing Manager", role: "Marketing Manager", group: "Marketing", email: "", phone: "" },
