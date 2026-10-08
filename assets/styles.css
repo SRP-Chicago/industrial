@@ -259,12 +259,6 @@ table.portfolio { width: 100%; border-collapse: collapse; }
 }
 
 /* ---------- Process ---------- */
-.process-intro {
-  display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;
-  background: #04234D; border: 1px solid rgba(255,255,255,.08); border-left: 4px solid var(--pacific);
-  border-radius: var(--radius); padding: 14px 18px; margin-bottom: 12px;
-}
-.process-intro p { margin: 0; color: #fff; }
 .process-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 13px; color: var(--gray); margin-bottom: 14px; }
 .process-legend .who { margin-left: 8px; }
 .process-legend .who:first-child { margin-left: 0; }

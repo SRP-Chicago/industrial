@@ -242,9 +242,6 @@
   }
 
   function renderProcess() {
-    var req = $("process-request");
-    if (D.meta && D.meta.requestLink) req.href = D.meta.requestLink; else $("process-intro").hidden = true;
-
     var box = $("process-list");
     box.innerHTML = "";
     var items = (D.process || []).filter(matches);
