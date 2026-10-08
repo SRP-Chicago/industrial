@@ -266,6 +266,7 @@
     renderPresentations();
     renderResources();
     renderPortfolio();
+    updateTabCounts();
   }
 
   function bindSelect(id, key, values, allLabel) {
@@ -274,16 +275,56 @@
     sel.addEventListener("change", function () { state[key] = sel.value; renderFiltered(); });
   }
 
-  function setupNavHighlight() {
-    var links = Array.prototype.slice.call(document.querySelectorAll(".sectionnav a"));
-    if (!("IntersectionObserver" in window)) return;
-    var obs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (!e.isIntersecting) return;
-        links.forEach(function (a) { a.classList.toggle("is-active", a.getAttribute("href") === "#" + e.target.id); });
+  // ---------- tabs ----------
+  var TABS = ["queue", "presentations", "resources", "portfolio", "team"];
+
+  function showTab(id, focus) {
+    if (TABS.indexOf(id) === -1) id = TABS[0];
+    TABS.forEach(function (t) {
+      var on = t === id;
+      $(t).hidden = !on;
+      var tab = $("tab-" + t);
+      tab.classList.toggle("is-active", on);
+      tab.setAttribute("aria-selected", on ? "true" : "false");
+      tab.tabIndex = on ? 0 : -1;
+      if (on && focus) tab.focus();
+    });
+    if (location.hash !== "#" + id) {
+      try { history.replaceState(null, "", "#" + id); } catch (e) { /* sandboxed viewers */ }
+    }
+  }
+
+  function setupTabs() {
+    TABS.forEach(function (t, i) {
+      var tab = $("tab-" + t);
+      tab.addEventListener("click", function (e) { e.preventDefault(); showTab(t); window.scrollTo(0, 0); });
+      tab.addEventListener("keydown", function (e) {
+        var step = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+        if (!step) return;
+        e.preventDefault();
+        showTab(TABS[(i + step + TABS.length) % TABS.length], true);
       });
-    }, { rootMargin: "-40% 0px -55% 0px" });
-    document.querySelectorAll("main .section").forEach(function (s) { obs.observe(s); });
+    });
+    window.addEventListener("hashchange", function () { showTab(location.hash.slice(1)); });
+    showTab(location.hash.slice(1));
+  }
+
+  // While searching, show how many matches each tab has.
+  function updateTabCounts() {
+    var counts = {
+      queue: document.querySelectorAll("#board .task").length,
+      presentations: document.querySelectorAll("#presentations-list .card").length,
+      resources: document.querySelectorAll("#resources-list li").length,
+      portfolio: document.querySelectorAll("#portfolio-table .prop-name").length
+    };
+    Object.keys(counts).forEach(function (t) {
+      var tab = $("tab-" + t);
+      var badge = tab.querySelector(".tab-count");
+      if (!state.q) { if (badge) badge.remove(); return; }
+      if (!badge) { badge = h("span", { class: "tab-count" }); tab.appendChild(badge); }
+      badge.textContent = counts[t];
+      badge.classList.toggle("tab-count--zero", !counts[t]);
+    });
   }
 
   function init() {
@@ -307,7 +348,7 @@
     setupPortfolioSort();
     renderFiltered();
     renderTeam();
-    setupNavHighlight();
+    setupTabs();
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);

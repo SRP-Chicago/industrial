@@ -29,12 +29,12 @@
       </div>
     </div>
     <nav class="sectionnav" aria-label="Sections">
-      <div class="wrap sectionnav__inner">
-        <a href="#queue">In the Queue</a>
-        <a href="#presentations">Presentations</a>
-        <a href="#resources">Resources</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#team">Team</a>
+      <div class="wrap sectionnav__inner" role="tablist">
+        <a href="#queue" role="tab" id="tab-queue" aria-controls="queue">In the Queue</a>
+        <a href="#presentations" role="tab" id="tab-presentations" aria-controls="presentations">Presentations</a>
+        <a href="#resources" role="tab" id="tab-resources" aria-controls="resources">Resources</a>
+        <a href="#portfolio" role="tab" id="tab-portfolio" aria-controls="portfolio">Portfolio</a>
+        <a href="#team" role="tab" id="tab-team" aria-controls="team">Team</a>
       </div>
     </nav>
   </header>
@@ -45,7 +45,7 @@
     </div>
 
 
-    <section id="queue" class="section" aria-labelledby="queue-h">
+    <section id="queue" class="section" role="tabpanel" aria-labelledby="tab-queue">
       <div class="section__head">
         <h2 id="queue-h" class="section__title">In the Queue</h2>
         <div class="filters">
@@ -56,7 +56,7 @@
       <div class="board" id="board"></div>
     </section>
 
-    <section id="presentations" class="section" aria-labelledby="pres-h">
+    <section id="presentations" class="section" role="tabpanel" aria-labelledby="tab-presentations">
       <div class="section__head">
         <h2 id="pres-h" class="section__title">Presentations</h2>
         <div class="filters">
@@ -67,7 +67,7 @@
     </section>
 
 
-    <section id="resources" class="section" aria-labelledby="res-h">
+    <section id="resources" class="section" role="tabpanel" aria-labelledby="tab-resources">
       <div class="section__head">
         <h2 id="res-h" class="section__title">Resources</h2>
         <p class="section__meta">Templates, brand standards, research and tools.</p>
@@ -75,7 +75,7 @@
       <div class="resources" id="resources-list"></div>
     </section>
 
-    <section id="portfolio" class="section" aria-labelledby="port-h">
+    <section id="portfolio" class="section" role="tabpanel" aria-labelledby="tab-portfolio">
       <div class="section__head">
         <h2 id="port-h" class="section__title">Portfolio</h2>
         <div class="filters">
@@ -102,7 +102,7 @@
       </div>
     </section>
 
-    <section id="team" class="section" aria-labelledby="team-h">
+    <section id="team" class="section" role="tabpanel" aria-labelledby="tab-team">
       <div class="section__head">
         <h2 id="team-h" class="section__title">Team</h2>
       </div>

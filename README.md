@@ -10,7 +10,7 @@ One page where the Industrial brokerage and marketing teams can see what's going
 | **Portfolio** | Every property with submarket, available SF, clear height, status, broker lead, and quick links (flyer, website, OM, photos, tour book, map, folder). Sortable and filterable |
 | **Team** | Who's on the brokerage, marketing and research teams |
 
-The search box at the top searches all sections at once.
+Each section is its own tab. The search box at the top searches every tab at once and shows the number of matches on each tab. Links like `index.html#portfolio` open straight to a tab.
 
 ## Viewing it
 
