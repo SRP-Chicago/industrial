@@ -53,11 +53,6 @@
     if (typeof o !== "object") return [String(o)];
     return Object.keys(o).reduce(function (acc, k) { return acc.concat(values(o[k])); }, []);
   }
-  function fmtBigSF(n) {
-    if (n >= 1e6) return (n / 1e6).toFixed(2).replace(/\.?0+$/, "") + "M";
-    if (n >= 1e3) return Math.round(n / 1e3) + "K";
-    return String(n);
-  }
 
   function fillSelect(sel, values, allLabel) {
     sel.innerHTML = "";
@@ -84,61 +79,6 @@
   }
 
   function empty(msg) { return h("p", { class: "empty", text: msg || "Nothing matches your filters." }); }
-
-  // ---------- overview ----------
-  function renderOverview() {
-    var queue = D.queue || [];
-    var open = queue.filter(function (t) { return t.status !== "Complete"; });
-    var overdue = open.filter(function (t) { return t.due && daysUntil(t.due) < 0; }).length;
-    var portfolio = D.portfolio || [];
-    var avail = portfolio.filter(function (p) { return p.status !== "Leased"; });
-    var sf = avail.reduce(function (s, p) { return s + (Number(p.availableSF) || 0); }, 0);
-    var pres90 = (D.presentations || []).filter(function (p) { var n = daysUntil(p.date); return n !== null && n >= -90; }).length;
-
-    var stats = [
-      { value: open.length, label: "In the queue", sub: overdue ? overdue + " overdue" : "Nothing overdue", href: "#queue" },
-      { value: queue.filter(function (t) { return t.status === "In Review"; }).length, label: "Awaiting review", sub: "Needs broker sign-off", href: "#queue" },
-      { value: pres90, label: "Final decks shared", sub: "Last 90 days", href: "#presentations" },
-      { value: portfolio.length, label: "Portfolio properties", sub: avail.length + " active listings", href: "#portfolio" },
-      { value: fmtBigSF(sf), label: "SF available", sub: "Across active listings", href: "#portfolio" }
-    ];
-    var box = $("stats");
-    box.innerHTML = "";
-    stats.forEach(function (s) {
-      box.appendChild(h("a", { class: "stat", href: s.href }, [
-        h("div", { class: "stat__value", text: String(s.value) }),
-        h("div", { class: "stat__label", text: s.label }),
-        h("div", { class: "stat__sub", text: s.sub })
-      ]));
-    });
-
-    var up = $("updates");
-    up.innerHTML = "";
-    (D.updates || []).slice(0, 6).forEach(function (u) {
-      up.appendChild(h("li", null, [h("span", { class: "date-chip", text: fmtDate(u.date) }), h("span", { text: u.text })]));
-    });
-    if (!up.children.length) up.appendChild(h("li", { text: "No updates yet." }));
-
-    var soon = open
-      .filter(function (t) { return t.due && daysUntil(t.due) <= 14; })
-      .sort(function (a, b) { return parseDate(a.due) - parseDate(b.due); });
-    var ds = $("due-soon");
-    ds.innerHTML = "";
-    soon.forEach(function (t) {
-      ds.appendChild(h("li", null, [
-        h("span", { class: "date-chip", text: fmtDate(t.due) }),
-        h("div", null, [
-          h("div", { class: "title", text: t.title }),
-          h("div", { class: "sub", text: [t.property, t.owner, t.status].filter(Boolean).join(" · ") })
-        ]),
-        dueBadge(t)
-      ]));
-    });
-    if (!soon.length) ds.appendChild(h("li", { text: "Nothing due in the next two weeks." }));
-
-    var lu = $("last-updated");
-    if (D.meta && D.meta.lastUpdated) lu.textContent = "Last updated " + fmtDate(D.meta.lastUpdated, true);
-  }
 
   // ---------- queue ----------
   function renderQueue() {
@@ -191,22 +131,6 @@
         h("p", { class: "card__sub", text: [p.client, p.team].filter(Boolean).join(" · ") }),
         p.notes ? h("p", { class: "card__notes", text: p.notes }) : null,
         h("div", { class: "card__foot" }, [linkButton(p.link, "Open deck"), outcome])
-      ]));
-    });
-    if (!items.length) box.appendChild(empty());
-  }
-
-  // ---------- best in class ----------
-  function renderBest() {
-    var box = $("best-list");
-    box.innerHTML = "";
-    var items = (D.best || []).filter(matches);
-    items.forEach(function (b) {
-      box.appendChild(h("article", { class: "card" }, [
-        h("div", { class: "card__top" }, [h("span", { class: "pill pill--type", text: b.category })]),
-        h("h3", { class: "card__title", text: b.title }),
-        h("p", { class: "quote", text: "“" + b.why + "”" }),
-        h("div", { class: "card__foot" }, [h("span", { class: "card__sub", text: b.by || "" }), linkButton(b.link, "View")])
       ]));
     });
     if (!items.length) box.appendChild(empty());
@@ -340,7 +264,6 @@
   function renderFiltered() {
     renderQueue();
     renderPresentations();
-    renderBest();
     renderResources();
     renderPortfolio();
   }
@@ -382,7 +305,6 @@
     });
 
     setupPortfolioSort();
-    renderOverview();
     renderFiltered();
     renderTeam();
     setupNavHighlight();

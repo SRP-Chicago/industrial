@@ -4,10 +4,8 @@ One page where the Industrial brokerage and marketing teams can see what's going
 
 | Section | What it's for |
 |---|---|
-| **Overview** | Headline numbers, team updates, and everything due in the next 14 days |
 | **In the Queue** | Marketing requests by stage: Requested → In Progress → In Review → Complete. Filter by type or owner |
 | **Presentations** | Library of final, client-ready decks (pitches, BOVs, tour books, market updates) with the outcome |
-| **Best in Class** | Examples of our best work and why they're good, to use as a starting point |
 | **Resources** | Templates, brand standards, research/market data, social, tools & process links |
 | **Portfolio** | Every property with submarket, available SF, clear height, status, broker lead, and quick links (flyer, website, OM, photos, tour book, map, folder). Sortable and filterable |
 | **Team** | Who's on the brokerage, marketing and research teams |
@@ -27,7 +25,7 @@ It's a static site with no build step. Any of these work:
 All content lives in **`data/dashboard.js`**. You don't need to touch the HTML, CSS or JS.
 
 1. Open `data/dashboard.js` (on GitHub, click the pencil icon to edit in the browser).
-2. Find the section you want (`queue`, `presentations`, `best`, `resources`, `portfolio`, `team`, `updates`).
+2. Find the section you want (`queue`, `presentations`, `resources`, `portfolio`, `team`).
 3. Copy an existing entry, paste it, and change the values. Keep the comma between entries.
 4. Paste SharePoint/OneDrive/website URLs into `link` / `links` fields. Leave `""` if there's no link yet; the dashboard shows "link needed" or a greyed-out button.
 5. Update `meta.lastUpdated`, then commit.

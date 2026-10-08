@@ -18,13 +18,6 @@ window.DASHBOARD_DATA = {
     requestLink: "mailto:?subject=Industrial%20Marketing%20Request"
   },
 
-  // Short notes shown on the Overview panel (newest first).
-  updates: [
-    { date: "2026-10-07", text: "Q3 Chicago Industrial market stats are loaded into The Quarter template — pull from Resources." },
-    { date: "2026-10-02", text: "New tour book template (landscape) added to Resources. Please use for all Q4 tours." },
-    { date: "2026-09-28", text: "Reminder: final decks go into Final Presentations within 2 business days of the pitch." }
-  ],
-
   // Marketing queue. status: Requested | In Progress | In Review | Complete
   // priority: High | Normal | Low
   // type: Flyer | BOV / OM | Pitch Deck | Tour Book | Social | Email Blast | Case Study | Signage | Website
@@ -47,14 +40,6 @@ window.DASHBOARD_DATA = {
     { title: "Tenant rep — food & beverage cold storage search", client: "Sample F&B Company", type: "Tour Book", date: "2026-09-12", team: "Broker B", outcome: "Pending", link: "", notes: "" },
     { title: "BOV — 210K SF Class A bulk", client: "Sample Private Owner", type: "BOV / OM", date: "2026-08-29", team: "Broker C, Research Analyst", outcome: "Won", link: "", notes: "Lease-up scenarios laid out cleanly on one page." },
     { title: "Developer pitch — spec 300K SF", client: "Sample Developer", type: "Pitch", date: "2026-08-15", team: "Broker A, Broker B", outcome: "Lost", link: "", notes: "Debrief: client wanted more on labor-shed data." }
-  ],
-
-  // Best in class examples. category: Pitch | Flyer | BOV / OM | Tour Book | Social | Case Study | Email
-  best: [
-    { title: "Portfolio pitch — 1.2M SF", category: "Pitch", why: "Leads with the client's goals, not our resume. Clear 90-day plan, one idea per slide.", by: "Broker A + Marketing", link: "" },
-    { title: "Spec bulk building flyer", category: "Flyer", why: "Specs at a glance, strong aerial, drive-time map. Every item a tenant rep asks for on page one.", by: "Graphic Designer", link: "" },
-    { title: "Cold storage tour book", category: "Tour Book", why: "Side-by-side comparison matrix and consistent site pages make it easy to decide.", by: "Marketing Coordinator", link: "" },
-    { title: "Q2 leasing wins carousel", category: "Social", why: "Highest engagement post of the year: bold numbers, short copy, on-brand navy.", by: "Marketing Manager", link: "" }
   ],
 
   // Resource library. Each group renders as a card of links.
