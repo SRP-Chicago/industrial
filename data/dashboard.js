@@ -15,7 +15,7 @@ window.DASHBOARD_DATA = {
     lastUpdated: "2026-10-08",
     sampleData: true,
     // Where the "+ New marketing request" button goes (Microsoft Form, email, etc.)
-    requestLink: "mailto:?subject=Industrial%20Marketing%20Request",
+    requestLink: "https://airtable.com/shrDILYHH00BiB7xF",
     // Group photo shown at the top of the Team tab ("" to hide).
     teamPhoto: "assets/team-photo.jpg"
   },
@@ -74,7 +74,7 @@ window.DASHBOARD_DATA = {
       { label: "Content calendar", link: "" }
     ]},
     { group: "Tools & Process", items: [
-      { label: "Marketing request form", link: "" },
+      { label: "Marketing request form (Airtable)", link: "https://airtable.com/shrDILYHH00BiB7xF" },
       { label: "Marketing request turnaround times", link: "" },
       { label: "Deal / pipeline tracker", link: "" },
       { label: "Signage vendor ordering", link: "" }
@@ -93,6 +93,82 @@ window.DASHBOARD_DATA = {
     { name: "Sample: Aurora Business Park", address: "Address TBD, Aurora, IL", submarket: "I-88 / Fox Valley", availableSF: 238000, clearHeight: "36'", status: "Available", broker: "Joe Connor", links: { flyer: "", website: "", tourBook: "", map: "", drive: "" } },
     { name: "Sample: Lake County Flex Center", address: "Address TBD, Waukegan, IL", submarket: "Lake County", availableSF: 47200, clearHeight: "24'", status: "Available", broker: "Ben Dickey", links: { flyer: "", map: "", drive: "" } },
     { name: "Sample: Kenosha Logistics Park", address: "Address TBD, Kenosha, WI", submarket: "SE Wisconsin", availableSF: 520000, clearHeight: "40'", status: "Available", broker: "Brian Duffy", links: { flyer: "", website: "", photos: "", map: "", drive: "" } }
+  ],
+
+  // Chicago IND + Marketing team processes, in order.
+  // who: "IND" | "MKT" | "IND + MKT". Optional: note, link.
+  process: [
+    { title: "New Business Pitch or Client Presentation", steps: [
+      { who: "IND", text: "Submit Marketing Airtable request", link: "https://airtable.com/shrDILYHH00BiB7xF" },
+      { who: "MKT", text: "Set a kickoff call" },
+      { who: "MKT", text: "Send a brief", note: "Brief template to be created" },
+      { who: "IND", text: "Fill out the brief before kickoff" },
+      { who: "IND + MKT", text: "Kickoff meeting: discuss and solidify strategy for the meeting or presentation. Walk away with a general content outline." },
+      { who: "MKT", text: "Design the presentation shell" },
+      { who: "MKT", text: "Send markup link" },
+      { who: "IND", text: "Mark up by a specific date" },
+      { who: "MKT", text: "Provide a final version and schedule an interactive walkthrough if needed" },
+      { who: "MKT", text: "Upload to the IND dashboard" }
+    ]},
+    { title: "New Assignment Onboarding", steps: [
+      { who: "IND", text: "Submit Marketing Airtable request", link: "https://airtable.com/shrDILYHH00BiB7xF" },
+      { who: "IND", text: "Provide Marketing with the official \u2018online\u2019 date" },
+      { who: "IND", text: "Supply Marketing any previous or existing deliverables (e-blasts, flyers, brochures)" },
+      { who: "IND", text: "Submit a second Airtable request if a press release is needed" },
+      { who: "IND", text: "Note any existing signage that needs to be removed and replaced" }
+    ]},
+    { title: "E-Blast, Site Plan & Brochure/Flyer Request", steps: [
+      { who: "IND", text: "Submit Marketing Airtable request", link: "https://airtable.com/shrDILYHH00BiB7xF" },
+      { who: "IND", text: "Supply Marketing with any previous or existing deliverables" },
+      { who: "IND", text: "Send high-resolution CoStar or final photography images" },
+      { who: "MKT", text: "Send draft for review" },
+      { who: "IND + MKT", text: "Finalize" },
+      { who: "IND", text: "Upload to CoStar" },
+      { who: "MKT", text: "Add to the dashboard" }
+    ]},
+    { title: "Signage (Installation / Removal)", steps: [
+      { who: "IND", text: "Submit Marketing Airtable request", link: "https://airtable.com/shrDILYHH00BiB7xF" },
+      { who: "IND", text: "Note any existing signage that needs to be removed and replaced" },
+      { who: "IND", text: "Note what information (contacts and logos) needs to be included" },
+      { who: "IND", text: "Highlight the exact signage placement on a Google Maps screenshot" },
+      { who: "MKT", text: "Request a quote from the signage vendor" },
+      { who: "IND", text: "Approve the quote" },
+      { who: "MKT", text: "Send the invoice to Liz to be processed" }
+    ]},
+    { title: "Branding & Positioning", steps: [
+      { who: "IND", text: "Submit Marketing Airtable request", link: "https://airtable.com/shrDILYHH00BiB7xF" },
+      { who: "MKT", text: "Schedule a kickoff call" }
+    ]},
+    { title: "Press Release", steps: [
+      { who: "IND", text: "Submit Marketing Airtable request", link: "https://airtable.com/shrDILYHH00BiB7xF" },
+      { who: "MKT", text: "Send the Amplification Form" },
+      { who: "IND", text: "Complete the Amplification Form" },
+      { who: "MKT", text: "Draft with the team and National Marketing" },
+      { who: "MKT", text: "Send draft to ownership for review and communicate any edits with National Marketing" },
+      { who: "MKT", text: "Once approved, help post creative announcements with the team locally and amplify National posts" }
+    ]},
+    { title: "New Deal / Leasing Announcement", steps: [
+      { who: "IND", text: "Submit Marketing Airtable request", link: "https://airtable.com/shrDILYHH00BiB7xF" },
+      { who: "IND", text: "Supply Marketing with the broker credit and deal details" }
+    ]},
+    { title: "Broker / Client Event", steps: [
+      { who: "IND", text: "Submit Marketing Airtable request", link: "https://airtable.com/shrDILYHH00BiB7xF" },
+      { who: "IND", text: "Supply Marketing with an overview of the event goal and details: budget, headcount, attendee list, important dates and anything else to note" }
+    ]}
+  ],
+
+  // Who owns each active assignment.
+  assignmentTeams: [
+    { name: "Flightline", client: "MS IND Portfolio", roles: [
+      { role: "IND Lead / Approver", person: "Brian Duffy" },
+      { role: "MKT Lead", person: "Marissa Rupert" },
+      { role: "MKT Designer", person: "Michael Krzewicki" }
+    ]},
+    { name: "APEX Elgin", client: "Scannell Development", roles: [
+      { role: "IND Lead / Approver", person: "Ben Dickey" },
+      { role: "MKT Lead", person: "Marissa Rupert" },
+      { role: "MKT Designer", person: "Jason Thompson" }
+    ]}
   ],
 
   // Team roster. group: Brokerage | Marketing | Research

@@ -233,6 +233,59 @@
     });
   }
 
+  // ---------- process ----------
+  var LETTERS = "abcdefghijklmnopqrstuvwxyz";
+
+  function whoChip(who) {
+    var cls = who === "MKT" ? "mkt" : who === "IND" ? "ind" : "both";
+    return h("span", { class: "who who--" + cls, text: who });
+  }
+
+  function renderProcess() {
+    var req = $("process-request");
+    if (D.meta && D.meta.requestLink) req.href = D.meta.requestLink; else $("process-intro").hidden = true;
+
+    var box = $("process-list");
+    box.innerHTML = "";
+    var items = (D.process || []).filter(matches);
+    items.forEach(function (proc, i) {
+      var ol = h("ol", { class: "steps" });
+      (proc.steps || []).forEach(function (st, j) {
+        var text = st.link
+          ? h("a", { href: st.link, target: "_blank", rel: "noopener", text: st.text + " ↗" })
+          : h("span", { text: st.text });
+        ol.appendChild(h("li", { class: "step" }, [
+          h("span", { class: "step__letter", text: LETTERS[j] || "" }),
+          whoChip(st.who),
+          h("div", { class: "step__text" }, [text, st.note ? h("span", { class: "step__note", text: st.note }) : null])
+        ]));
+      });
+      var details = h("details", { class: "proc" }, [
+        h("summary", null, [
+          h("span", { class: "proc__num", text: String((D.process || []).indexOf(proc) + 1) }),
+          h("span", { class: "proc__title", text: proc.title }),
+          h("span", { class: "proc__count", text: proc.steps.length + " steps" })
+        ]),
+        ol
+      ]);
+      if (i === 0 || state.q) details.open = true;
+      box.appendChild(details);
+    });
+    if (!items.length) box.appendChild(empty(D.process && D.process.length ? null : "Process steps coming soon."));
+
+    var as = $("assignment-list");
+    as.innerHTML = "";
+    (D.assignmentTeams || []).forEach(function (t) {
+      as.appendChild(h("div", { class: "panel" }, [
+        h("h4", { class: "assign__name", text: t.name }),
+        h("div", { class: "assign__client", text: t.client || "" }),
+        h("dl", { class: "assign__roles" }, (t.roles || []).reduce(function (acc, r) {
+          return acc.concat([h("dt", { text: r.role }), h("dd", { text: r.person })]);
+        }, []))
+      ]));
+    });
+  }
+
   // ---------- team ----------
   function renderTeam() {
     var photo = D.meta && D.meta.teamPhoto;
@@ -276,6 +329,7 @@
     renderPresentations();
     renderResources();
     renderPortfolio();
+    renderProcess();
     updateTabCounts();
   }
 
@@ -286,7 +340,7 @@
   }
 
   // ---------- tabs ----------
-  var TABS = ["queue", "portfolio", "presentations", "resources", "team"];
+  var TABS = ["queue", "portfolio", "presentations", "resources", "process", "team"];
 
   function showTab(id, focus) {
     if (TABS.indexOf(id) === -1) id = TABS[0];
@@ -327,7 +381,8 @@
       queue: document.querySelectorAll("#board .task").length,
       presentations: document.querySelectorAll("#presentations-list .card").length,
       resources: document.querySelectorAll("#resources-list li").length,
-      portfolio: document.querySelectorAll("#portfolio-table .prop-name").length
+      portfolio: document.querySelectorAll("#portfolio-table .prop-name").length,
+      process: document.querySelectorAll("#process-list .proc").length
     };
     Object.keys(counts).forEach(function (t) {
       var tab = $("tab-" + t);

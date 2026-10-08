@@ -258,6 +258,57 @@ table.portfolio { width: 100%; border-collapse: collapse; }
   }
 }
 
+/* ---------- Process ---------- */
+.process-intro {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;
+  background: #04234D; border: 1px solid rgba(255,255,255,.08); border-left: 4px solid var(--pacific);
+  border-radius: var(--radius); padding: 14px 18px; margin-bottom: 12px;
+}
+.process-intro p { margin: 0; color: #fff; }
+.process-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 13px; color: var(--gray); margin-bottom: 14px; }
+.process-legend .who { margin-left: 8px; }
+.process-legend .who:first-child { margin-left: 0; }
+.who {
+  display: inline-block; flex: none; font-size: 11px; font-weight: 800; letter-spacing: .04em; padding: 2px 8px;
+  border-radius: 999px; white-space: nowrap; min-width: 44px; text-align: center;
+}
+.who--ind { background: #fff; color: var(--navy); }
+.who--mkt { background: var(--pacific); color: #00142F; }
+.who--both { background: var(--yellow); color: #00142F; }
+.process { display: grid; gap: 10px; }
+.proc { background: #04234D; border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); }
+.proc summary {
+  display: flex; align-items: center; gap: 12px; padding: 14px 18px; cursor: pointer; list-style: none;
+}
+.proc summary::-webkit-details-marker { display: none; }
+.proc summary::after { content: "+"; margin-left: auto; font-size: 20px; line-height: 1; color: var(--pacific); }
+.proc[open] summary::after { content: "–"; }
+.proc summary:focus-visible { outline: 2px solid #fff; outline-offset: -2px; border-radius: var(--radius); }
+.proc__num {
+  flex: none; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--pacific); color: #00142F; font-weight: 800; font-size: 14px;
+}
+.proc__title { font-weight: 800; font-size: 16px; color: #fff; }
+.proc__count { font-size: 12px; color: var(--gray); white-space: nowrap; }
+.steps { list-style: none; margin: 0; padding: 0 18px 14px 60px; display: grid; gap: 2px; }
+.step { display: flex; align-items: flex-start; gap: 10px; padding: 7px 0; border-top: 1px solid rgba(255,255,255,.08); }
+.step:first-child { border-top: 0; }
+.step__letter { flex: none; width: 14px; font-weight: 800; color: var(--gray); font-size: 13px; padding-top: 1px; }
+.step .who { margin-top: 1px; }
+.step__text { min-width: 0; color: #fff; }
+.step__note { display: block; font: italic 400 12px var(--serif); color: var(--gray); }
+@media (max-width: 640px) {
+  .steps { padding-left: 18px; }
+  .proc__count { display: none; }
+}
+.subhead { font: 400 20px var(--serif); color: #fff; margin: 28px 0 12px; }
+.assignments { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+.assign__name { margin: 0; font: 700 17px var(--sans); color: #fff; }
+.assign__client { font-size: 13px; color: var(--gray); margin-bottom: 10px; }
+.assign__roles { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; margin: 0; font-size: 14px; }
+.assign__roles dt { color: var(--gray); font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding-top: 2px; }
+.assign__roles dd { margin: 0; color: #fff; font-weight: 700; }
+
 /* ---------- Team ---------- */
 .team-photo { margin: 0 0 16px; border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(255,255,255,.08); }
 .team-photo img { display: block; width: 100%; max-width: 100%; aspect-ratio: 21 / 9; object-fit: cover; object-position: 50% 40%; }
