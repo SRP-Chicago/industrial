@@ -273,9 +273,15 @@
     });
     if (!items.length) box.appendChild(empty(D.process && D.process.length ? null : "Process steps coming soon."));
 
+  }
+
+  // ---------- assignment teams (Portfolio tab) ----------
+  function renderAssignments() {
     var as = $("assignment-list");
     as.innerHTML = "";
-    (D.assignmentTeams || []).forEach(function (t) {
+    var teams = (D.assignmentTeams || []).filter(matches);
+    $("assignments-block").hidden = !(D.assignmentTeams || []).length;
+    teams.forEach(function (t) {
       as.appendChild(h("div", { class: "panel" }, [
         h("h4", { class: "assign__name", text: t.name }),
         h("div", { class: "assign__client", text: t.client || "" }),
@@ -284,6 +290,7 @@
         }, []))
       ]));
     });
+    if (!teams.length && (D.assignmentTeams || []).length) as.appendChild(empty());
   }
 
   // ---------- team ----------
@@ -329,6 +336,7 @@
     renderPresentations();
     renderResources();
     renderPortfolio();
+    renderAssignments();
     renderProcess();
     updateTabCounts();
   }
