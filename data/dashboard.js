@@ -69,6 +69,28 @@ window.DASHBOARD_DATA = {
         ],
         takeaway: "Vacancy eased to 5.77% from 5.84% in Q4 2025. The I-80 Joliet Corridor posted 5.3M SF of leasing, led by General Mills' 1.5M SF renewal; Ferrara's 998K SF move-out weighed on the I-55 Corridor." }
     ],
+    // Deal Reel: notable transactions, newest quarter first.
+    // Seeded from the Key Lease Transactions in The Quarter (market-wide deals).
+    deals: [
+      { quarter: "Q2 2026", tenant: "KeHE Foods", address: "21533 Cherry Hill Rd", city: "Joliet", submarket: "I-80 Joliet Corridor", sf: 1195754, type: "New Lease" },
+      { quarter: "Q2 2026", tenant: "Hyundai Translead", address: "3835 Youngs Rd", city: "Channahon", submarket: "I-80 Joliet Corridor", sf: 906517, type: "New Lease" },
+      { quarter: "Q2 2026", tenant: "Distribution 2000", address: "1120-1140 Remington Blvd", city: "Romeoville", submarket: "I-55 Corridor", sf: 453568, type: "New Lease" },
+      { quarter: "Q2 2026", tenant: "HH Global", address: "8725 31st St", city: "Somers", submarket: "SE Wisconsin", sf: 434913, type: "Renewal/Expansion" },
+      { quarter: "Q2 2026", tenant: "Custom Goods", address: "21520-21540 SW Frontage Rd", city: "Shorewood", submarket: "I-80 Joliet Corridor", sf: 376006, type: "New Lease" },
+      { quarter: "Q2 2026", tenant: "Diageo", address: "1701 Remington Blvd", city: "Bolingbrook", submarket: "I-55 Corridor", sf: 361000, type: "Renewal" },
+      { quarter: "Q2 2026", tenant: "RJW Logistics", address: "2601 Internationale Pky", city: "Woodridge", submarket: "I-55 Corridor", sf: 356621, type: "Renewal" },
+      { quarter: "Q2 2026", tenant: "Tesla Motors", address: "16342 W 163rd St", city: "Lockport", submarket: "I-80 Joliet Corridor", sf: 308988, type: "Renewal" },
+      { quarter: "Q2 2026", tenant: "CoreCentric Solutions", address: "1717 W Harvester Rd", city: "West Chicago", submarket: "Fox Valley", sf: 282622, type: "New Lease" },
+      { quarter: "Q1 2026", tenant: "General Mills", address: "30131 Ridgeway Blvd", city: "Wilmington", submarket: "I-80 Joliet Corridor", sf: 1508425, type: "Renewal" },
+      { quarter: "Q1 2026", tenant: "Hyundai", address: "2200-2600 Channahon Rd", city: "Joliet", submarket: "I-80 Joliet Corridor", sf: 1380070, type: "New Lease" },
+      { quarter: "Q1 2026", tenant: "Saddle Creek Logistics", address: "2550 Logistics Dr", city: "Elwood", submarket: "I-80 Joliet Corridor", sf: 1114575, type: "Renewal" },
+      { quarter: "Q1 2026", tenant: "Crane Worldwide Logistics", address: "9130 W 55th St", city: "McCook", submarket: "I-290 South", sf: 992151, type: "New Lease" },
+      { quarter: "Q1 2026", tenant: "RJW Logistics", address: "26220 W 143rd St", city: "Plainfield", submarket: "I-55 Corridor", sf: 788000, type: "New Lease" },
+      { quarter: "Q1 2026", tenant: "Amazon", address: "201 Emerald Rd", city: "Joliet", submarket: "I-80 Joliet Corridor", sf: 746801, type: "Renewal" },
+      { quarter: "Q1 2026", tenant: "Elogistek", address: "160 Southcreek Pky", city: "Romeoville", submarket: "I-55 Corridor", sf: 648960, type: "New Lease" },
+      { quarter: "Q1 2026", tenant: "LG Electronics", address: "14746 S Gougar Rd", city: "Lockport", submarket: "I-80 Joliet Corridor", sf: 363224, type: "Renewal" },
+      { quarter: "Q1 2026", tenant: "Learjet", address: "251 Wille Rd", city: "Des Plaines", submarket: "O'Hare", sf: 333988, type: "Renewal" }
+    ],
     groups: [
       { group: "Market Reports", items: [
         { label: "Submarket snapshots", link: "" }

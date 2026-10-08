@@ -183,7 +183,42 @@
     });
     if (!reports.length) rl.appendChild(empty((r.reports || []).length ? null : "No reports yet."));
 
+    renderDealReel(r.deals || []);
     renderLinkGroups($("research-list"), r.groups || []);
+  }
+
+  function renderDealReel(all) {
+    var quarters = uniq(all.map(function (d) { return d.quarter; })).sort(function (a, b) {
+      var pa = a.split(" "), pb = b.split(" ");
+      return (pb[1] - pa[1]) || pb[0].localeCompare(pa[0]);
+    });
+    if (state.reelQuarter == null) state.reelQuarter = quarters[0] || "";
+    var filter = $("reel-filter");
+    filter.innerHTML = "";
+    quarters.concat(["All"]).forEach(function (q) {
+      var val = q === "All" ? "" : q;
+      var btn = h("button", { type: "button", class: "chip" + (state.reelQuarter === val ? " chip--on" : ""), "aria-pressed": state.reelQuarter === val ? "true" : "false", text: q });
+      btn.addEventListener("click", function () { state.reelQuarter = val; renderDealReel(all); $("deal-reel").scrollLeft = 0; });
+      filter.appendChild(btn);
+    });
+    var reel = $("deal-reel");
+    reel.innerHTML = "";
+    var deals = all
+      .filter(function (d) { return matches(d) && (!state.reelQuarter || d.quarter === state.reelQuarter); })
+      .sort(function (a, b) { return (b.sf || 0) - (a.sf || 0); });
+    deals.forEach(function (d) {
+      var renewal = /renew/i.test(d.type || "");
+      reel.appendChild(h("article", { class: "deal" }, [
+        h("div", { class: "deal__sf" }, [fmtSF(d.sf), h("span", { text: " SF" })]),
+        h("div", { class: "deal__tenant", text: d.tenant }),
+        h("div", { class: "deal__addr", text: [d.address, d.city].filter(Boolean).join(", ") }),
+        h("div", { class: "deal__foot" }, [
+          h("span", { class: "pill " + (renewal ? "pill--type" : "pill--available"), text: d.type }),
+          h("span", { class: "deal__meta", text: d.submarket + (state.reelQuarter ? "" : " · " + d.quarter) })
+        ])
+      ]));
+    });
+    if (!deals.length) reel.appendChild(empty());
   }
 
   function renderLinkGroups(box, groups) {
@@ -434,7 +469,7 @@
     var counts = {
       queue: document.querySelectorAll("#board .task").length,
       presentations: document.querySelectorAll("#presentations-list .card").length,
-      research: document.querySelectorAll("#research-list li, #report-list .report").length,
+      research: document.querySelectorAll("#research-list li, #report-list .report, #deal-reel .deal").length,
       resources: document.querySelectorAll("#resources-list li").length,
       portfolio: document.querySelectorAll("#portfolio-table .prop-name").length,
       process: document.querySelectorAll("#process-list .proc").length

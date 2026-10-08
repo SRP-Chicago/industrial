@@ -241,6 +241,37 @@ main { padding-top: 24px; padding-bottom: 48px; flex: 1; width: 100%; }
 .report__stats dt { font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--gray); }
 .report__takeaway { margin: 0; color: #fff; font-size: 14px; }
 
+.reel-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+.reel-head .subhead { margin: 0; }
+.reel-filter { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip {
+  font: 700 13px var(--sans); color: #fff; background: transparent; border: 1px solid rgba(255,255,255,.25);
+  border-radius: 999px; padding: 5px 12px; cursor: pointer;
+}
+.chip:hover { border-color: var(--pacific); }
+.chip--on { background: var(--pacific); border-color: var(--pacific); color: #00142F; }
+.chip:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.reel-note { margin: 6px 0 12px; font-size: 13px; color: var(--gray); }
+.reel {
+  display: grid; grid-auto-flow: column; grid-auto-columns: minmax(240px, 260px); gap: 12px;
+  overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; scrollbar-color: var(--pacific) transparent;
+}
+.reel:focus-visible { outline: 2px solid var(--pacific); outline-offset: 4px; }
+.deal {
+  scroll-snap-align: start; background: #04234D; border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius);
+  padding: 16px; display: flex; flex-direction: column; gap: 4px; position: relative; overflow: hidden;
+}
+.deal::after {
+  content: ""; position: absolute; right: -50px; top: -50px; width: 140px; height: 140px; pointer-events: none;
+  background: repeating-radial-gradient(circle at 70% 30%, transparent 0 9px, rgba(0,176,185,.12) 9px 10px);
+}
+.deal__sf { font: 400 26px/1.1 var(--serif); color: #fff; font-variant-numeric: tabular-nums; }
+.deal__sf span { font: 700 12px var(--sans); color: var(--gray); }
+.deal__tenant { font-weight: 800; font-size: 16px; color: #fff; margin-top: 6px; }
+.deal__addr { font-size: 13px; color: var(--gray); }
+.deal__foot { margin-top: auto; padding-top: 10px; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+.deal__meta { font-size: 12px; color: var(--gray); }
+
 /* ---------- Portfolio ---------- */
 .portfolio-summary { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; font-size: 14px; }
 .portfolio-summary span { background: var(--surface); border-radius: 999px; padding: 4px 12px; box-shadow: var(--shadow); }
