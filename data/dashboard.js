@@ -42,11 +42,13 @@ window.DASHBOARD_DATA = {
     { title: "Brochure", property: "APEX Elgin (Scannell Properties)", type: "Brochure", owner: "", broker: "Ben Dickey", status: "Complete", priority: "Normal", due: "", link: "" }
   ],
 
-  // Final, client-ready presentations. type: Pitch | BOV / OM | Tour Book | Market Update | Case Study
+  // Final, client-ready presentations. cover = optional front-cover image shown on the card. type: Pitch | BOV / OM | Tour Book | Market Update | Case Study
   presentations: [
     { title: "GRM — 7123 W 65th St, Bedford Park", client: "GRM", type: "Pitch", date: "2026-06-02", team: "Ben Dickey, Kennedy Arundel", outcome: "", link: "presentations/GRM_7123_W_65th_Bedford_Park_0626.pdf",
+      cover: "presentations/previews/GRM_7123_W_65th_Bedford_Park_0626-cover.jpg",
       notes: "Landlord pitch (working analysis, June 2026). Covers SWOT, an 8-building Chicago South competitive set, 10 lease comps, target tenants with 2027-28 expirations, pricing guidance of $7.00-$7.50 NNN and a 5% flat commission." },
     { title: "Bodor Laser — 1700 Penny Ln, Schaumburg", client: "Bodor Laser", type: "Proposal", date: "2026-09-09", team: "", outcome: "", link: "presentations/Bodor_Laser_1700_Penny_Ln_090926.pdf",
+      cover: "presentations/previews/Bodor_Laser_1700_Penny_Ln_090926-cover.jpg",
       notes: "61,743 SF at Crow Holdings' 1700 Penny Ln redevelopment. Covers site renderings, a competitor location map, the preliminary floor plan, two lease options (5-yr 2-mo at $14.95/SF net, 7-yr 3-mo at $14.75/SF net) with cash flows, and a construction timeline to August 2027 occupancy." }
   ],
 

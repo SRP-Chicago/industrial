@@ -465,3 +465,11 @@ mark { background: rgba(255,184,28,.35); color: #fff; }
 .vendor__company a, .vendor__company span { font-weight: 800; font-size: 15px; }
 .vendor__name { color: #fff; font-weight: 700; font-size: 14px; }
 .vendor__line { color: var(--gray); font-size: 13px; overflow-wrap: anywhere; }
+
+/* Presentation front covers */
+.card--with-cover { padding-top: 0; overflow: hidden; }
+.card__cover { display: block; margin: 0 -18px 4px; background: #000B1C; aspect-ratio: 16 / 10; overflow: hidden; }
+.card__cover-img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform .25s ease; }
+a.card__cover:hover .card__cover-img { transform: scale(1.03); }
+a.card__cover:focus-visible { outline: 2px solid var(--pacific); outline-offset: -2px; }
+@media (prefers-reduced-motion: reduce) { .card__cover-img { transition: none; } }

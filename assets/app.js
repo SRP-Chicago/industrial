@@ -309,7 +309,15 @@
       .sort(function (a, b) { return parseDate(b.date) - parseDate(a.date); });
     items.forEach(function (p) {
       var outcome = p.outcome ? h("span", { class: "pill pill--" + slug(p.outcome), text: p.outcome }) : null;
-      box.appendChild(h("article", { class: "card" }, [
+      var cover = null;
+      if (p.cover) {
+        var img = h("img", { class: "card__cover-img", src: p.cover, alt: "Cover of " + p.title, loading: "lazy" });
+        cover = p.link
+          ? h("a", { class: "card__cover", href: p.link, target: "_blank", rel: "noopener", "aria-label": "Open " + p.title }, [img])
+          : h("div", { class: "card__cover" }, [img]);
+      }
+      box.appendChild(h("article", { class: "card" + (cover ? " card--with-cover" : "") }, [
+        cover,
         h("div", { class: "card__top" }, [h("span", { class: "pill pill--type", text: p.type }), h("span", { class: "card__date", text: fmtDate(p.date, true) })]),
         h("h3", { class: "card__title", text: p.title }),
         h("p", { class: "card__sub", text: [p.client, p.team].filter(Boolean).join(" · ") }),
