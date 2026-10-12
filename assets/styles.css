@@ -495,3 +495,7 @@ a.card__cover:focus-visible { outline: 2px solid var(--pacific); outline-offset:
 .quarter-graphic a:focus-visible { outline: 2px solid var(--pacific); outline-offset: -2px; }
 /* "Go-to for" label: brighter so it reads on navy */
 .member__focus span { color: #7FE3E8; font-weight: 700; }
+
+/* Stream logo (white, reversed on navy). Kept at least 10mm tall with clear space around it per brand rules. */
+.brand__logo { display: block; height: 40px; width: auto; margin: 4px 0 20px; }
+@media (max-width: 760px) { .brand__logo { height: 38px; margin-bottom: 16px; } }
