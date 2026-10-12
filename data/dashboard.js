@@ -24,6 +24,7 @@ window.DASHBOARD_DATA = {
   // priority: High | Normal | Low
   // type: Flyer | BOV / OM | Pitch Deck | Tour Book | Social | Email Blast | Case Study | Signage | Website
   queue: [
+    { title: "Signage Coordination", property: "APEX Elgin (Scannell Properties)", type: "Signage", owner: "Marissa Rupert", broker: "Ben Dickey", status: "Requested", priority: "Normal", due: "", link: "" },
     { title: "Pitch deck — 3PL user requirement", property: "Sample: I-55 Logistics Center", type: "Pitch Deck", owner: "Kaitlyn Maloney", broker: "Brian Duffy", status: "In Progress", priority: "High", due: "2026-10-12", link: "" },
     { title: "Leasing flyer refresh (new availability)", property: "Sample: O'Hare Cargo Park Bldg 2", type: "Flyer", owner: "Celia Burch", broker: "Ben Dickey", status: "In Review", priority: "Normal", due: "2026-10-10", link: "" },
     { title: "BOV — single-tenant NNN", property: "Sample: Elk Grove Distribution", type: "BOV / OM", owner: "Hannah Webster", broker: "Joe Connor", status: "Requested", priority: "High", due: "2026-10-20", link: "" },
