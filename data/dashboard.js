@@ -44,6 +44,8 @@ window.DASHBOARD_DATA = {
 
   // Final, client-ready presentations. type: Pitch | BOV / OM | Tour Book | Market Update | Case Study
   presentations: [
+    { title: "Bodor Laser — 1700 Penny Ln, Schaumburg", client: "Bodor Laser", type: "Proposal", date: "2026-09-09", team: "", outcome: "", link: "presentations/Bodor_Laser_1700_Penny_Ln_090926.pdf",
+      notes: "61,743 SF at Crow Holdings' 1700 Penny Ln redevelopment. Covers site renderings, a competitor location map, the preliminary floor plan, two lease options (5-yr 2-mo at $14.95/SF net, 7-yr 3-mo at $14.75/SF net) with cash flows, and a construction timeline to August 2027 occupancy." }
   ],
 
   // Research tab: who to ask, plus link groups (same shape as resources).
