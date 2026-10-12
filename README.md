@@ -43,6 +43,10 @@ Allowed values:
 
 Dates are `YYYY-MM-DD`. Items due within 3 days are flagged, and overdue items are marked in orange.
 
+## Live queue (Claude artifact)
+
+When the dashboard is opened as its Claude artifact, the In the Queue board reads from the artifact's shared database (`tasks` collection) instead of `data/dashboard.js`. Anyone with Contributor access or above can drag a card to another column, or use its "Move to" menu, and the move saves for everyone. The static copy in this repo (GitHub Pages, SharePoint) still shows the `queue` list from `data/dashboard.js` and is read-only.
+
 ## Brand
 
 Uses the "Midnight" look: a full Stream Navy page with Pacific Blue highlights, Merriweather headlines and Nunito Sans text. Stream Blue is kept off navy surfaces, per the brand contrast rule. The theme is the last block in `assets/styles.css`; delete that block to go back to the light page with a navy header.

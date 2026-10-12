@@ -17,7 +17,7 @@
     <div class="wrap masthead__inner">
       <div class="brand">
         <span class="brand__eyebrow">Stream Realty Partners · Chicago</span>
-        <h1 class="brand__title">Industrial Dashboard</h1>
+        <h1 class="brand__title">Industrial Marketing Dashboard</h1>
       </div>
       <div class="masthead__tools">
         <label class="search" for="global-search">
@@ -55,6 +55,7 @@
           <label>Coordinator <select id="queue-owner"></select></label>
         </div>
       </div>
+      <p class="queue-live-note" id="queue-live-note" hidden>Drag a card to another column, or use its "Move to" menu, to update its status. Changes save for everyone.</p>
       <div class="board" id="board"></div>
     </section>
 
@@ -151,9 +152,11 @@
     </section>
   </main>
 
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
   <footer class="footer">
     <div class="wrap footer__inner">
-      <p class="footer__note">Internal use only · Questions on brand: <a href="mailto:nationalmarketing@streamrealty.com">nationalmarketing@streamrealty.com</a></p>
+      <p class="footer__note">Internal use only</p>
     </div>
   </footer>
 

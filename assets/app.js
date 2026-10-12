@@ -121,7 +121,7 @@
       body.hidden = collapsed;
       var column = h("div", { class: "column column--" + slug(status) + (collapsed ? " column--collapsed" : "") }, [toggle, body]);
       col.forEach(function (t) {
-        body.appendChild(h("article", { class: "task" + (t.priority === "High" ? " task--high" : "") + (status === "Complete" ? " task--complete" : "") }, [
+        var card = h("article", { class: "task" + (t.priority === "High" ? " task--high" : "") + (status === "Complete" ? " task--complete" : "") }, [
           h("p", { class: "task__title", text: t.title }),
           h("p", { class: "task__prop", text: t.property || "" }),
           h("div", { class: "task__row" }, [
@@ -134,12 +134,124 @@
             t.owner ? h("div", { text: "Coordinator: " + t.owner }) : null,
             t.broker ? h("div", { text: "Broker: " + t.broker }) : null
           ]),
-          t.link ? h("a", { href: t.link, target: "_blank", rel: "noopener", text: "Open draft ↗" }) : null
-        ]));
+          t.link ? h("a", { href: t.link, target: "_blank", rel: "noopener", text: "Open draft ↗" }) : null,
+          live.canWrite ? moveSelect(t) : null
+        ]);
+        if (live.canWrite) {
+          card.draggable = true;
+          card.dataset.id = taskId(t);
+          card.addEventListener("dragstart", function (e) {
+            e.dataTransfer.setData("text/plain", taskId(t));
+            e.dataTransfer.effectAllowed = "move";
+            card.classList.add("task--dragging");
+            board.classList.add("board--dragging");
+          });
+          card.addEventListener("dragend", function () {
+            card.classList.remove("task--dragging");
+            board.classList.remove("board--dragging");
+          });
+        }
+        body.appendChild(card);
       });
       if (!col.length) body.appendChild(h("p", { class: "empty", text: "—" }));
+      if (live.canWrite) {
+        column.addEventListener("dragover", function (e) { e.preventDefault(); e.dataTransfer.dropEffect = "move"; column.classList.add("column--over"); });
+        column.addEventListener("dragleave", function (e) { if (!column.contains(e.relatedTarget)) column.classList.remove("column--over"); });
+        column.addEventListener("drop", function (e) {
+          e.preventDefault();
+          column.classList.remove("column--over");
+          moveTask(e.dataTransfer.getData("text/plain"), status);
+        });
+      }
       board.appendChild(column);
     });
+    var note = $("queue-live-note");
+    if (note) note.hidden = !live.canWrite;
+  }
+
+  // ---------- live queue (shared db) ----------
+  // When the page runs as a Claude artifact with the db capability, the queue
+  // lives in the shared "tasks" collection: moves save for everyone, live.
+  var live = { db: null, canWrite: false };
+
+  function taskId(t) {
+    return t._id || slug((t.title || "") + "-" + (t.property || "")).replace(/^-+|-+$/g, "").slice(0, 120);
+  }
+
+  function moveSelect(t) {
+    var sel = h("select", { class: "task__move", "aria-label": "Move " + t.title + " to" });
+    var first = h("option", { value: "", text: "Move to…" });
+    first.selected = true;
+    first.disabled = true;
+    sel.appendChild(first);
+    STATUSES.forEach(function (st) {
+      if (st !== t.status) sel.appendChild(h("option", { value: st, text: st }));
+    });
+    sel.addEventListener("change", function () { moveTask(taskId(t), sel.value); });
+    return sel;
+  }
+
+  var moving = {};
+  function moveTask(id, status) {
+    if (!id || !live.db) return;
+    var t = (D.queue || []).filter(function (x) { return taskId(x) === id; })[0];
+    if (!t || t.status === status || moving[id]) return;
+    moving[id] = true;
+    var prev = t.status;
+    t.status = status; // optimistic; the snapshot confirms
+    renderQueue();
+    live.db.doc("tasks/" + id).update({ status: status, updated: new Date().toISOString() }).then(function () {
+      delete moving[id];
+    }, function (err) {
+      delete moving[id];
+      t.status = prev;
+      if (err && err.code === "invalid_argument") live.canWrite = false;
+      renderQueue();
+      showToast(err && err.code === "invalid_argument" ? "You can view the queue but not move cards." : "Couldn't save that move. Try again.");
+    });
+  }
+
+  function showToast(msg) {
+    var tEl = $("toast");
+    if (!tEl) return;
+    tEl.textContent = msg;
+    tEl.hidden = false;
+    clearTimeout(showToast.t);
+    showToast.t = setTimeout(function () { tEl.hidden = true; }, 3500);
+  }
+
+  function refreshQueueFilters() {
+    fillSelectKeep($("queue-type"), uniq((D.queue || []).map(function (t) { return t.type; })), "All", "queueType");
+    fillSelectKeep($("queue-owner"), uniq((D.queue || []).map(function (t) { return t.owner; })), "Everyone", "queueOwner");
+  }
+  function fillSelectKeep(sel, values, allLabel, key) {
+    fillSelect(sel, values, allLabel);
+    if (state[key] && values.indexOf(state[key]) !== -1) sel.value = state[key]; else state[key] = "";
+  }
+
+  function startLiveQueue() {
+    if (!window.claude || typeof window.claude.use !== "function") return;
+    Promise.all([window.claude.use("db"), window.claude.use("user")]).then(function (r) {
+      var db = r[0], user = r[1];
+      if (!db) return;
+      live.db = db;
+      var canWrite = user && typeof user.can === "function" ? user.can("data.write") : null;
+      Promise.resolve(canWrite).then(function (ok) {
+        live.canWrite = ok !== false;
+        db.collection("tasks").onSnapshot(function (snap) {
+          if (snap.empty) return; // nothing stored yet: keep the built-in list
+          D.queue = snap.docs.map(function (d) {
+            var body = d.data() || {};
+            var copy = { _id: d.id };
+            Object.keys(body).forEach(function (k) { copy[k] = body[k]; });
+            return copy;
+          });
+          refreshQueueFilters();
+          renderQueue();
+          updateTabCounts();
+        }, function () { live.canWrite = false; renderQueue(); });
+      });
+    }, function () { /* no viewer runtime: static page */ });
   }
 
   // ---------- presentations ----------
@@ -532,6 +644,7 @@
     renderFiltered();
     renderTeam();
     setupTabs();
+    startLiveQueue();
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
