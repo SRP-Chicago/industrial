@@ -355,7 +355,11 @@
     qg.innerHTML = "";
     if (r.quarterGraphic) {
       qg.classList.remove("quarter-graphic--empty");
-      qg.appendChild(h("img", { src: r.quarterGraphic, alt: "The Quarter — Chicago Industrial" }));
+      var latest = (r.reports || []).filter(function (x) { return x.file && /launch/i.test(x.status || ""); })[0];
+      var gImg = h("img", { src: r.quarterGraphic, alt: "The Quarter — Chicago Industrial" + (latest ? ", " + latest.quarter : "") });
+      qg.appendChild(latest
+        ? h("a", { href: latest.file, target: "_blank", rel: "noopener", title: "Open the " + latest.quarter + " report" }, [gImg])
+        : gImg);
     } else {
       qg.classList.add("quarter-graphic--empty");
       qg.appendChild(h("span", { text: "The Quarter graphic coming soon" }));

@@ -56,7 +56,7 @@ window.DASHBOARD_DATA = {
   research: {
     contact: "Hannah Webster",
     // Graphic shown to the left of The Quarter cards ("" shows a placeholder).
-    quarterGraphic: "",
+    quarterGraphic: "research/the-quarter-q2-2026-cover.jpg",
     // The Quarter market reports, newest first. file is a PDF path or link.
     // status: "Launched" | "In Progress" (stats and file can stay empty until launch)
     reports: [

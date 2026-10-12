@@ -475,7 +475,7 @@ a.card__cover:focus-visible { outline: 2px solid var(--pacific); outline-offset:
 @media (prefers-reduced-motion: reduce) { .card__cover-img { transition: none; } }
 
 /* The Quarter: graphic on the left, compact report cards stacked on the right */
-.quarter-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 16px; align-items: stretch; }
+.quarter-layout { display: grid; grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.38fr); gap: 16px; align-items: start; }
 @media (max-width: 900px) { .quarter-layout { grid-template-columns: 1fr; } }
 .quarter-graphic { margin: 0; border-radius: var(--radius); overflow: hidden; background: #04234D; border: 1px solid rgba(255,255,255,.08); }
 .quarter-graphic img { display: block; width: 100%; max-width: 100%; height: auto; }
@@ -491,3 +491,5 @@ a.card__cover:focus-visible { outline: 2px solid var(--pacific); outline-offset:
   font-size: 13px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
 .quarter-layout .report .link-btn { padding: 4px 10px; font-size: 12px; }
+.quarter-graphic a { display: block; }
+.quarter-graphic a:focus-visible { outline: 2px solid var(--pacific); outline-offset: -2px; }
