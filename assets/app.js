@@ -325,7 +325,7 @@
         h("div", { class: "card__foot" }, [linkButton(p.link, "Open deck"), outcome])
       ]));
     });
-    if (!items.length) box.appendChild(empty((D.presentations || []).length ? null : "No presentations yet. Final decks will show here once they're added."));
+    if (!items.length) box.appendChild(empty((D.presentations || []).length ? null : "No pursuits yet. Final decks will show here once they're added."));
   }
 
   // ---------- resources ----------

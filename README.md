@@ -5,7 +5,7 @@ One page where the Industrial brokerage and marketing teams can see what's going
 | Section | What it's for |
 |---|---|
 | **In the Queue** | Marketing requests by stage: Requested → In Progress → In Review → Complete. Filter by type or owner |
-| **Presentations** | Library of final, client-ready decks (pitches, BOVs, tour books, market updates) with the outcome |
+| **Pursuits** | Library of final, client-ready decks (pitches, BOVs, tour books, market updates) with the outcome |
 | **Resources** | Templates, brand standards, research/market data, social, tools & process links |
 | **Portfolio** | Every property with submarket, available SF, clear height, status, broker lead, and quick links (flyer, website, OM, photos, tour book, map, folder). Sortable and filterable |
 | **Research** | The Quarter market reports (PDF) with headline stats, plus research data and tools, and who to ask |
