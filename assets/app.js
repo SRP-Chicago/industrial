@@ -119,7 +119,7 @@
       });
       var body = h("div", { class: "column__body", id: bodyId });
       body.hidden = collapsed;
-      var column = h("div", { class: "column column--" + slug(status) + (collapsed ? " column--collapsed" : "") }, [toggle, body]);
+      var column = h("div", { class: "column column--" + slug(status) + (collapsed ? " column--collapsed" : ""), "data-status": status }, [toggle, body]);
       col.forEach(function (t) {
         var card = h("article", { class: "task" + (t.priority === "High" ? " task--high" : "") + (status === "Complete" ? " task--complete" : "") }, [
           h("p", { class: "task__title", text: t.title }),
@@ -134,8 +134,7 @@
             t.owner ? h("div", { text: "Coordinator: " + t.owner }) : null,
             t.broker ? h("div", { text: "Broker: " + t.broker }) : null
           ]),
-          t.link ? h("a", { href: t.link, target: "_blank", rel: "noopener", text: "Open draft ↗" }) : null,
-          live.canWrite ? moveSelect(t) : null
+          t.link ? h("a", { href: t.link, target: "_blank", rel: "noopener", text: "Open draft ↗" }) : null
         ]);
         if (live.canWrite) {
           card.draggable = true;
@@ -150,6 +149,7 @@
             card.classList.remove("task--dragging");
             board.classList.remove("board--dragging");
           });
+          addTouchDrag(card, taskId(t), board);
         }
         body.appendChild(card);
       });
@@ -178,17 +178,64 @@
     return t._id || slug((t.title || "") + "-" + (t.property || "")).replace(/^-+|-+$/g, "").slice(0, 120);
   }
 
-  function moveSelect(t) {
-    var sel = h("select", { class: "task__move", "aria-label": "Move " + t.title + " to" });
-    var first = h("option", { value: "", text: "Move to…" });
-    first.selected = true;
-    first.disabled = true;
-    sel.appendChild(first);
-    STATUSES.forEach(function (st) {
-      if (st !== t.status) sel.appendChild(h("option", { value: st, text: st }));
+  // Touch screens don't fire HTML drag events: press and hold a card, then slide it to a column.
+  function addTouchDrag(card, id, board) {
+    var timer = null, dragging = false, ghost = null, overCol = null, startX = 0, startY = 0;
+    function colAt(x, y) {
+      var el = document.elementFromPoint(x, y);
+      return el && el.closest ? el.closest(".column") : null;
+    }
+    function cleanup() {
+      clearTimeout(timer);
+      if (ghost) ghost.remove();
+      ghost = null;
+      if (overCol) overCol.classList.remove("column--over");
+      overCol = null;
+      dragging = false;
+      card.classList.remove("task--dragging");
+      board.classList.remove("board--dragging");
+    }
+    card.addEventListener("touchstart", function (e) {
+      var tch = e.touches[0];
+      startX = tch.clientX; startY = tch.clientY;
+      timer = setTimeout(function () {
+        dragging = true;
+        card.classList.add("task--dragging");
+        board.classList.add("board--dragging");
+        ghost = card.cloneNode(true);
+        ghost.className += " task--ghost";
+        ghost.style.width = card.offsetWidth + "px";
+        document.body.appendChild(ghost);
+        ghost.style.left = (startX - card.offsetWidth / 2) + "px";
+        ghost.style.top = (startY - 20) + "px";
+      }, 350);
+    }, { passive: true });
+    card.addEventListener("touchmove", function (e) {
+      var tch = e.touches[0];
+      if (!dragging) {
+        if (Math.abs(tch.clientX - startX) > 8 || Math.abs(tch.clientY - startY) > 8) clearTimeout(timer);
+        return;
+      }
+      e.preventDefault();
+      ghost.style.left = (tch.clientX - card.offsetWidth / 2) + "px";
+      ghost.style.top = (tch.clientY - 20) + "px";
+      // Scroll the page when the finger nears the top or bottom edge, so far columns are reachable.
+      var edge = 60;
+      if (tch.clientY < edge) window.scrollBy(0, -12);
+      else if (tch.clientY > window.innerHeight - edge) window.scrollBy(0, 12);
+      var col = colAt(tch.clientX, tch.clientY);
+      if (col !== overCol) {
+        if (overCol) overCol.classList.remove("column--over");
+        overCol = col;
+        if (overCol) overCol.classList.add("column--over");
+      }
+    }, { passive: false });
+    card.addEventListener("touchend", function () {
+      var target = dragging && overCol ? overCol.dataset.status : null;
+      cleanup();
+      if (target) moveTask(id, target);
     });
-    sel.addEventListener("change", function () { moveTask(taskId(t), sel.value); });
-    return sel;
+    card.addEventListener("touchcancel", cleanup);
   }
 
   var moving = {};
