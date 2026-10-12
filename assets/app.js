@@ -107,7 +107,10 @@
             t.due ? h("span", { text: "Due " + fmtDate(t.due) }) : null,
             dueBadge(t)
           ]),
-          h("div", { class: "task__people", text: [t.owner && "Coordinator: " + t.owner, t.broker && "Broker: " + t.broker].filter(Boolean).join(" · ") }),
+          h("div", { class: "task__people" }, [
+            t.owner ? h("div", { text: "Coordinator: " + t.owner }) : null,
+            t.broker ? h("div", { text: "Broker: " + t.broker }) : null
+          ]),
           t.link ? h("a", { href: t.link, target: "_blank", rel: "noopener", text: "Open draft ↗" }) : null
         ]));
       });
