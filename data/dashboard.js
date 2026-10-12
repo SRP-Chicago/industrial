@@ -239,18 +239,18 @@ window.DASHBOARD_DATA = {
     ]}
   ],
 
-  // Team roster. group: Brokerage | Marketing | Research
+  // Team roster. group: Industrial Brokerage | Marketing | Research
   // Optional: focus ("Go-to for" line) and photo (square headshot path).
   team: [
-    { name: "Brian Duffy", role: "Managing Director", group: "Brokerage", email: "brian.duffy@streamrealty.com", phone: "630.743.3313" },
-    { name: "Ben Dickey", role: "Vice President", group: "Brokerage", email: "ben.dickey@streamrealty.com", phone: "224.465.3468" },
-    { name: "Joe Connor", role: "Senior Associate", group: "Brokerage", email: "joe.connor@streamrealty.com", phone: "816.508.0232" },
-    { name: "Brian Daly", role: "Senior Associate", group: "Brokerage", email: "brian.daly@streamrealty.com", phone: "847.544.6730" },
-    { name: "Mario Macioce", role: "Associate", group: "Brokerage", email: "mario.macioce@streamrealty.com", phone: "312.767.3546" },
-    { name: "Kennedy Arundel", role: "Associate", group: "Brokerage", email: "kennedy.arundel@streamrealty.com", phone: "773.580.1107" },
-    { name: "Chad Meyer", role: "Associate", group: "Brokerage", email: "chad.meyer@streamrealty.com", phone: "614.561.5985" },
-    { name: "Alyssa Aucoin", role: "Analyst", group: "Brokerage", email: "alyssa.aucoin@streamrealty.com", phone: "630.450.6837" },
-    { name: "Liz Megginson", role: "Transaction Manager", group: "Brokerage", email: "liz.megginson@streamrealty.com", phone: "224.343.0090" },
+    { name: "Brian Duffy", role: "Managing Director", group: "Industrial Brokerage", email: "brian.duffy@streamrealty.com", phone: "630.743.3313" },
+    { name: "Ben Dickey", role: "Vice President", group: "Industrial Brokerage", email: "ben.dickey@streamrealty.com", phone: "224.465.3468" },
+    { name: "Joe Connor", role: "Senior Associate", group: "Industrial Brokerage", email: "joe.connor@streamrealty.com", phone: "816.508.0232" },
+    { name: "Brian Daly", role: "Senior Associate", group: "Industrial Brokerage", email: "brian.daly@streamrealty.com", phone: "847.544.6730" },
+    { name: "Mario Macioce", role: "Associate", group: "Industrial Brokerage", email: "mario.macioce@streamrealty.com", phone: "312.767.3546" },
+    { name: "Kennedy Arundel", role: "Associate", group: "Industrial Brokerage", email: "kennedy.arundel@streamrealty.com", phone: "773.580.1107" },
+    { name: "Chad Meyer", role: "Associate", group: "Industrial Brokerage", email: "chad.meyer@streamrealty.com", phone: "614.561.5985" },
+    { name: "Alyssa Aucoin", role: "Analyst", group: "Industrial Brokerage", email: "alyssa.aucoin@streamrealty.com", phone: "630.450.6837" },
+    { name: "Liz Megginson", role: "Transaction Manager", group: "Industrial Brokerage", email: "liz.megginson@streamrealty.com", phone: "224.343.0090" },
     { name: "Marissa Rupert", role: "Strategic Marketing Director", group: "Marketing", email: "marissa.rupert@streamrealty.com", phone: "224.595.3797", focus: "Strategy, brand standards, campaign direction, client relations", photo: "assets/team/marissa-rupert.jpg" },
     { name: "Jason Thompson", role: "Senior Creative Manager", group: "Marketing", email: "jason.thompson@streamrealty.com", phone: "", focus: "Creative direction, concepting and content strategy", photo: "assets/team/jason-thompson.jpg" },
     { name: "Michael Krzewicki", role: "Creative Manager", group: "Marketing", email: "michael.krzewicki@streamrealty.com", phone: "312.900.0339", focus: "Property marketing, branding and business development presentations", photo: "assets/team/michael-krzewicki.jpg" },
