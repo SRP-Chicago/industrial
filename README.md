@@ -4,7 +4,7 @@ One page where the Industrial brokerage and marketing teams can see what's going
 
 | Section | What it's for |
 |---|---|
-| **In the Queue** | Marketing requests by stage: Requested → In Progress → In Review → Complete. Filter by type or owner |
+| **Marketing Pipeline** | Marketing requests by stage: Requested → In Progress → In Review → Complete. Drag cards between stages; filter by type |
 | **Pursuits** | Library of final, client-ready decks (pitches, BOVs, tour books, market updates) with the outcome |
 | **Resources** | Templates, brand standards, research/market data, social, tools & process links |
 | **Portfolio** | Every property with submarket, available SF, clear height, status, broker lead, and quick links (flyer, website, OM, photos, tour book, map, folder). Sortable and filterable |
@@ -45,7 +45,7 @@ Dates are `YYYY-MM-DD`. Items due within 3 days are flagged, and overdue items a
 
 ## Live queue (Claude artifact)
 
-When the dashboard is opened as its Claude artifact, the In the Queue board reads from the artifact's shared database (`tasks` collection) instead of `data/dashboard.js`. Anyone with Contributor access or above can drag a card to another column, or use its "Move to" menu, and the move saves for everyone. The static copy in this repo (GitHub Pages, SharePoint) still shows the `queue` list from `data/dashboard.js` and is read-only.
+When the dashboard is opened as its Claude artifact, the Marketing Pipeline board reads from the artifact's shared database (`tasks` collection) instead of `data/dashboard.js`. Anyone with Contributor access or above can drag a card to another column (press and hold on a phone), and the move saves for everyone. The static copy in this repo (GitHub Pages, SharePoint) still shows the `queue` list from `data/dashboard.js` and is read-only.
 
 ## Brand
 
