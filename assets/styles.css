@@ -534,3 +534,22 @@ a.card__cover:focus-visible { outline: 2px solid var(--pacific); outline-offset:
 #request-link { background: var(--yellow); color: #00142F; }
 #request-link:hover { background: #FFC94D; }
 #request-link:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+/* Tabs, search and Submit Request share one row */
+.sectionnav__row { display: flex; align-items: center; gap: 16px; }
+.sectionnav__row .sectionnav__inner { flex: 1; min-width: 0; padding: 0; }
+.sectionnav__row .masthead__tools { flex: none; gap: 8px; flex-wrap: nowrap; }
+.sectionnav__row .search { width: 230px; height: 32px; padding: 0 10px; }
+.sectionnav__row .search svg { width: 15px; height: 15px; }
+.sectionnav__row .search input { font-size: 13px; }
+.sectionnav__row .btn { height: 32px; padding: 0 14px; font-size: 13px; }
+.masthead__right { gap: 0; }
+@media (max-width: 1080px) { .sectionnav__row .search { width: 170px; } }
+@media (max-width: 760px) {
+  .sectionnav__row { flex-wrap: wrap; gap: 0; }
+  .sectionnav__row .masthead__tools { order: -1; width: 100%; padding: 4px 0 10px; }
+  .sectionnav__row .search { flex: 1; width: auto; height: 36px; }
+  .sectionnav__row .btn { height: 36px; }
+  .sectionnav__row .sectionnav__inner { flex-basis: 100%; }
+}
+@media (min-width: 761px) { .masthead__right { align-self: flex-start; } .masthead__inner { padding-bottom: 12px; } }
