@@ -351,6 +351,15 @@
         ])
       ]));
     }
+    var qg = $("quarter-graphic");
+    qg.innerHTML = "";
+    if (r.quarterGraphic) {
+      qg.classList.remove("quarter-graphic--empty");
+      qg.appendChild(h("img", { src: r.quarterGraphic, alt: "The Quarter — Chicago Industrial" }));
+    } else {
+      qg.classList.add("quarter-graphic--empty");
+      qg.appendChild(h("span", { text: "The Quarter graphic coming soon" }));
+    }
     var rl = $("report-list");
     rl.innerHTML = "";
     var reports = (r.reports || []).filter(matches);

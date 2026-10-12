@@ -55,6 +55,8 @@ window.DASHBOARD_DATA = {
   // Research tab: who to ask, plus link groups (same shape as resources).
   research: {
     contact: "Hannah Webster",
+    // Graphic shown to the left of The Quarter cards ("" shows a placeholder).
+    quarterGraphic: "",
     // The Quarter market reports, newest first. file is a PDF path or link.
     // status: "Launched" | "In Progress" (stats and file can stay empty until launch)
     reports: [
