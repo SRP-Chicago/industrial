@@ -13,7 +13,7 @@
 window.DASHBOARD_DATA = {
   meta: {
     lastUpdated: "2026-10-08",
-    sampleData: true,
+    sampleData: false,
     // Where the "+ New marketing request" button goes (Microsoft Form, email, etc.)
     requestLink: "https://airtable.com/shrDILYHH00BiB7xF",
     // Group photo shown at the top of the Team tab ("" to hide).
@@ -31,7 +31,15 @@ window.DASHBOARD_DATA = {
     { title: "E-Blast — 1341-1371 Howard", property: "1341-1371 Howard", type: "E-Blast", owner: "", broker: "", status: "In Review", priority: "Normal", due: "", link: "" },
     { title: "Brochure — 787 Belden", property: "787 Belden", type: "Brochure", owner: "", broker: "", status: "In Review", priority: "Normal", due: "", link: "" },
     { title: "Signage — 787 Belden", property: "787 Belden", type: "Signage", owner: "", broker: "", status: "In Review", priority: "Normal", due: "", link: "" },
-    { title: "E-Blast — 27735 Diehl", property: "27735 Diehl", type: "E-Blast", owner: "", broker: "", status: "In Progress", priority: "Normal", due: "", link: "" }
+    { title: "E-Blast — 27735 Diehl", property: "27735 Diehl", type: "E-Blast", owner: "", broker: "", status: "In Progress", priority: "Normal", due: "", link: "" },
+    { title: "Realty Ads", property: "Flightline (MS IND Portfolio)", type: "Advertising", owner: "", broker: "Brian Duffy", status: "Complete", priority: "Normal", due: "", link: "" },
+    { title: "Press Release", property: "Flightline (MS IND Portfolio)", type: "Press Release", owner: "", broker: "Brian Duffy", status: "Complete", priority: "Normal", due: "", link: "" },
+    { title: "Sizzle Reel", property: "Flightline (MS IND Portfolio)", type: "Video", owner: "", broker: "Brian Duffy", status: "Complete", priority: "Normal", due: "", link: "" },
+    { title: "Landing Page", property: "Flightline (MS IND Portfolio)", type: "Website", owner: "", broker: "Brian Duffy", status: "Complete", priority: "Normal", due: "", link: "" },
+    { title: "Landing Page", property: "APEX Elgin (Scannell Properties)", type: "Website", owner: "", broker: "Ben Dickey", status: "In Progress", priority: "Normal", due: "", link: "" },
+    { title: "Press Release", property: "APEX Elgin (Scannell Properties)", type: "Press Release", owner: "", broker: "Ben Dickey", status: "Complete", priority: "Normal", due: "", link: "" },
+    { title: "Announcement", property: "APEX Elgin (Scannell Properties)", type: "Announcement", owner: "", broker: "Ben Dickey", status: "Complete", priority: "Normal", due: "", link: "" },
+    { title: "Brochure", property: "APEX Elgin (Scannell Properties)", type: "Brochure", owner: "", broker: "Ben Dickey", status: "Complete", priority: "Normal", due: "", link: "" }
   ],
 
   // Final, client-ready presentations. type: Pitch | BOV / OM | Tour Book | Market Update | Case Study
