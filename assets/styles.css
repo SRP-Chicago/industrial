@@ -497,5 +497,11 @@ a.card__cover:focus-visible { outline: 2px solid var(--pacific); outline-offset:
 .member__focus span { color: #7FE3E8; font-weight: 700; }
 
 /* Stream logo (white, reversed on navy). Kept at least 10mm tall with clear space around it per brand rules. */
-.brand__logo { display: block; height: 40px; width: auto; margin: 4px 0 20px; }
-@media (max-width: 760px) { .brand__logo { height: 38px; margin-bottom: 16px; } }
+.masthead__right { display: flex; flex-direction: column; align-items: flex-end; gap: 22px; }
+.brand__logo { display: block; height: 40px; width: auto; }
+@media (max-width: 760px) {
+  .masthead__inner { position: relative; }
+  .masthead__right { width: 100%; align-items: stretch; gap: 0; }
+  .brand__logo { position: absolute; top: 20px; right: 16px; height: 38px; }
+  .brand { padding-right: 140px; }
+}
