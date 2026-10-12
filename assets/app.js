@@ -432,7 +432,16 @@
     groups.forEach(function (g) {
       var groupHit = state.q && g.group.toLowerCase().indexOf(state.q) !== -1;
       var items = (g.items || []).filter(function (i) { return groupHit || matches(i); });
-      if (!items.length) return;
+      if (!items.length) {
+        // An empty group still shows (when not searching) so the team knows where things will go.
+        if (state.q || (g.items || []).length) return;
+        shown++;
+        box.appendChild(h("div", { class: "panel" }, [
+          h("h3", { class: "panel__title" }, [h("span", { class: "square", "aria-hidden": "true" }), g.group]),
+          h("p", { class: "empty", text: "Nothing here yet." })
+        ]));
+        return;
+      }
       shown++;
       var ul = h("ul");
       items.forEach(function (i) {

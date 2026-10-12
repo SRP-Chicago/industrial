@@ -147,10 +147,7 @@ window.DASHBOARD_DATA = {
       { label: "Deal / pipeline tracker", link: "" },
       { label: "Signage vendor ordering", link: "" }
     ]},
-    { group: "Case Studies", items: [
-      { label: "800 Northpoint Blvd (Bldg 10)", link: "", note: "Redevelopment positioning" },
-      { label: "Fulton Market Collection", link: "", note: "Property differentiation" }
-    ]},
+    { group: "Case Studies", items: [] },
     // Vendor contact cards: an item may carry contact lines and an optional logo image.
     { group: "Signage", items: [
       { label: "Landmark Visibility Solutions, Inc.", link: "https://www.landmarkvisibilitysolutions.com",
