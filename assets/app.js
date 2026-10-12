@@ -81,6 +81,14 @@
   function empty(msg) { return h("p", { class: "empty", text: msg || "Nothing matches your filters." }); }
 
   // ---------- queue ----------
+  // Which queue buckets each viewer has collapsed (remembered in this browser only).
+  var collapsedCols = (function () {
+    try { return JSON.parse(localStorage.getItem("queueCollapsed") || "{}") || {}; } catch (e) { return {}; }
+  })();
+  function saveCollapsed() {
+    try { localStorage.setItem("queueCollapsed", JSON.stringify(collapsedCols)); } catch (e) { /* storage unavailable */ }
+  }
+
   function renderQueue() {
     var board = $("board");
     board.innerHTML = "";
@@ -94,11 +102,26 @@
           var pa = a.priority === "High" ? 0 : 1, pb = b.priority === "High" ? 0 : 1;
           return pa - pb || (parseDate(a.due) || 0) - (parseDate(b.due) || 0);
         });
-      var column = h("div", { class: "column" }, [
-        h("div", { class: "column__head" }, [h("span", { text: status }), h("span", { class: "column__count", text: String(col.length) })])
+      var collapsed = !!collapsedCols[status];
+      var bodyId = "col-" + slug(status);
+      var toggle = h("button", {
+        type: "button", class: "column__head", "aria-expanded": collapsed ? "false" : "true", "aria-controls": bodyId,
+        title: collapsed ? "Expand " + status : "Collapse " + status
+      }, [
+        h("span", { class: "column__chev", "aria-hidden": "true", text: collapsed ? "▸" : "▾" }),
+        h("span", { class: "column__name", text: status }),
+        h("span", { class: "column__count", text: String(col.length) })
       ]);
+      toggle.addEventListener("click", function () {
+        collapsedCols[status] = !collapsedCols[status];
+        saveCollapsed();
+        renderQueue();
+      });
+      var body = h("div", { class: "column__body", id: bodyId });
+      body.hidden = collapsed;
+      var column = h("div", { class: "column column--" + slug(status) + (collapsed ? " column--collapsed" : "") }, [toggle, body]);
       col.forEach(function (t) {
-        column.appendChild(h("article", { class: "task" + (t.priority === "High" ? " task--high" : "") + (status === "Complete" ? " task--complete" : "") }, [
+        body.appendChild(h("article", { class: "task" + (t.priority === "High" ? " task--high" : "") + (status === "Complete" ? " task--complete" : "") }, [
           h("p", { class: "task__title", text: t.title }),
           h("p", { class: "task__prop", text: t.property || "" }),
           h("div", { class: "task__row" }, [
@@ -114,7 +137,7 @@
           t.link ? h("a", { href: t.link, target: "_blank", rel: "noopener", text: "Open draft ↗" }) : null
         ]));
       });
-      if (!col.length) column.appendChild(h("p", { class: "empty", text: "—" }));
+      if (!col.length) body.appendChild(h("p", { class: "empty", text: "—" }));
       board.appendChild(column);
     });
   }
