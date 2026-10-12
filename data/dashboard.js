@@ -223,14 +223,16 @@ window.DASHBOARD_DATA = {
     ]}
   ],
 
-  // Who owns each active assignment.
+  // Who owns each active assignment. Click a card to open its properties and website.
+  // properties: [{ address, city, sf, link }]; propertyCount shows before the list is filled in.
+  // website / brochure: links shown when the card is opened ("" shows "link coming").
   assignmentTeams: [
-    { name: "Flightline", client: "MS IND Portfolio", roles: [
+    { name: "Flightline", client: "MS IND Portfolio", website: "", propertyCount: 11, properties: [], roles: [
       { role: "IND Lead / Approver", person: "Brian Duffy" },
       { role: "MKT Lead", person: "Marissa Rupert" },
       { role: "MKT Designer", person: "Michael Krzewicki" }
     ]},
-    { name: "APEX Elgin", client: "Scannell Development", roles: [
+    { name: "APEX Elgin", client: "Scannell Development", website: "", brochure: "", properties: [], roles: [
       { role: "IND Lead / Approver", person: "Ben Dickey" },
       { role: "MKT Lead", person: "Marissa Rupert" },
       { role: "MKT Designer", person: "Jason Thompson" }

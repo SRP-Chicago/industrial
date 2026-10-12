@@ -585,18 +585,61 @@
   }
 
   // ---------- assignment teams (Portfolio tab) ----------
+  var openAssignments = {};
   function renderAssignments() {
     var as = $("assignment-list");
     as.innerHTML = "";
     var teams = (D.assignmentTeams || []).filter(matches);
     $("assignments-block").hidden = !(D.assignmentTeams || []).length;
     teams.forEach(function (t) {
-      as.appendChild(h("div", { class: "panel" }, [
-        h("h4", { class: "assign__name", text: t.name }),
-        h("div", { class: "assign__client", text: t.client || "" }),
+      var props = t.properties || [];
+      var count = props.length || t.propertyCount || 0;
+      var key = slug(t.name);
+      var open = !!openAssignments[key];
+      var detailId = "assign-" + key;
+      var head = h("button", { type: "button", class: "assign__head", "aria-expanded": open ? "true" : "false", "aria-controls": detailId }, [
+        h("div", null, [
+          h("h4", { class: "assign__name", text: t.name }),
+          h("div", { class: "assign__client", text: [t.client, count ? count + " properties" : ""].filter(Boolean).join(" · ") })
+        ]),
+        h("span", { class: "assign__chev", "aria-hidden": "true", text: open ? "–" : "+" })
+      ]);
+      head.addEventListener("click", function () { openAssignments[key] = !openAssignments[key]; renderAssignments(); });
+
+      var list;
+      if (props.length) {
+        list = h("ol", { class: "assign__props" }, props.map(function (pr) {
+          var label = [pr.address, pr.city].filter(Boolean).join(", ");
+          return h("li", null, [
+            pr.link ? h("a", { href: pr.link, target: "_blank", rel: "noopener", text: label + " ↗" }) : h("span", { text: label }),
+            pr.sf ? h("span", { class: "assign__sf", text: fmtSF(pr.sf) + " SF" }) : null
+          ]);
+        }));
+      } else {
+        list = h("p", { class: "empty", text: count ? "Property list coming (" + count + " properties)." : "Property list coming." });
+      }
+      var detail = h("div", { class: "assign__detail", id: detailId }, [
+        h("div", { class: "assign__label", text: "Properties" }),
+        list,
+        h("div", { class: "assign__links" }, [
+          t.website
+            ? h("a", { class: "link-btn", href: t.website, target: "_blank", rel: "noopener", text: "Website ↗" })
+            : h("span", { class: "link-btn link-btn--pending", text: "Website link coming" }),
+          "brochure" in t
+            ? (t.brochure
+              ? h("a", { class: "link-btn", href: t.brochure, target: "_blank", rel: "noopener", text: "Brochure ↗" })
+              : h("span", { class: "link-btn link-btn--pending", text: "Brochure link coming" }))
+            : null
+        ])
+      ]);
+      detail.hidden = !open;
+
+      as.appendChild(h("div", { class: "panel assign" + (open ? " assign--open" : "") }, [
+        head,
         h("dl", { class: "assign__roles" }, (t.roles || []).reduce(function (acc, r) {
           return acc.concat([h("dt", { text: r.role }), h("dd", { text: r.person })]);
-        }, []))
+        }, [])),
+        detail
       ]));
     });
     if (!teams.length && (D.assignmentTeams || []).length) as.appendChild(empty());

@@ -26,6 +26,7 @@
 }
 
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 
 body {
   margin: 0;
@@ -505,3 +506,21 @@ a.card__cover:focus-visible { outline: 2px solid var(--pacific); outline-offset:
   .brand__logo { position: absolute; top: 20px; right: 16px; height: 38px; }
   .brand { padding-right: 140px; }
 }
+
+/* Expandable assignment cards */
+.assign__head {
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; width: 100%;
+  background: none; border: 0; padding: 0; margin: 0 0 10px; text-align: left; font: inherit; color: inherit; cursor: pointer;
+}
+.assign__head .assign__client { margin-bottom: 0; }
+.assign__head:focus-visible { outline: 2px solid var(--pacific); outline-offset: 4px; border-radius: 4px; }
+.assign__chev { font-size: 22px; line-height: 1; color: var(--pacific); }
+.assign:hover { border-color: rgba(0,176,185,.45); }
+.assign--open { border-color: var(--pacific); }
+.assign__detail { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+.assign__label { font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--gray); }
+.assign__props { margin: 0; padding-left: 20px; width: 100%; display: grid; gap: 4px; color: #fff; font-size: 14px; }
+.assign__props li { display: flex; justify-content: space-between; gap: 10px; }
+.assign__sf { color: var(--gray); font-size: 12px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.assign__links { display: flex; gap: 8px; flex-wrap: wrap; }
+.assignments { align-items: start; }
