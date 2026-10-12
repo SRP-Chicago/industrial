@@ -24,16 +24,7 @@ window.DASHBOARD_DATA = {
   // priority: High | Normal | Low
   // type: Flyer | BOV / OM | Pitch Deck | Tour Book | Social | Email Blast | Case Study | Signage | Website
   queue: [
-    { title: "Signage Coordination", property: "APEX Elgin (Scannell Properties)", type: "Signage", owner: "Marissa Rupert", broker: "Ben Dickey", status: "Requested", priority: "Normal", due: "", link: "" },
-    { title: "Pitch deck — 3PL user requirement", property: "Sample: I-55 Logistics Center", type: "Pitch Deck", owner: "Kaitlyn Maloney", broker: "Brian Duffy", status: "In Progress", priority: "High", due: "2026-10-12", link: "" },
-    { title: "Leasing flyer refresh (new availability)", property: "Sample: O'Hare Cargo Park Bldg 2", type: "Flyer", owner: "Celia Burch", broker: "Ben Dickey", status: "In Review", priority: "Normal", due: "2026-10-10", link: "" },
-    { title: "BOV — single-tenant NNN", property: "Sample: Elk Grove Distribution", type: "BOV / OM", owner: "Hannah Webster", broker: "Joe Connor", status: "Requested", priority: "High", due: "2026-10-20", link: "" },
-    { title: "Tour book — 5 building I-80 tour", property: "Client: Sample Manufacturer", type: "Tour Book", owner: "Kaitlyn Maloney", broker: "Brian Duffy", status: "Requested", priority: "Normal", due: "2026-10-15", link: "" },
-    { title: "LinkedIn carousel — Q3 leasing wins", property: "Team", type: "Social", owner: "Michael Krzewicki", broker: "Team", status: "In Progress", priority: "Normal", due: "2026-10-17", link: "" },
-    { title: "Email blast — spec building delivery", property: "Sample: Joliet Gateway Bldg A", type: "Email Blast", owner: "Michael Krzewicki", broker: "Ben Dickey", status: "Requested", priority: "Low", due: "2026-10-28", link: "" },
-    { title: "Case study — 450K SF build-to-suit", property: "Sample: Romeoville Commerce Ctr", type: "Case Study", owner: "Celia Burch", broker: "Joe Connor", status: "In Review", priority: "Normal", due: "2026-10-09", link: "" },
-    { title: "Site signage — For Lease banner", property: "Sample: Bolingbrook Crossing", type: "Signage", owner: "Kaitlyn Maloney", broker: "Brian Duffy", status: "Complete", priority: "Normal", due: "2026-10-03", link: "" },
-    { title: "Property website launch", property: "Sample: I-55 Logistics Center", type: "Website", owner: "Michael Krzewicki", broker: "Brian Duffy", status: "Complete", priority: "High", due: "2026-09-30", link: "" }
+    { title: "Signage Coordination", property: "APEX Elgin (Scannell Properties)", type: "Signage", owner: "Marissa Rupert", broker: "Ben Dickey", status: "Requested", priority: "Normal", due: "", link: "" }
   ],
 
   // Final, client-ready presentations. type: Pitch | BOV / OM | Tour Book | Market Update | Case Study
