@@ -136,7 +136,7 @@
         h("div", { class: "card__foot" }, [linkButton(p.link, "Open deck"), outcome])
       ]));
     });
-    if (!items.length) box.appendChild(empty());
+    if (!items.length) box.appendChild(empty((D.presentations || []).length ? null : "No presentations yet. Final decks will show here once they're added."));
   }
 
   // ---------- resources ----------
@@ -284,7 +284,7 @@
       ]));
     });
     if (!items.length) {
-      tbody.appendChild(h("tr", null, [h("td", { colspan: "7" }, [empty()])]));
+      tbody.appendChild(h("tr", null, [h("td", { colspan: "7" }, [empty((D.portfolio || []).length ? null : "No properties yet. Listings will show here once they're added.")])]));
     }
 
     var sf = items.reduce(function (s, p) { return s + (p.status === "Leased" ? 0 : Number(p.availableSF) || 0); }, 0);

@@ -44,11 +44,6 @@ window.DASHBOARD_DATA = {
 
   // Final, client-ready presentations. type: Pitch | BOV / OM | Tour Book | Market Update | Case Study
   presentations: [
-    { title: "Landlord pitch — 1.2M SF portfolio assignment", client: "Sample Institutional Owner", type: "Pitch", date: "2026-09-24", team: "Brian Duffy, Joe Connor", outcome: "Won", link: "", notes: "Strong submarket comps section and a 90-day marketing timeline." },
-    { title: "Q3 Chicago Industrial market update", client: "Internal / Clients", type: "Market Update", date: "2026-10-03", team: "Hannah Webster", outcome: "", link: "", notes: "Use slides 4–9 for any client meeting this quarter." },
-    { title: "Tenant rep — food & beverage cold storage search", client: "Sample F&B Company", type: "Tour Book", date: "2026-09-12", team: "Ben Dickey", outcome: "Pending", link: "", notes: "" },
-    { title: "BOV — 210K SF Class A bulk", client: "Sample Private Owner", type: "BOV / OM", date: "2026-08-29", team: "Joe Connor, Hannah Webster", outcome: "Won", link: "", notes: "Lease-up scenarios laid out cleanly on one page." },
-    { title: "Developer pitch — spec 300K SF", client: "Sample Developer", type: "Pitch", date: "2026-08-15", team: "Brian Duffy, Ben Dickey", outcome: "Lost", link: "", notes: "Debrief: client wanted more on labor-shed data." }
   ],
 
   // Research tab: who to ask, plus link groups (same shape as resources).
@@ -149,15 +144,6 @@ window.DASHBOARD_DATA = {
   // Portfolio. status: Available | Under LOI | Leased | Coming Soon | For Sale
   // links: any of flyer, website, om, photos, tourBook, map, drive — "" to hide.
   portfolio: [
-    { name: "Sample: I-55 Logistics Center", address: "Address TBD, Romeoville, IL", submarket: "I-55 Corridor", availableSF: 412000, clearHeight: "40'", status: "Available", broker: "Brian Duffy", links: { flyer: "", website: "", photos: "", map: "", drive: "" } },
-    { name: "Sample: O'Hare Cargo Park Bldg 2", address: "Address TBD, Elk Grove Village, IL", submarket: "O'Hare", availableSF: 86500, clearHeight: "32'", status: "Under LOI", broker: "Ben Dickey", links: { flyer: "", website: "", photos: "", map: "", drive: "" } },
-    { name: "Sample: Joliet Gateway Bldg A", address: "Address TBD, Joliet, IL", submarket: "I-80 / Joliet", availableSF: 625000, clearHeight: "40'", status: "Coming Soon", broker: "Ben Dickey", links: { flyer: "", website: "", photos: "", map: "", drive: "" } },
-    { name: "Sample: Elk Grove Distribution", address: "Address TBD, Elk Grove Village, IL", submarket: "O'Hare", availableSF: 154000, clearHeight: "28'", status: "For Sale", broker: "Joe Connor", links: { om: "", photos: "", map: "", drive: "" } },
-    { name: "Sample: Bolingbrook Crossing", address: "Address TBD, Bolingbrook, IL", submarket: "I-55 Corridor", availableSF: 0, clearHeight: "36'", status: "Leased", broker: "Brian Duffy", links: { flyer: "", photos: "", drive: "" } },
-    { name: "Sample: Romeoville Commerce Ctr", address: "Address TBD, Romeoville, IL", submarket: "I-55 Corridor", availableSF: 0, clearHeight: "40'", status: "Leased", broker: "Joe Connor", links: { photos: "", drive: "" } },
-    { name: "Sample: Aurora Business Park", address: "Address TBD, Aurora, IL", submarket: "I-88 / Fox Valley", availableSF: 238000, clearHeight: "36'", status: "Available", broker: "Joe Connor", links: { flyer: "", website: "", tourBook: "", map: "", drive: "" } },
-    { name: "Sample: Lake County Flex Center", address: "Address TBD, Waukegan, IL", submarket: "Lake County", availableSF: 47200, clearHeight: "24'", status: "Available", broker: "Ben Dickey", links: { flyer: "", map: "", drive: "" } },
-    { name: "Sample: Kenosha Logistics Park", address: "Address TBD, Kenosha, WI", submarket: "SE Wisconsin", availableSF: 520000, clearHeight: "40'", status: "Available", broker: "Brian Duffy", links: { flyer: "", website: "", photos: "", map: "", drive: "" } }
   ],
 
   // Chicago IND + Marketing team processes, in order.
