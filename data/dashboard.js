@@ -248,7 +248,7 @@ window.DASHBOARD_DATA = {
     { name: "Chad Meyer", role: "Associate", group: "Brokerage", email: "chad.meyer@streamrealty.com", phone: "614.561.5985" },
     { name: "Alyssa Aucoin", role: "Analyst", group: "Brokerage", email: "alyssa.aucoin@streamrealty.com", phone: "630.450.6837" },
     { name: "Liz Megginson", role: "Transaction Manager", group: "Brokerage", email: "liz.megginson@streamrealty.com", phone: "224.343.0090" },
-    { name: "Marissa Rupert", role: "Strategic Marketing Director", group: "Marketing", email: "marissa.rupert@streamrealty.com", phone: "224.595.3797", focus: "Strategy, brand standards, campaign direction", photo: "assets/team/marissa-rupert.jpg" },
+    { name: "Marissa Rupert", role: "Strategic Marketing Director", group: "Marketing", email: "marissa.rupert@streamrealty.com", phone: "224.595.3797", focus: "Strategy, brand standards, campaign direction, client relations", photo: "assets/team/marissa-rupert.jpg" },
     { name: "Jason Thompson", role: "Senior Creative Manager", group: "Marketing", email: "jason.thompson@streamrealty.com", phone: "", focus: "Creative direction, concepting and content strategy", photo: "assets/team/jason-thompson.jpg" },
     { name: "Michael Krzewicki", role: "Creative Manager", group: "Marketing", email: "michael.krzewicki@streamrealty.com", phone: "312.900.0339", focus: "Property marketing, branding and business development presentations", photo: "assets/team/michael-krzewicki.jpg" },
     { name: "Celia Burch", role: "Senior Graphic Designer", group: "Marketing", email: "celia.burch@streamrealty.com", phone: "213.418.4102", focus: "Design, layout and collateral", photo: "assets/team/celia-burch.jpg" },
