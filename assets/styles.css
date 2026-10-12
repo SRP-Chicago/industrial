@@ -524,3 +524,9 @@ a.card__cover:focus-visible { outline: 2px solid var(--pacific); outline-offset:
 .assign__sf { color: var(--gray); font-size: 12px; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .assign__links { display: flex; gap: 8px; flex-wrap: wrap; }
 .assignments { align-items: start; }
+/* "Stream Chicago" sits at the top, level with the logo; the title stays on the search row */
+@media (min-width: 761px) {
+  .brand { align-self: stretch; display: flex; flex-direction: column; justify-content: space-between; }
+  .brand__eyebrow { margin-top: 0; line-height: 1; }
+  .brand__title { margin-bottom: 0; }
+}
