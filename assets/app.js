@@ -93,7 +93,7 @@
     var board = $("board");
     board.innerHTML = "";
     var items = (D.queue || []).filter(function (t) {
-      return matches(t) && (!state.queueType || t.type === state.queueType) && (!state.queueOwner || t.owner === state.queueOwner);
+      return matches(t) && (!state.queueType || t.type === state.queueType);
     });
     STATUSES.forEach(function (status) {
       var col = items
@@ -269,7 +269,6 @@
 
   function refreshQueueFilters() {
     fillSelectKeep($("queue-type"), uniq((D.queue || []).map(function (t) { return t.type; })), "All", "queueType");
-    fillSelectKeep($("queue-owner"), uniq((D.queue || []).map(function (t) { return t.owner; })), "Everyone", "queueOwner");
   }
   function fillSelectKeep(sel, values, allLabel, key) {
     fillSelect(sel, values, allLabel);
@@ -690,7 +689,6 @@
     if (D.meta && D.meta.requestLink) req.href = D.meta.requestLink; else req.classList.add("is-hidden");
 
     bindSelect("queue-type", "queueType", uniq((D.queue || []).map(function (t) { return t.type; })), "All");
-    bindSelect("queue-owner", "queueOwner", uniq((D.queue || []).map(function (t) { return t.owner; })), "Everyone");
     bindSelect("pres-type", "presType", uniq((D.presentations || []).map(function (p) { return p.type; })), "All");
     bindSelect("port-submarket", "submarket", uniq((D.portfolio || []).map(function (p) { return p.submarket; })), "All");
     bindSelect("port-status", "status", uniq((D.portfolio || []).map(function (p) { return p.status; })), "All");
