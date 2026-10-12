@@ -647,6 +647,10 @@
   }
 
   // ---------- team ----------
+  var collapsedTeam = (function () {
+    try { return JSON.parse(localStorage.getItem("teamCollapsed") || "{}") || {}; } catch (e) { return {}; }
+  })();
+
   function renderTeam() {
     var photo = D.meta && D.meta.teamPhoto;
     if (photo) {
@@ -658,10 +662,24 @@
     box.innerHTML = "";
     var groups = uniq((D.team || []).map(function (m) { return m.group; }));
     groups.forEach(function (g) {
-      var panel = h("div", { class: "panel" }, [
-        h("h3", { class: "panel__title" }, [h("span", { class: "square", "aria-hidden": "true" }), g])
+      var members = (D.team || []).filter(function (m) { return m.group === g; });
+      var collapsed = !!collapsedTeam[g];
+      var bodyId = "team-" + slug(g);
+      var toggle = h("button", { type: "button", class: "panel__title team__toggle", "aria-expanded": collapsed ? "false" : "true", "aria-controls": bodyId }, [
+        h("span", { class: "square", "aria-hidden": "true" }),
+        h("span", { class: "team__group", text: g }),
+        h("span", { class: "team__count", text: String(members.length) }),
+        h("span", { class: "team__chev", "aria-hidden": "true", text: collapsed ? "+" : "–" })
       ]);
-      (D.team || []).filter(function (m) { return m.group === g; }).forEach(function (m) {
+      toggle.addEventListener("click", function () {
+        collapsedTeam[g] = !collapsedTeam[g];
+        try { localStorage.setItem("teamCollapsed", JSON.stringify(collapsedTeam)); } catch (e) { /* storage unavailable */ }
+        renderTeam();
+      });
+      var panelBody = h("div", { class: "team__body", id: bodyId });
+      panelBody.hidden = collapsed;
+      var panel = h("div", { class: "panel" + (collapsed ? " panel--collapsed" : "") }, [toggle, panelBody]);
+      members.forEach(function (m) {
         var initials = m.name.split(/\s+/).map(function (w) { return w[0]; }).join("").slice(0, 2).toUpperCase();
         var contact = [];
         if (m.email) contact.push(h("a", { href: "mailto:" + m.email, text: m.email }));
@@ -669,7 +687,7 @@
         var avatar = m.photo
           ? h("img", { class: "avatar avatar--photo", src: m.photo, alt: "", loading: "lazy" })
           : h("div", { class: "avatar", "aria-hidden": "true", text: initials });
-        panel.appendChild(h("div", { class: "member" }, [
+        panelBody.appendChild(h("div", { class: "member" }, [
           avatar,
           h("div", null, [
             h("div", { class: "member__name", text: m.name }),
