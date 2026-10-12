@@ -636,9 +636,10 @@
 
       as.appendChild(h("div", { class: "panel assign" + (open ? " assign--open" : "") }, [
         head,
-        h("dl", { class: "assign__roles" }, (t.roles || []).reduce(function (acc, r) {
+        // Team roles are kept in the data but hidden for now; set showRoles: true on an assignment to show them.
+        t.showRoles ? h("dl", { class: "assign__roles" }, (t.roles || []).reduce(function (acc, r) {
           return acc.concat([h("dt", { text: r.role }), h("dd", { text: r.person })]);
-        }, [])),
+        }, [])) : null,
         detail
       ]));
     });
