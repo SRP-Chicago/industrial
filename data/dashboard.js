@@ -25,7 +25,8 @@ window.DASHBOARD_DATA = {
   // type: Flyer | BOV / OM | Pitch Deck | Tour Book | Social | Email Blast | Case Study | Signage | Website
   queue: [
     { title: "Signage Coordination", property: "APEX Elgin (Scannell Properties)", type: "Signage", owner: "Marissa Rupert", broker: "Ben Dickey", status: "Requested", priority: "Normal", due: "", link: "" },
-    { title: "Launch Event Invite", property: "Flightline (MS IND Portfolio)", type: "Event", owner: "Marissa Rupert", broker: "Brian Duffy", status: "Requested", priority: "Normal", due: "", link: "" }
+    { title: "Launch Event Invite", property: "Flightline (MS IND Portfolio)", type: "Event", owner: "Marissa Rupert", broker: "Brian Duffy", status: "Requested", priority: "Normal", due: "", link: "" },
+    { title: "Brochure — 2315-2317 Lanmeier", property: "Flightline (MS IND Portfolio)", type: "Brochure", owner: "Marissa Rupert", broker: "Brian Duffy", status: "Requested", priority: "Normal", due: "", link: "" }
   ],
 
   // Final, client-ready presentations. type: Pitch | BOV / OM | Tour Book | Market Update | Case Study
