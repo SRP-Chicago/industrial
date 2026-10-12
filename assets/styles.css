@@ -457,3 +457,11 @@ mark { background: rgba(255,184,28,.35); color: #fff; }
 }
 .task--ghost { position: fixed; z-index: 60; pointer-events: none; opacity: .9; transform: rotate(-2deg); box-shadow: 0 10px 30px rgba(0,0,0,.5); }
 .task[draggable="true"] { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+
+/* Vendor contact cards in Resources */
+.resources li.vendor { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; justify-content: flex-start; }
+.vendor__logo { display: block; max-width: 100%; width: 220px; height: 56px; object-fit: contain; background: #fff; border-radius: 8px; padding: 8px 12px; }
+.vendor__body { min-width: 0; display: grid; gap: 2px; }
+.vendor__company a, .vendor__company span { font-weight: 800; font-size: 15px; }
+.vendor__name { color: #fff; font-weight: 700; font-size: 14px; }
+.vendor__line { color: var(--gray); font-size: 13px; overflow-wrap: anywhere; }

@@ -419,6 +419,21 @@
         var label = i.link
           ? h("a", { href: i.link, target: "_blank", rel: "noopener", text: i.label })
           : h("span", { class: "muted-link", text: i.label });
+        if (i.contact) {
+          var c = i.contact;
+          ul.appendChild(h("li", { class: "vendor" }, [
+            i.logo ? h("img", { class: "vendor__logo", src: i.logo, alt: i.label + " logo" }) : null,
+            h("div", { class: "vendor__body" }, [
+              h("div", { class: "vendor__company" }, [label]),
+              c.name ? h("div", { class: "vendor__name", text: c.name + (c.title ? ", " + c.title : "") }) : null,
+              c.address ? h("div", { class: "vendor__line", text: c.address }) : null,
+              c.phone ? h("div", { class: "vendor__line" }, [h("a", { href: "tel:" + c.phone.replace(/[^0-9+]/g, ""), text: c.phone })]) : null,
+              c.email ? h("div", { class: "vendor__line" }, [h("a", { href: "mailto:" + c.email, text: c.email })]) : null,
+              c.web && i.link ? h("div", { class: "vendor__line" }, [h("a", { href: i.link, target: "_blank", rel: "noopener", text: c.web + " ↗" })]) : null
+            ])
+          ]));
+          return;
+        }
         ul.appendChild(h("li", null, [
           h("div", null, [label, i.note ? h("span", { class: "res-note", text: i.note }) : null]),
           i.link ? null : h("span", { class: "soon", text: "link needed" })

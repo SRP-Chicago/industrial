@@ -138,6 +138,12 @@ window.DASHBOARD_DATA = {
       { label: "Marketing request turnaround times", link: "" },
       { label: "Deal / pipeline tracker", link: "" },
       { label: "Signage vendor ordering", link: "" }
+    ]},
+    // Vendor contact cards: an item may carry contact lines and an optional logo image.
+    { group: "Signage", items: [
+      { label: "Landmark Visibility Solutions, Inc.", link: "https://www.landmarkvisibilitysolutions.com",
+        logo: "",
+        contact: { name: "Nick Prager", title: "President", address: "641 Industrial Dr Unit E, Cary, IL 60013", phone: "847.971.2981", web: "www.landmarkvisibilitysolutions.com" } }
     ]}
   ],
 
