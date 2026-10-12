@@ -530,3 +530,7 @@ a.card__cover:focus-visible { outline: 2px solid var(--pacific); outline-offset:
   .brand__eyebrow { margin-top: 0; line-height: 1; }
   .brand__title { margin-bottom: 0; }
 }
+/* New marketing request button: Golden Yellow accent */
+#request-link { background: var(--yellow); color: #00142F; }
+#request-link:hover { background: #FFC94D; }
+#request-link:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
