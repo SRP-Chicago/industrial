@@ -777,8 +777,6 @@
 
   function init() {
     if (D.meta && D.meta.sampleData) $("sample-banner").hidden = false;
-    var pf = $("pursuits-folder");
-    if (pf && D.meta && D.meta.pursuitsFolder) { pf.href = D.meta.pursuitsFolder; pf.hidden = false; }
     var req = $("request-link");
     if (D.meta && D.meta.requestLink) req.href = D.meta.requestLink; else req.classList.add("is-hidden");
 
