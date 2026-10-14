@@ -562,3 +562,4 @@ a.card__cover:focus-visible { outline: 2px solid var(--pacific); outline-offset:
 .team__count { background: var(--pacific); color: #00142F; border-radius: 999px; padding: 1px 8px; font-size: 11px; letter-spacing: 0; }
 .team__chev { font-size: 18px; line-height: 1; color: var(--pacific); width: 14px; text-align: center; }
 .panel--collapsed .team__toggle { margin-bottom: 0; }
+.filters .link-btn { text-transform: none; letter-spacing: 0; }

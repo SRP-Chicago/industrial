@@ -17,7 +17,9 @@ window.DASHBOARD_DATA = {
     // Where the "+ New marketing request" button goes (Microsoft Form, email, etc.)
     requestLink: "https://airtable.com/shrDILYHH00BiB7xF",
     // Group photo shown at the top of the Team tab ("" to hide).
-    teamPhoto: "assets/team-photo.jpg"
+    teamPhoto: "assets/team-photo.jpg",
+    // SharePoint folder with all Industrial pursuit decks (opens with Stream sign-in).
+    pursuitsFolder: "https://streamrealty.sharepoint.com/:f:/t/SCHI-RegionalOffice/IgDbYSzegYFYQbCoKVzFMkdQAdM7W7SYIDcC7o7Vi42vjiE?e=CVbS7O"
   },
 
   // Marketing queue. owner = the marketing coordinator on the request. status: Requested | In Progress | In Review | Complete
