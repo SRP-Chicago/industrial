@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2600 S 25th Broadview</title>
+  <meta name="description" content="Lightstone — 2600 S 25th Broadview working analysis, November 2026. Stream Chicago Industrial.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,300;1,6..12,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="deck.css">
+</head>
+<body>
+  <!-- Deck chrome: menu, slide counter, dot nav, progress -->
+  <header class="chrome">
+    <button class="chrome__menu" id="menu-open" aria-controls="menu" aria-expanded="false">
+      <span class="chrome__burger" aria-hidden="true"></span><span>Contents</span>
+    </button>
+    <div class="chrome__count" aria-live="polite"><span id="count-now">01</span> / <span id="count-total">12</span></div>
+  </header>
+  <nav class="dots" id="dots" aria-label="Slides"></nav>
+  <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
+  <div class="menu" id="menu" hidden>
+    <div class="menu__panel" role="dialog" aria-modal="true" aria-labelledby="menu-title">
+      <button class="menu__close" id="menu-close" aria-label="Close contents">&times;</button>
+      <p class="eyebrow eyebrow--light">Contents</p>
+      <h2 class="menu__title" id="menu-title">The <em>Rundown</em></h2>
+      <ol class="menu__list" id="menu-list"></ol>
+    </div>
+  </div>
+
+  <main class="deck" id="deck">
+
+    <!-- 00 · Cover -->
+    <section class="slide slide--cover" id="cover" data-label="Cover">
+      <div class="cover__photo">
+        <img src="img/cover.jpg" alt="2600 S 25th Ave, Broadview — building exterior" width="1942" height="707">
+      </div>
+      <div class="cover__band">
+        <div class="cover__badge"><img src="img/lightstone-white.png" alt="Lightstone" width="960" height="104"></div>
+      </div>
+      <div class="cover__body">
+        <div>
+          <p class="eyebrow">Working Analysis | November 2026</p>
+          <h1 class="cover__title">2600 S 25<sup>TH</sup> <em>Broadview</em></h1>
+        </div>
+        <img class="cover__stream" src="img/stream-blue.png" alt="Stream Realty Partners" width="846" height="246">
+      </div>
+    </section>
+
+    <!-- Contents -->
+    <section class="slide slide--contents" id="contents" data-label="Contents">
+      <div class="contents__photo">
+        <img src="img/contents-door.jpg" alt="Overhead loading door" width="769" height="1102" loading="lazy">
+      </div>
+      <div class="contents__body">
+        <p class="eyebrow">Contents</p>
+        <h2 class="title">The <em>Rundown</em></h2>
+        <ol class="toc" id="toc">
+          <li><a href="#in-the-room"><span>01</span>In the Room</a></li>
+          <li><a href="#reintroduce"><span>02</span>Allow Us to Reintroduce Ourselves</a></li>
+          <li><a href="#effort"><span>03</span>Effort and Hustle</a></li>
+          <li><a href="#tools"><span>04</span>Tools</a></li>
+          <li><a href="#swot"><span>05</span>SWOT</a></li>
+          <li><a href="#accountability"><span>06</span>Accountability</a></li>
+          <li><a href="#recommendations"><span>07</span>Our Recommendations</a></li>
+          <li><a href="#competitive-set"><span>08</span>Competitive Set</a></li>
+          <li><a href="#vacant-suites"><span>09</span>Vacant Suites</a></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 01 · In the Room -->
+    <section class="slide slide--light" id="in-the-room" data-label="In the Room">
+      <div class="slide__inner">
+        <p class="eyebrow">In the Room</p>
+        <h2 class="title">Who’s in the <em>Room</em></h2>
+        <ul class="people">
+          <li class="person">
+            <div class="person__photo"><img src="img/team/brian-duffy.jpg" alt="" width="600" height="756" loading="lazy"></div>
+            <h3 class="person__name">Brian Duffy</h3>
+            <p class="person__role">Managing Director</p>
+          </li>
+          <li class="person">
+            <div class="person__photo"><img src="img/team/ben-dickey.jpg" alt="" width="600" height="770" loading="lazy"></div>
+            <h3 class="person__name">Ben Dickey</h3>
+            <p class="person__role">Vice President</p>
+          </li>
+          <li class="person">
+            <div class="person__photo"><img src="img/team/mario-macioce.jpg" alt="" width="600" height="756" loading="lazy"></div>
+            <h3 class="person__name">Mario Macioce</h3>
+            <p class="person__role">Associate</p>
+          </li>
+          <li class="person">
+            <div class="person__photo"><img src="img/team/kennedy-arundel.jpg" alt="" width="600" height="751" loading="lazy"></div>
+            <h3 class="person__name">Kennedy Arundel</h3>
+            <p class="person__role">Associate</p>
+            <a class="btn-outline" data-link="getToKnowKennedy" href="#">Get to Know Me</a>
+          </li>
+        </ul>
+      </div>
+      <div class="water-band" aria-hidden="true"></div>
+    </section>
+
+    <!-- 02 · Allow Us to Reintroduce Ourselves -->
+    <section class="slide slide--light" id="reintroduce" data-label="Allow Us to Reintroduce Ourselves">
+      <div class="slide__inner numbers">
+        <div class="numbers__left">
+          <p class="eyebrow">Allow Us to Reintroduce Ourselves</p>
+          <h2 class="title">Strength in <em>numbers</em></h2>
+          <ol class="timeline">
+            <li class="timeline__year">
+              <p class="timeline__date">2024</p>
+              <div>
+                <p class="timeline__count"><strong>04</strong> Team Members</p>
+                <ul class="faces">
+                  <li><img src="img/faces/patrick-russo.jpg" alt="" loading="lazy"><span>Patrick Russo</span></li>
+                  <li><img src="img/faces/brian-duffy.jpg" alt="" loading="lazy"><span>Brian Duffy</span></li>
+                  <li><img src="img/faces/victoria-knudson.jpg" alt="" loading="lazy"><span>Victoria Knudson</span></li>
+                  <li><img src="img/faces/mario-macioce.jpg" alt="" loading="lazy"><span>Mario Macioce</span></li>
+                </ul>
+              </div>
+            </li>
+            <li class="timeline__year">
+              <p class="timeline__date">2026</p>
+              <div>
+                <p class="timeline__count"><strong>8</strong> New Additions</p>
+                <ul class="faces">
+                  <li><img src="img/faces/ben-dickey.jpg" alt="" loading="lazy"><span>Ben Dickey</span></li>
+                  <li><img src="img/faces/brian-daly.jpg" alt="" loading="lazy"><span>Brian Daly</span></li>
+                  <li><img src="img/faces/joe-connor.jpg" alt="" loading="lazy"><span>Joe Connor</span></li>
+                  <li><img src="img/faces/hannah-webster.jpg" alt="" loading="lazy"><span>Hannah Webster</span></li>
+                  <li><img src="img/faces/chad-meyer.jpg" alt="" loading="lazy"><span>Chad Meyer</span></li>
+                  <li><img src="img/faces/kennedy-arundel.jpg" alt="" loading="lazy"><span>Kennedy Arundel</span></li>
+                  <li><img src="img/faces/alyssa-aucion.jpg" alt="" loading="lazy"><span>Alyssa Aucion</span></li>
+                  <li><img src="img/faces/liz-megginson.jpg" alt="" loading="lazy"><span>Liz Megginson</span></li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <figure class="numbers__org">
+          <img src="img/org-circle.jpg" alt="Stream Chicago platform: Industrial Brokerage, Research &amp; Marketing, Property &amp; Construction Management, Development Services, Investment Management and National Investor Services" width="1200" height="1173" loading="lazy">
+        </figure>
+      </div>
+      <div class="water-band" aria-hidden="true"></div>
+    </section>
+
+    <!-- 03 · Effort and Hustle -->
+    <section class="slide slide--photo" id="effort" data-label="Effort and Hustle" style="--bg: url('img/hustle-aerial.jpg')">
+      <div class="slide__inner">
+        <p class="eyebrow eyebrow--light">Effort and Hustle</p>
+        <div class="hustle">
+          <article class="panel panel--commodity">
+            <h3 class="panel__head">Commodity Broker</h3>
+            <ul class="panel__list">
+              <li>Market Stats</li>
+              <li>Market Map</li>
+              <li>30-60-90 Day Plan</li>
+              <li>Broker event</li>
+              <li>Broker Bonuses</li>
+              <li>Relevant Tenant Reps</li>
+              <li>Deals in the Market</li>
+            </ul>
+          </article>
+          <article class="panel panel--stream">
+            <h3 class="panel__head"><img src="img/stream-white.png" alt="Stream" width="846" height="246"></h3>
+            <div class="panel__split">
+              <ul class="panel__list">
+                <li>Include PM and CM on tours</li>
+                <li>Constant diagnostics of competitive landscape</li>
+                <li>Ongoing SWOT Analysis</li>
+                <li>50-75M SF per broker = +- 800 bldgs. and +- 1,300 tenants</li>
+                <li>Stack &amp; verify EVERY tenant</li>
+                <li>Organize stacking data in Airtable</li>
+                <li>Source contact info – Zoominfo</li>
+                <li>Manage outreach in Pipedrive</li>
+                <li>Minimum 50 doors and 100 calls/emails per week</li>
+              </ul>
+              <div class="stat">
+                <p class="stat__num" data-count="250">250</p>
+                <p class="stat__label">tenant touch points per week</p>
+                <p class="stat__note">Covering OHARE,<br>DUPAGE, N. COOK</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="water-band" aria-hidden="true"></div>
+    </section>
+
+    <!-- 04 · Tools -->
+    <section class="slide slide--light slide--tools" id="tools" data-label="Tools">
+      <div class="slide__inner slide__inner--head">
+        <p class="eyebrow">Tools</p>
+        <h2 class="title">The <em>Toolkit</em></h2>
+      </div>
+      <div class="toolkit">
+        <div class="water-band water-band--top" aria-hidden="true"></div>
+        <div class="toolkit__grid">
+          <ul class="pillars">
+            <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29s-9-9.2-9-15a9 9 0 0 1 18 0c0 5.8-9 15-9 15Z"/><circle cx="16" cy="14" r="3.5"/><path d="M6 29h20"/></svg>Submarket Maps</li>
+            <li><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="6" y="4" width="20" height="24" rx="1"/><path d="M10 10h6M10 14h12M10 18h4M18 18h4M10 22h12"/><path d="M19 7v5h4"/></svg>Construction Pipeline</li>
+            <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 29V5M4 5h22l-4 5M8 9l4-4M12 5v24M5 29h10M22 10v6"/><rect x="19" y="16" width="6" height="5"/></svg>Inventory (Vacancy + Absorption Stats)</li>
+            <li><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="13" cy="13" r="9"/><path d="m20 20 9 9"/></svg>Lease/Sale Comps</li>
+            <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 5h4l3 16h15l3-11H9"/><circle cx="12" cy="26" r="2"/><circle cx="23" cy="26" r="2"/></svg>Deals in the Market</li>
+            <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 29h24M7 29V18h4v11M14 29V13h4v15M21 29V16h4v13"/><path d="m6 11 6-5 6 4 7-6"/></svg>Stacking/Tenant Data</li>
+          </ul>
+
+          <ol class="flow">
+            <li class="flow__step">
+              <h3>Brokers</h3>
+              <span class="flow__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </li>
+            <li class="flow__step flow__step--hub">
+              <h3>Teams Channel</h3>
+              <button class="shot" data-zoom="img/teams-channel.jpg" data-caption="Teams Channel">
+                <img src="img/teams-channel.jpg" alt="Teams channel screenshot" loading="lazy">
+              </button>
+            </li>
+            <li class="flow__step">
+              <h3>Hannah<br>Webster</h3>
+              <span class="flow__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </li>
+          </ol>
+
+          <div class="org">
+            <table class="org__table">
+              <thead><tr><th scope="col">What</th><th scope="col">Where</th><th scope="col">Who</th></tr></thead>
+              <tbody>
+                <tr><td>Property<br>Inventory Data</td><td><img src="img/icons/costar.png" alt="CoStar"></td><td>Research</td></tr>
+                <tr><td>Comp Data</td><td><img src="img/icons/costar.png" alt="CoStar"></td><td>Research</td></tr>
+                <tr><td>Construction<br>Pipeline</td><td><img src="img/icons/excel.png" alt="Excel"></td><td>Research</td></tr>
+                <tr><td>Deals in<br>the Market</td><td><img src="img/icons/excel.png" alt="Excel"></td><td>Brokers<br>&amp; Research</td></tr>
+                <tr><td>Stacking/<br>Tenant Data</td><td><img src="img/icons/airtable.png" alt="Airtable"></td><td>Brokers<br>&amp; Research</td></tr>
+              </tbody>
+            </table>
+            <p class="org__foot">Presenting + Reviewing all Research <img src="img/icons/powerbi.png" alt="Power BI"></p>
+          </div>
+        </div>
+
+        <ul class="screens">
+          <li><button class="shot" data-zoom="img/pipedrive.jpg" data-caption="Pipedrive"><img src="img/pipedrive.jpg" alt="Pipedrive screenshot" loading="lazy"></button><span>Pipedrive</span></li>
+          <li><button class="shot" data-zoom="img/airtable.jpg" data-caption="Airtable"><img src="img/airtable.jpg" alt="Airtable screenshot" loading="lazy"></button><span>Airtable</span></li>
+          <li><button class="shot" data-zoom="img/powerbi.jpg" data-caption="Power of BI"><img src="img/powerbi.jpg" alt="Power BI screenshot" loading="lazy"></button><span>Power of BI</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 05 · SWOT -->
+    <section class="slide slide--navy" id="swot" data-label="SWOT">
+      <div class="slide__inner">
+        <div class="slide__top">
+          <div>
+            <p class="eyebrow eyebrow--light">SWOT</p>
+            <h2 class="title title--light">SWOT <em>Analysis</em></h2>
+          </div>
+          <p class="todo">Team to Update</p>
+        </div>
+        <div class="swot">
+          <article class="swot__card">
+            <h3><span class="swot__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 16h26M7 11v10M10 9v14M22 9v14M25 11v10"/></svg></span>Strengths</h3>
+            <ul>
+              <li>Infill West Cook location. 1.2 miles to I-290, 3.3 miles to I-294</li>
+              <li>Strong loading and yard for a building of this age.</li>
+              <li>100+ trailer positions and outside storage</li>
+              <li>Heavy power and parking</li>
+              <li>Truck repair capability.</li>
+              <li>Size flexibility.</li>
+              <li>Institutional, well-capitalized landlord.</li>
+              <li>Built-out office in most units.</li>
+            </ul>
+          </article>
+          <article class="swot__card">
+            <h3><span class="swot__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M14 18a5 5 0 0 0 7 0l4-4a5 5 0 0 0-7-7l-1.5 1.5M18 14a5 5 0 0 0-7 0l-4 4a5 5 0 0 0 7 7l1.5-1.5"/></svg></span>Weakness</h3>
+            <ul>
+              <li>Low clear height (18’).</li>
+              <li>Irregular, piecemeal demising.</li>
+              <li>High taxes and operating expenses.</li>
+              <li>Inconsistent and shared loading.</li>
+              <li>Mixed-use adjacencies..</li>
+            </ul>
+          </article>
+          <article class="swot__card">
+            <h3><span class="swot__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 27h22M8 27v-7h4v7M14 27V15h4v12M20 27V11h4v16M7 15l7-6 4 3 7-6M21 6h4v4"/></svg></span>Opportunities</h3>
+            <ul>
+              <li>Re-demise into standardized bays.</li>
+              <li>New leasing team to drive fresh activity</li>
+              <li>Flexible deal structuring.</li>
+              <li>Sale to data center companies.</li>
+              <li>Small-bay and last-mile demand.</li>
+            </ul>
+          </article>
+          <article class="swot__card">
+            <h3><span class="swot__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 5 3 27h26L16 5ZM16 13v7M16 23v1"/></svg></span>Threats</h3>
+            <ul>
+              <li>Competing vacancy next door (2000 S 25th Ave).</li>
+              <li>Newer, taller product elsewhere.</li>
+              <li>Rollover and re-leasing costs.</li>
+              <li>Aging systems and capital needs.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+      <div class="water-band" aria-hidden="true"></div>
+    </section>
+
+    <!-- 06 · Accountability -->
+    <section class="slide slide--light" id="accountability" data-label="Accountability">
+      <div class="slide__inner">
+        <div class="slide__top">
+          <p class="eyebrow">Accountability</p>
+          <p class="todo">Team to Provide Link<br>(Comps &amp; Dims)</p>
+        </div>
+        <div class="split">
+          <div class="split__text">
+            <p class="kicker">Stream Chicago</p>
+            <h2 class="title">Agency <em>Dashboard</em></h2>
+            <p class="lede">An internal industrial leasing dashboard that centralizes portfolio activity, tracks real-time leasing and marketing performance, and keeps teams aligned and accountable through clear, data-driven visibility into availabilities, deals, pipeline, and property momentum.</p>
+          </div>
+          <a class="monitor" data-link="agencyDashboard" href="#" aria-label="Open the Stream Chicago Agency Dashboard">
+            <span class="monitor__screen"><img src="img/dashboard-login.jpg" alt="" width="1400" height="742" loading="lazy"></span>
+            <span class="monitor__stand" aria-hidden="true"></span>
+            <span class="tap" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
+      <div class="water-band" aria-hidden="true"></div>
+    </section>
+
+    <!-- 07 · Our Recommendations -->
+    <section class="slide slide--light slide--placeholder" id="recommendations" data-label="Our Recommendations">
+      <div class="placeholder-stage">
+        <p class="todo todo--block">Team to Provide</p>
+      </div>
+    </section>
+
+    <!-- 08 · Competitive Set -->
+    <section class="slide slide--light" id="competitive-set" data-label="Competitive Set">
+      <div class="slide__inner">
+        <div class="slide__top slide__top--end">
+          <p class="todo">Team to Provide Link</p>
+        </div>
+        <div class="split split--center">
+          <a class="monitor" data-link="competitiveSet" href="#" aria-label="Open the competitive set">
+            <span class="monitor__screen"><img src="img/dashboard-login.jpg" alt="" width="1400" height="742" loading="lazy"></span>
+            <span class="monitor__stand" aria-hidden="true"></span>
+            <span class="tap" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
+      <div class="water-band" aria-hidden="true"></div>
+    </section>
+
+    <!-- 09 · Vacant Suites -->
+    <section class="slide slide--white" id="vacant-suites" data-label="Vacant Suites">
+      <div class="slide__inner">
+        <div class="slide__top slide__top--center">
+          <p class="todo">Team to Provide MLA’s for<br>Vacant Suites</p>
+        </div>
+        <!-- MLAs for vacant suites go here -->
+      </div>
+    </section>
+
+    <!-- Thank You -->
+    <section class="slide slide--thanks" id="thank-you" data-label="Thank You">
+      <div class="thanks__panel">
+        <h2 class="thanks__title">Thank<br><em>You</em></h2>
+        <div class="thanks__logos">
+          <img src="img/lightstone-white.png" alt="Lightstone" width="960" height="104">
+          <img src="img/stream-white.png" alt="Stream Realty Partners" width="846" height="246">
+        </div>
+      </div>
+      <div class="thanks__photo">
+        <img src="img/thanks-aerial.jpg" alt="Aerial view of the Broadview industrial area" width="918" height="1092" loading="lazy">
+      </div>
+    </section>
+
+  </main>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <figure class="lightbox__inner">
+      <button class="lightbox__close" id="lightbox-close" aria-label="Close">&times;</button>
+      <img id="lightbox-img" alt="">
+      <figcaption id="lightbox-cap"></figcaption>
+    </figure>
+  </div>
+  <div class="toast" id="toast" role="status" hidden></div>
+
+  <script src="deck.js"></script>
+</body>
+</html>
