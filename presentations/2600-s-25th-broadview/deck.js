@@ -10,6 +10,23 @@ const LINKS = {
 (function () {
   document.documentElement.classList.add("js");
   const slides = [...document.querySelectorAll(".slide")];
+
+  // ---- 1920 x 1080 stage -------------------------------------------------
+  // Each slide is wrapped in a full-screen .frame and scaled (CSS zoom) to fit.
+  // Below 861px wide the CSS falls back to a stacked, fluid layout.
+  const STAGE_W = 1920, STAGE_H = 1080;
+  slides.forEach(s => {
+    const frame = document.createElement("div");
+    frame.className = "frame";
+    s.before(frame);
+    frame.appendChild(s);
+  });
+  function fit() {
+    const scale = Math.min(window.innerWidth / STAGE_W, window.innerHeight / STAGE_H);
+    document.documentElement.style.setProperty("--scale", scale.toFixed(4));
+  }
+  fit();
+  window.addEventListener("resize", fit);
   const pad = n => String(n).padStart(2, "0");
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -109,7 +126,7 @@ const LINKS = {
 
   // ---- Keyboard ----------------------------------------------------------
   function go(i) {
-    const target = slides[Math.max(0, Math.min(slides.length - 1, i))];
+    const target = slides[Math.max(0, Math.min(slides.length - 1, i))].parentElement;
     target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
   }
   document.addEventListener("keydown", e => {
