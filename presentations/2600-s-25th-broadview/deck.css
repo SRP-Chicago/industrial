@@ -185,8 +185,8 @@ em { font-style: italic; }
   background: var(--stream-blue) url("img/water.jpg") center 45% / cover;
   box-shadow: inset 0 0 0 7px var(--stream-blue), 0 18px 40px -18px rgba(15,31,71,.5);
 }
-.cover__badge::before { content: ""; position: absolute; inset: 7px; background: rgba(35,80,170,.72); }  /* blue veil so the logo reads over the water */
-.cover__badge img { position: relative; width: clamp(180px, calc(19 * var(--vw)), 360px); }
+.cover__badge::before { content: ""; position: absolute; inset: 7px; background: rgba(30,70,160,.93); }  /* near-solid blue so the logo reads; water shows only in the frame */
+.cover__badge img { position: relative; width: clamp(180px, calc(19 * var(--vw)), 360px); filter: drop-shadow(0 1px 2px rgba(8,20,60,.45)); }
 .cover__body {
   flex: 1; display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap;
   padding: clamp(48px, calc(8 * var(--vh)), 96px) var(--gutter) clamp(36px, calc(6 * var(--vh)), 72px);
