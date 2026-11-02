@@ -2,8 +2,7 @@
 // Paste URLs into LINKS as the team provides them. Until a link is filled in,
 // clicking that button shows a "link needed" notice instead of going anywhere.
 const LINKS = {
-  agencyDashboard: "",    // Accountability → monitor (Comps & Dims)
-  competitiveSet: ""      // Competitive Set → monitor
+  agencyDashboard: ""     // Accountability → monitor (Comps & Dims)
 };
 
 (function () {

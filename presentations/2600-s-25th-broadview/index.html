@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,200;1,6..12,300;1,6..12,400&display=swap" rel="stylesheet">
   <!-- Bump ?v= on deck.css and deck.js with each update so browsers fetch the new files -->
-  <link rel="stylesheet" href="deck.css?v=2026-11-02.1">
+  <link rel="stylesheet" href="deck.css?v=2026-11-02.2">
 </head>
 <body>
   <!-- Deck chrome: menu, slide counter, dot nav, progress -->
@@ -367,16 +367,15 @@
     <!-- 08 · Competitive Set -->
     <section class="slide slide--light" id="competitive-set" data-label="Competitive Set">
       <div class="slide__inner">
-        <div class="slide__top slide__top--end">
+        <div class="slide__top">
+          <h2 class="title">Competitive <em>Set</em></h2>
           <p class="todo">Team to Provide Link</p>
         </div>
-        <div class="split split--center">
-          <a class="monitor" data-link="competitiveSet" href="#" aria-label="Open the competitive set">
-            <span class="monitor__screen"><img src="img/dashboard-login.jpg" alt="" width="1400" height="742" loading="lazy"></span>
-            <span class="monitor__stand" aria-hidden="true"></span>
-            <span class="tap" aria-hidden="true"></span>
-          </a>
-        </div>
+        <!-- Placeholder: swap this <figure> for the exported Excel chart (an <img>) when it's ready -->
+        <figure class="sheet" aria-label="Excel chart placeholder">
+          <figcaption class="sheet__bar"><img src="img/icons/excel.png" alt="" width="130" height="110">Excel Chart Placeholder</figcaption>
+          <div class="sheet__grid" aria-hidden="true"></div>
+        </figure>
       </div>
       <div class="water-band" aria-hidden="true"></div>
     </section>
@@ -417,6 +416,6 @@
   </div>
   <div class="toast" id="toast" role="status" hidden></div>
 
-  <script src="deck.js?v=2026-11-02.1"></script>
+  <script src="deck.js?v=2026-11-02.2"></script>
 </body>
 </html>

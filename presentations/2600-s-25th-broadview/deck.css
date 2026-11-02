@@ -330,7 +330,6 @@ em { font-style: italic; }
 
 /* ---------- Accountability / monitors ---------- */
 .split { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(32px, calc(5 * var(--vw)), 96px); align-items: center; margin-top: clamp(24px, calc(6 * var(--vh)), 80px); }
-.split--center { grid-template-columns: minmax(0, min(900px, calc(96 * var(--vh)))); justify-content: center; margin-top: clamp(16px, calc(3 * var(--vh)), 40px); }
 .monitor { position: relative; display: block; width: 100%; max-width: calc(104 * var(--vh)); justify-self: center; color: inherit; text-decoration: none; }
 .monitor__screen { display: block; padding: clamp(10px, calc(1.4 * var(--vw)), 22px); border-radius: 14px; background: #121318; box-shadow: 0 40px 70px -30px rgba(15,31,71,.45); transition: transform .35s var(--ease), box-shadow .35s; }
 .monitor__screen img { border-radius: 4px; }
@@ -340,6 +339,17 @@ em { font-style: italic; }
 .tap::after { content: ""; position: absolute; inset: 22%; background: var(--navy); clip-path: polygon(38% 0, 58% 0, 58% 40%, 100% 48%, 92% 100%, 34% 100%, 6% 60%, 16% 52%, 38% 66%); }
 .tap::before { content: ""; position: absolute; inset: -8px; border: 2px solid rgba(255,255,255,.9); border-radius: 50%; animation: ping 1.8s ease-out infinite; }
 @keyframes ping { from { transform: scale(.85); opacity: 1; } to { transform: scale(1.5); opacity: 0; } }
+
+/* ---------- Competitive Set: Excel chart placeholder ---------- */
+.sheet { display: flex; flex-direction: column; height: calc(66 * var(--vh)); margin: clamp(24px, calc(4 * var(--vh)), 48px) 0 0; border: 1.5px dashed rgba(29,111,66,.5); border-radius: 8px; overflow: hidden; background: #fff; box-shadow: 0 30px 60px -40px rgba(15,31,71,.45); }
+.sheet__bar { display: flex; align-items: center; gap: 14px; padding: 14px 22px; background: #1d6f42; color: #fff; font-size: clamp(.78rem, calc(.9 * var(--vw)), .95rem); font-weight: 700; letter-spacing: .24em; text-transform: uppercase; }
+.sheet__bar img { width: auto; height: 22px; }
+/* Faux spreadsheet: header row, row-number column, then 40px rows and 200px columns */
+.sheet__grid { flex: 1; background:
+  linear-gradient(#eef1f5, #eef1f5) 0 0 / 100% 40px no-repeat,
+  linear-gradient(#eef1f5, #eef1f5) 0 0 / 56px 100% no-repeat,
+  repeating-linear-gradient(to bottom, #dfe4ec 0 1px, transparent 1px 40px),
+  repeating-linear-gradient(to right, #dfe4ec 0 1px, transparent 1px 200px) 56px 0 / 100% 100%; }
 
 /* ---------- Proposed Layouts ---------- */
 :root { --unit-1: #1b7a3a; --unit-2: #1f4fd8; --unit-3: #c4471b; }  /* match the plan's unit colors */
