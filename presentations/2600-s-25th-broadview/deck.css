@@ -340,8 +340,8 @@ p, li, figcaption, td { text-wrap: pretty; }
 .swot__panel li::before { content: ""; position: absolute; left: -22px; top: .72em; width: 10px; height: 1px; background: #111; opacity: .5; }
 .swot__panel li.is-key { font-weight: 700; color: var(--stream-blue); }
 .swot__panel li.is-key::before { background: var(--stream-blue); opacity: 1; height: 2px; }
-.sheet--aerial { height: calc(76 * var(--vh)); margin-top: clamp(40px, calc(6 * var(--vh)), 72px); }
-.sheet__map { flex: 1; background: repeating-linear-gradient(45deg, #f4f6fa 0 16px, #eef1f6 16px 32px); }
+.swot__plan { margin: clamp(24px, calc(4 * var(--vh)), 48px) 0 0; justify-self: end; }
+.swot__plan .plan__zoom img { width: min(100%, calc(76 * var(--vh) * 1500 / 1529)); height: auto; }  /* keep the plan's aspect ratio */
 
 /* Accountability: checklist matching the dashboard tabs */
 .checks { display: grid; grid-template-columns: repeat(2, max-content); gap: 14px 16px; margin-top: clamp(24px, calc(3.6 * var(--vh)), 40px); }
@@ -434,7 +434,7 @@ p, li, figcaption, td { text-wrap: pretty; }
   .contents__photo::after { top: auto; left: 0; width: auto; height: 20px; }
   .people { grid-template-columns: repeat(2, 1fr); }
   .hustle, .panel__split, .swotx, .split, .checks { grid-template-columns: 1fr; }
-  .sheet--aerial { height: 60vw; margin-top: 0; }
+  .swot__plan { justify-self: stretch; margin-top: 0; }
   .stat { padding: 0 24px 32px; }
   .toolkit__grid { grid-template-columns: 1fr; }
   .flow { grid-template-columns: 1fr; margin-top: 0; }

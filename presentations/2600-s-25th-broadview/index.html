@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,200;1,6..12,300;1,6..12,400&display=swap" rel="stylesheet">
   <!-- Bump ?v= on deck.css and deck.js with each update so browsers fetch the new files -->
-  <link rel="stylesheet" href="deck.css?v=2026-11-02.7">
+  <link rel="stylesheet" href="deck.css?v=2026-11-02.8">
 </head>
 <body>
   <!-- Deck chrome: menu, slide counter, dot nav, progress -->
@@ -300,10 +300,11 @@
             </div>
           </div>
         </div>
-        <!-- Placeholder: swap for the aerial site plan (vacancies in color) when it's ready -->
-        <figure class="sheet sheet--aerial" aria-label="Aerial site plan placeholder">
-          <figcaption class="sheet__bar">Aerial Site Plan Placeholder</figcaption>
-          <div class="sheet__map" aria-hidden="true"></div>
+        <!-- Site plan with vacancies in color; click to enlarge -->
+        <figure class="swot__plan">
+          <button class="plan__zoom" data-zoom="img/site-plan-vacancies.jpg" data-caption="Site Plan" aria-label="Enlarge the site plan">
+            <img src="img/site-plan-vacancies.jpg" alt="Site plan with vacant units shaded: Y, O, F, V, E, K, D, P, K2 and B" width="1500" height="1529" loading="lazy">
+          </button>
         </figure>
       </div>
       <div class="water-band" aria-hidden="true"></div>
@@ -439,6 +440,6 @@
   </div>
   <div class="toast" id="toast" role="status" hidden></div>
 
-  <script src="deck.js?v=2026-11-02.7"></script>
+  <script src="deck.js?v=2026-11-02.8"></script>
 </body>
 </html>
