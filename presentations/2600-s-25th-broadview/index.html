@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,200;1,6..12,300;1,6..12,400&display=swap" rel="stylesheet">
   <!-- Bump ?v= on deck.css and deck.js with each update so browsers fetch the new files -->
-  <link rel="stylesheet" href="deck.css?v=2026-11-02.5">
+  <link rel="stylesheet" href="deck.css?v=2026-11-02.6">
 </head>
 <body>
   <!-- Deck chrome: menu, slide counter, dot nav, progress -->
@@ -64,10 +64,9 @@
           <li><a href="#effort"><span>03</span>Effort and Hustle</a></li>
           <li><a href="#tools"><span>04</span>Tools</a></li>
           <li><a href="#swot"><span>05</span>SWOT</a></li>
-          <li><a href="#accountability"><span>06</span>Accountability</a></li>
-          <li><a href="#recommendations"><span>07</span>Our Recommendations</a></li>
-          <li><a href="#competitive-set"><span>08</span>Competitive Set</a></li>
-          <li><a href="#vacant-suites"><span>09</span>Vacant Suites</a></li>
+          <li><a href="#recommendations"><span>06</span>Our Recommendations</a></li>
+          <li><a href="#accountability"><span>07</span>Accountability</a></li>
+          <li><a href="#vacant-suites"><span>08</span>Vacant Suites</a></li>
         </ol>
       </div>
     </section>
@@ -182,7 +181,7 @@
               <div class="stat">
                 <p class="stat__num" data-count="250">250</p>
                 <p class="stat__label">tenant touch points per week</p>
-                <p class="stat__note">Covering OHARE,<br>DUPAGE, N. COOK</p>
+                <p class="stat__note">Covering O’Hare, I-290 North and South, and I-55</p>
               </div>
             </div>
           </article>
@@ -249,87 +248,68 @@
       </div>
     </section>
 
-    <!-- 05 · SWOT -->
-    <section class="slide slide--navy" id="swot" data-label="SWOT">
-      <div class="slide__inner">
-        <div class="slide__top">
-          <div>
-            <p class="eyebrow eyebrow--light">SWOT</p>
-            <h2 class="title title--light">SWOT <em>Analysis</em></h2>
+    <!-- 05 · SWOT: click a category to show its bullets; .is-key marks the highlighted bullet -->
+    <section class="slide slide--white" id="swot" data-label="SWOT">
+      <div class="slide__inner swotx">
+        <div>
+          <p class="eyebrow">SWOT</p>
+          <h2 class="title">SWOT <em>Analysis</em></h2>
+          <div class="swot">
+            <div class="swot__item">
+              <h3><button class="swot__toggle" aria-expanded="false" aria-controls="swot-s"><span class="swot__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 16h26M7 11v10M10 9v14M22 9v14M25 11v10"/></svg></span>Strengths<span class="swot__chev" aria-hidden="true"></span></button></h3>
+              <div class="swot__panel" id="swot-s"><ul>
+                  <li>Infill West Cook location. 1.2 miles to I-290, 3.3 miles to I-294</li>
+                  <li class="is-key">Strong loading and yard for a building of this age</li>
+                  <li>100+ trailer positions and outside storage</li>
+                  <li>Heavy power and parking</li>
+                  <li>Truck repair capability</li>
+                  <li>Size flexibility</li>
+                  <li>Institutional, well-capitalized landlord</li>
+                  <li>Built-out office in most units</li>
+              </ul></div>
+            </div>
+            <div class="swot__item">
+              <h3><button class="swot__toggle" aria-expanded="false" aria-controls="swot-w"><span class="swot__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M14 18a5 5 0 0 0 7 0l4-4a5 5 0 0 0-7-7l-1.5 1.5M18 14a5 5 0 0 0-7 0l-4 4a5 5 0 0 0 7 7l1.5-1.5"/></svg></span>Weakness<span class="swot__chev" aria-hidden="true"></span></button></h3>
+              <div class="swot__panel" id="swot-w"><ul>
+                  <li>Low clear height (18’)</li>
+                  <li class="is-key">Irregular, piecemeal demising</li>
+                  <li>High taxes and operating expenses</li>
+                  <li>Inconsistent and shared loading</li>
+                  <li>Mixed-use adjacencies</li>
+              </ul></div>
+            </div>
+            <div class="swot__item">
+              <h3><button class="swot__toggle" aria-expanded="false" aria-controls="swot-o"><span class="swot__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 27h22M8 27v-7h4v7M14 27V15h4v12M20 27V11h4v16M7 15l7-6 4 3 7-6M21 6h4v4"/></svg></span>Opportunities<span class="swot__chev" aria-hidden="true"></span></button></h3>
+              <div class="swot__panel" id="swot-o"><ul>
+                  <li class="is-key">Re-demise into standardized bays</li>
+                  <li>New leasing team to drive fresh activity</li>
+                  <li>Flexible deal structuring</li>
+                  <li>Sale to data center companies</li>
+                  <li>Small-bay and last-mile demand</li>
+                  <li>In-house truck repair shop</li>
+              </ul></div>
+            </div>
+            <div class="swot__item">
+              <h3><button class="swot__toggle" aria-expanded="false" aria-controls="swot-t"><span class="swot__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 5 3 27h26L16 5ZM16 13v7M16 23v1"/></svg></span>Threats<span class="swot__chev" aria-hidden="true"></span></button></h3>
+              <div class="swot__panel" id="swot-t"><ul>
+                  <li>Competing vacancy next door (2000 S 25th Ave)</li>
+                  <li class="is-key">More functional product elsewhere</li>
+                  <li>Rollover and re-leasing costs</li>
+                  <li>Aging systems and capital needs</li>
+              </ul></div>
+            </div>
           </div>
         </div>
-        <div class="swot">
-          <article class="swot__card">
-            <h3><span class="swot__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 16h26M7 11v10M10 9v14M22 9v14M25 11v10"/></svg></span>Strengths</h3>
-            <ul>
-              <li>Infill West Cook location. 1.2 miles to I-290, 3.3 miles to I-294</li>
-              <li>Strong loading and yard for a building of this age</li>
-              <li>100+ trailer positions and outside storage</li>
-              <li>Heavy power and parking</li>
-              <li>Truck repair capability</li>
-              <li>Size flexibility</li>
-              <li>Institutional, well-capitalized landlord</li>
-              <li>Built-out office in most units</li>
-            </ul>
-          </article>
-          <article class="swot__card">
-            <h3><span class="swot__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M14 18a5 5 0 0 0 7 0l4-4a5 5 0 0 0-7-7l-1.5 1.5M18 14a5 5 0 0 0-7 0l-4 4a5 5 0 0 0 7 7l1.5-1.5"/></svg></span>Weakness</h3>
-            <ul>
-              <li>Low clear height (18’)</li>
-              <li>Irregular, piecemeal demising</li>
-              <li>High taxes and operating expenses</li>
-              <li>Inconsistent and shared loading</li>
-              <li>Mixed-use adjacencies</li>
-            </ul>
-          </article>
-          <article class="swot__card">
-            <h3><span class="swot__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 27h22M8 27v-7h4v7M14 27V15h4v12M20 27V11h4v16M7 15l7-6 4 3 7-6M21 6h4v4"/></svg></span>Opportunities</h3>
-            <ul>
-              <li>Re-demise into standardized bays</li>
-              <li>New leasing team to drive fresh activity</li>
-              <li>Flexible deal structuring</li>
-              <li>Sale to data center companies</li>
-              <li>Small-bay and last-mile demand</li>
-            </ul>
-          </article>
-          <article class="swot__card">
-            <h3><span class="swot__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 5 3 27h26L16 5ZM16 13v7M16 23v1"/></svg></span>Threats</h3>
-            <ul>
-              <li>Competing vacancy next door (2000 S 25th Ave)</li>
-              <li>New, more functional product elsewhere</li>
-              <li>Rollover and re-leasing costs</li>
-              <li>Aging systems and capital needs</li>
-            </ul>
-          </article>
-        </div>
+        <!-- Placeholder: swap for the aerial site plan (vacancies in color) when it's ready -->
+        <figure class="sheet sheet--aerial" aria-label="Aerial site plan placeholder">
+          <figcaption class="sheet__bar">Aerial Site Plan Placeholder</figcaption>
+          <div class="sheet__map" aria-hidden="true"></div>
+        </figure>
       </div>
       <div class="water-band" aria-hidden="true"></div>
     </section>
 
-    <!-- 06 · Accountability -->
-    <section class="slide slide--light" id="accountability" data-label="Accountability">
-      <div class="slide__inner">
-        <div class="slide__top">
-          <p class="eyebrow">Accountability</p>
-          <p class="todo">Team to Provide Link<br>(Comps &amp; Dims)</p>
-        </div>
-        <div class="split">
-          <div class="split__text">
-            <p class="kicker">Stream Chicago</p>
-            <h2 class="title">Agency <em>Dashboard</em></h2>
-            <p class="lede">An internal industrial leasing dashboard that centralizes portfolio activity, tracks real-time leasing and marketing performance, and keeps teams aligned and accountable through clear, data-driven visibility into availabilities, deals, pipeline, and property momentum.</p>
-          </div>
-          <a class="monitor" data-link="agencyDashboard" href="#" aria-label="Open the Stream Chicago Agency Dashboard">
-            <span class="monitor__screen"><img src="img/dashboard-login.jpg" alt="" width="1400" height="742" loading="lazy"></span>
-            <span class="monitor__stand" aria-hidden="true"></span>
-            <span class="tap" aria-hidden="true"></span>
-          </a>
-        </div>
-      </div>
-      <div class="water-band" aria-hidden="true"></div>
-    </section>
-
-    <!-- 07 · Our Recommendations -->
+    <!-- 06 · Our Recommendations -->
     <section class="slide slide--light" id="recommendations" data-label="Proposed Layouts">
       <div class="slide__inner layouts">
         <div class="layouts__text">
@@ -370,30 +350,59 @@
       <div class="water-band" aria-hidden="true"></div>
     </section>
 
-    <!-- 08 · Competitive Set -->
-    <section class="slide slide--light" id="competitive-set" data-label="Competitive Set">
+    <!-- New slide: recommendations and marketing bullets (team to provide) -->
+    <section class="slide slide--white" id="more-recommendations" data-label="Recommendations (Team to Provide)">
+      <div class="slide__inner">
+        <div class="slide__top slide__top--center">
+          <p class="todo todo--wide">Team to Provide<br>Recommendations &amp; Marketing Bullets</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 · Accountability -->
+    <section class="slide slide--light" id="accountability" data-label="Accountability">
       <div class="slide__inner">
         <div class="slide__top">
-          <h2 class="title">Competitive <em>Set</em></h2>
-          <p class="todo">Team to Provide Link</p>
+          <p class="eyebrow">Accountability</p>
+          <p class="todo">Team to Provide Link<br>(Comps &amp; Dims)</p>
         </div>
-        <!-- Placeholder: swap this <figure> for the exported Excel chart (an <img>) when it's ready -->
+        <div class="split">
+          <div class="split__text">
+            <p class="kicker">Stream Chicago</p>
+            <h2 class="title">Agency <em>Dashboard</em></h2>
+            <p class="lede">An internal industrial leasing dashboard that centralizes portfolio activity, tracks real-time leasing and marketing performance, and keeps teams aligned and accountable through clear, data-driven visibility into availabilities, deals, pipeline, and property momentum.</p>
+            <!-- Match these to the dashboard's tabs -->
+            <ul class="checks">
+              <li>Competitive Set</li>
+              <li>Lease Comps</li>
+              <li>Deals in the Market</li>
+              <li>Target Tenants</li>
+            </ul>
+          </div>
+          <a class="monitor" data-link="agencyDashboard" href="#" aria-label="Open the Stream Chicago Agency Dashboard">
+            <span class="monitor__screen"><img src="img/dashboard-login.jpg" alt="" width="1400" height="742" loading="lazy"></span>
+            <span class="monitor__stand" aria-hidden="true"></span>
+            <span class="tap" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
+      <div class="water-band" aria-hidden="true"></div>
+    </section>
+
+    <!-- 08 · Vacant Suites -->
+    <section class="slide slide--light" id="vacant-suites" data-label="Vacant Suites">
+      <div class="slide__inner">
+        <div class="slide__top">
+          <h2 class="title">Vacant <em>Suites</em></h2>
+          <p class="todo">Team to Provide MLA’s for<br>Vacant Suites</p>
+        </div>
+        <!-- Placeholder: swap this <figure> for the MLA Excel (as an <img> or table) when it's ready -->
         <figure class="sheet" aria-label="Excel chart placeholder">
           <figcaption class="sheet__bar"><img src="img/icons/excel.png" alt="" width="130" height="110">Excel Chart Placeholder</figcaption>
           <div class="sheet__grid" aria-hidden="true"></div>
         </figure>
       </div>
       <div class="water-band" aria-hidden="true"></div>
-    </section>
-
-    <!-- 09 · Vacant Suites -->
-    <section class="slide slide--white" id="vacant-suites" data-label="Vacant Suites">
-      <div class="slide__inner">
-        <div class="slide__top slide__top--center">
-          <p class="todo">Team to Provide MLA’s for<br>Vacant Suites</p>
-        </div>
-        <!-- MLAs for vacant suites go here -->
-      </div>
     </section>
 
     <!-- Thank You -->
@@ -422,6 +431,6 @@
   </div>
   <div class="toast" id="toast" role="status" hidden></div>
 
-  <script src="deck.js?v=2026-11-02.5"></script>
+  <script src="deck.js?v=2026-11-02.6"></script>
 </body>
 </html>

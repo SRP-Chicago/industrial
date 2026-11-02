@@ -96,8 +96,8 @@ const LINKS = {
 
   // ---- Reveal on enter ---------------------------------------------------
   const revealSel = ".eyebrow, .title, .cover__title, .toc li, .person, .timeline__count, .faces li, .numbers__org, " +
-    ".panel, .stat, .pillars li, .flow__step, .org, .screens li, .swot__card, .kicker, .lede, .monitor, .todo, .thanks__title, .thanks__logos, " +
-    ".layouts__head, .layouts__lead, .layouts__list, .plan";
+    ".panel, .stat, .pillars li, .flow__step, .org, .screens li, .kicker, .lede, .monitor, .todo, .thanks__title, .thanks__logos, " +
+    ".layouts__head, .layouts__lead, .layouts__list, .plan, .swot__item, .sheet, .checks li";
   slides.forEach(s => s.querySelectorAll(revealSel).forEach((el, i) => {
     el.classList.add("reveal");
     el.style.setProperty("--i", Math.min(i, 14));
@@ -130,6 +130,7 @@ const LINKS = {
   }
   document.addEventListener("keydown", e => {
     if (e.target.closest("input, textarea, select") || e.metaKey || e.ctrlKey || e.altKey) return;
+    if ((e.key === " " || e.key === "Enter") && e.target.closest("button, a")) return;  // let buttons handle their own keys
     if (!lightbox.hidden || !menu.hidden) {
       if (e.key === "Escape") { closeLightbox(); if (!menu.hidden) setMenu(false); }
       return;
@@ -141,6 +142,19 @@ const LINKS = {
     else if (e.key === "Home") { e.preventDefault(); go(0); }
     else if (e.key === "End") { e.preventDefault(); go(slides.length - 1); }
     else if (e.key.toLowerCase() === "m") setMenu(true);
+  });
+
+  // ---- SWOT: one category open at a time ---------------------------------
+  document.querySelectorAll(".swot").forEach(list => {
+    const items = [...list.querySelectorAll(".swot__item")];
+    items.forEach(item => item.querySelector(".swot__toggle").addEventListener("click", () => {
+      const open = !item.classList.contains("is-open");
+      items.forEach(other => {
+        const on = other === item && open;
+        other.classList.toggle("is-open", on);
+        other.querySelector(".swot__toggle").setAttribute("aria-expanded", String(on));
+      });
+    }));
   });
 
   // ---- Proposed Layouts: bullet <-> unit outline on the plan --------------
