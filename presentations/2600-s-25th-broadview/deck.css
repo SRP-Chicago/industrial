@@ -370,7 +370,7 @@ em { font-style: italic; }
 .thanks__panel::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,22,58,.15), rgba(10,22,58,.45)); }
 .thanks__panel > * { position: relative; }
 .thanks__title { font-size: clamp(4rem, calc(10 * var(--vw)), 11rem); font-weight: 200; line-height: .95; letter-spacing: -.03em; }
-.thanks__title em { font-style: normal; color: #c3c8ee; }
+.thanks__title em { font-style: italic; color: #c3c8ee; }
 .thanks__logos { display: flex; align-items: flex-end; gap: clamp(32px, calc(5 * var(--vw)), 90px); flex-wrap: wrap; margin-top: 48px; }
 .thanks__logos img:first-child { width: clamp(160px, calc(15 * var(--vw)), 300px); }
 .thanks__logos img:last-child { width: clamp(120px, calc(10 * var(--vw)), 195px); }
