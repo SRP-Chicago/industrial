@@ -116,7 +116,7 @@ const LINKS = {
   // ---- Reveal on enter ---------------------------------------------------
   const revealSel = ".eyebrow, .title, .cover__title, .toc li, .person, .timeline__count, .faces li, .numbers__org, " +
     ".panel, .stat, .pillars li, .flow__step, .org, .screens li, .kicker, .lede, .monitor, .todo, .thanks__title, .thanks__logos, " +
-    ".layouts__head, .layouts__lead, .layouts__list, .plan, .swot__plan, .swot__item, .sheet, .checks li";
+    ".layouts__head, .layouts__lead, .layouts__list, .plan, .swot__plan, .swot__item, .mla, .checks li";
   slides.forEach(s => s.querySelectorAll(revealSel).forEach((el, i) => {
     el.classList.add("reveal");
     el.style.setProperty("--i", Math.min(i, 14));

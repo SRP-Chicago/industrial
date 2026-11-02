@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,200;1,6..12,300;1,6..12,400&display=swap" rel="stylesheet">
   <!-- Bump ?v= on deck.css and deck.js with each update so browsers fetch the new files -->
-  <link rel="stylesheet" href="deck.css?v=2026-11-02.10">
+  <link rel="stylesheet" href="deck.css?v=2026-11-02.11">
 </head>
 <body>
   <!-- Deck chrome: menu, slide counter, dot nav, progress -->
@@ -391,17 +391,56 @@
     </section>
 
     <!-- 08 · Vacant Suites -->
-    <section class="slide slide--light" id="vacant-suites" data-label="Vacant Suites">
+    <section class="slide slide--light" id="vacant-suites" data-label="Vacant Suites (MLAs)">
       <div class="slide__inner">
         <div class="slide__top">
-          <h2 class="title">Vacant <em>Suites</em></h2>
-          <p class="todo">Team to Provide MLA’s for<br>Vacant Suites</p>
+          <div>
+            <p class="eyebrow">Vacant Suites</p>
+            <h2 class="title title--sm">Market Leasing <em>Assumptions</em></h2>
+          </div>
         </div>
-        <!-- Placeholder: swap this <figure> for the MLA Excel (as an <img> or table) when it's ready -->
-        <figure class="sheet" aria-label="Excel chart placeholder">
-          <figcaption class="sheet__bar"><img src="img/icons/excel.png" alt="" width="130" height="110">Excel Chart Placeholder</figcaption>
-          <div class="sheet__grid" aria-hidden="true"></div>
-        </figure>
+        <!-- Market leasing assumptions, generated from 2600_S_25th_MLAs.xlsx (side notes and parking math left off) -->
+        <div class="mla">
+          <table class="mla__table">
+            <thead>
+              <tr class="mla__groups">
+                <th colspan="4" scope="colgroup">Suite</th>
+                <th colspan="4" scope="colgroup">Size &amp; Current Terms</th>
+                <th colspan="5" scope="colgroup" class="mkt">Market Assumptions</th>
+                <th colspan="2" scope="colgroup">Leasing Comm.</th>
+              </tr>
+              <tr>
+                <th scope="col">Suite</th><th scope="col">Status</th><th scope="col" class="num">LXP</th><th scope="col">New / Renewal / Expansion</th>
+                <th scope="col" class="num">SF</th><th scope="col" class="num">Current Rent PSF (Net)</th><th scope="col" class="num">Op. Exp. Base</th><th scope="col" class="num">Term (mos)</th>
+                <th scope="col" class="num mkt">Market Rent (Net)</th><th scope="col" class="num mkt mkt--key">Market Rent (Gross)</th><th scope="col" class="num mkt">Escalations</th><th scope="col" class="num mkt">Free Rent</th><th scope="col" class="num mkt">TI PSF</th>
+                <th scope="col" class="num">New</th><th scope="col" class="num">Renewal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="mla__section"><th colspan="15" scope="rowgroup">Vacant</th></tr>
+            <tr><th scope="row">Y North &amp; V</th><td>Vacant</td><td class="num"><span class="mla__na">—</span></td><td>New</td><td class="num">68,500</td><td class="num"><span class="mla__na">—</span></td><td class="num">$7.00</td><td class="num">62</td><td class="num mkt">$6.00</td><td class="num mkt mkt--key">$13.00</td><td class="num mkt">3.50%</td><td class="num mkt">2 mos</td><td class="num mkt">$1.00</td><td class="num">7.00%</td><td class="num">5.00%</td></tr>
+            <tr><th scope="row">Y South</th><td>Vacant</td><td class="num"><span class="mla__na">—</span></td><td>New</td><td class="num">41,500</td><td class="num"><span class="mla__na">—</span></td><td class="num">$7.00</td><td class="num">62</td><td class="num mkt">$6.50</td><td class="num mkt mkt--key">$13.50</td><td class="num mkt">3.50%</td><td class="num mkt">2 mos</td><td class="num mkt">$1.00</td><td class="num">7.00%</td><td class="num">5.00%</td></tr>
+            <tr><th scope="row">D</th><td>Vacant</td><td class="num"><span class="mla__na">—</span></td><td>New</td><td class="num">6,043</td><td class="num"><span class="mla__na">—</span></td><td class="num">$7.00</td><td class="num">61</td><td class="num mkt">$6.75</td><td class="num mkt mkt--key">$13.75</td><td class="num mkt">3.50%</td><td class="num mkt">1 mo</td><td class="num mkt">$1.00</td><td class="num">7.00%</td><td class="num">5.00%</td></tr>
+            <tr><th scope="row">E</th><td>Vacant</td><td class="num"><span class="mla__na">—</span></td><td>New</td><td class="num">7,104</td><td class="num"><span class="mla__na">—</span></td><td class="num">$7.00</td><td class="num">61</td><td class="num mkt">$6.75</td><td class="num mkt mkt--key">$13.75</td><td class="num mkt">3.50%</td><td class="num mkt">1 mo</td><td class="num mkt">$1.00</td><td class="num">7.00%</td><td class="num">5.00%</td></tr>
+            <tr><th scope="row">K</th><td>Vacant (Repair Shop)</td><td class="num"><span class="mla__na">—</span></td><td>New</td><td class="num">6,665</td><td class="num"><span class="mla__na">—</span></td><td class="num">$7.00</td><td class="num">62</td><td class="num mkt">$11.50</td><td class="num mkt mkt--key">$18.50</td><td class="num mkt">3.50%</td><td class="num mkt">2 mos</td><td class="num mkt">$1.00</td><td class="num">7.00%</td><td class="num">5.00%</td></tr>
+            <tr><th scope="row">O</th><td>Vacant</td><td class="num"><span class="mla__na">—</span></td><td>New</td><td class="num">35,500</td><td class="num"><span class="mla__na">—</span></td><td class="num">$7.00</td><td class="num">62</td><td class="num mkt">$7.50</td><td class="num mkt mkt--key">$14.50</td><td class="num mkt">3.50%</td><td class="num mkt">2 mos</td><td class="num mkt">$0.50</td><td class="num">7.00%</td><td class="num">5.00%</td></tr>
+            <tr><th scope="row">P</th><td>Vacant</td><td class="num"><span class="mla__na">—</span></td><td>New (likely expansion space)</td><td class="num">6,226</td><td class="num"><span class="mla__na">—</span></td><td class="num">$7.00</td><td class="num">62</td><td class="num mkt">$3.00</td><td class="num mkt mkt--key">$10.00</td><td class="num mkt">3.50%</td><td class="num mkt">2 mos</td><td class="num mkt">$1.00</td><td class="num">7.00%</td><td class="num">5.00%</td></tr>
+            <tr><th scope="row">B</th><td>Vacant</td><td class="num"><span class="mla__na">—</span></td><td>Static Vacancy (expansion space)</td><td class="num">5,267</td><td class="num"><span class="mla__na">—</span></td><td class="num"><span class="mla__na">—</span></td><td class="num"><span class="mla__na">—</span></td><td class="num mkt"><span class="mla__na">—</span></td><td class="num mkt mkt--key"><span class="mla__na">—</span></td><td class="num mkt"><span class="mla__na">—</span></td><td class="num mkt"><span class="mla__na">—</span></td><td class="num mkt"><span class="mla__na">—</span></td><td class="num"><span class="mla__na">—</span></td><td class="num"><span class="mla__na">—</span></td></tr>
+            </tbody>
+            <tbody>
+              <tr class="mla__section"><th colspan="15" scope="rowgroup">In-Place Tenants</th></tr>
+            <tr><th scope="row">T</th><td>Mobile Auto</td><td class="num">12/31/29</td><td>Renewal</td><td class="num">8,665</td><td class="num">$10.97</td><td class="num">$6.45</td><td class="num"><span class="mla__na">—</span></td><td class="num mkt"><span class="mla__na">—</span></td><td class="num mkt mkt--key"><span class="mla__na">—</span></td><td class="num mkt"><span class="mla__na">—</span></td><td class="num mkt"><span class="mla__na">—</span></td><td class="num mkt"><span class="mla__na">—</span></td><td class="num"><span class="mla__na">—</span></td><td class="num"><span class="mla__na">—</span></td></tr>
+            <tr><th scope="row">M &amp; F</th><td>Mini-Moves</td><td class="num">TBD</td><td>Renewed</td><td class="num">21,631</td><td class="num">$6.27</td><td class="num">$6.97</td><td class="num"><span class="mla__na">—</span></td><td class="num mkt"><span class="mla__na">—</span></td><td class="num mkt mkt--key"><span class="mla__na">—</span></td><td class="num mkt"><span class="mla__na">—</span></td><td class="num mkt"><span class="mla__na">—</span></td><td class="num mkt"><span class="mla__na">—</span></td><td class="num"><span class="mla__na">—</span></td><td class="num"><span class="mla__na">—</span></td></tr>
+            <tr><th scope="row">S, Z &amp; Z2</th><td>Beam Global</td><td class="num">01/31/29</td><td>Renewal</td><td class="num">37,800</td><td class="num">$9.64</td><td class="num">$9.01</td><td class="num"><span class="mla__na">—</span></td><td class="num mkt"><span class="mla__na">—</span></td><td class="num mkt mkt--key"><span class="mla__na">—</span></td><td class="num mkt"><span class="mla__na">—</span></td><td class="num mkt"><span class="mla__na">—</span></td><td class="num mkt"><span class="mla__na">—</span></td><td class="num"><span class="mla__na">—</span></td><td class="num"><span class="mla__na">—</span></td></tr>
+            <tr><th scope="row">Q</th><td>AZ Metro Distributors</td><td class="num">06/30/36</td><td>Renewal</td><td class="num">42,925</td><td class="num">$9.00</td><td class="num">$4.95</td><td class="num"><span class="mla__na">—</span></td><td class="num mkt"><span class="mla__na">—</span></td><td class="num mkt mkt--key"><span class="mla__na">—</span></td><td class="num mkt"><span class="mla__na">—</span></td><td class="num mkt"><span class="mla__na">—</span></td><td class="num mkt"><span class="mla__na">—</span></td><td class="num"><span class="mla__na">—</span></td><td class="num"><span class="mla__na">—</span></td></tr>
+            </tbody>
+          </table>
+          <ul class="mla__notes">
+            <li>Assumed terms are post landlord make ready work.</li>
+            <li>Op. Exp. assumed at $7.00 PSF across all units.</li>
+            <li>TI PSF does not include the make ready work the landlord will need to do to the spaces.</li>
+          </ul>
+        </div>
       </div>
       <div class="water-band" aria-hidden="true"></div>
     </section>
@@ -440,6 +479,6 @@
   </div>
   <div class="toast" id="toast" role="status" hidden></div>
 
-  <script src="deck.js?v=2026-11-02.10"></script>
+  <script src="deck.js?v=2026-11-02.11"></script>
 </body>
 </html>
