@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,200;1,6..12,300;1,6..12,400&display=swap" rel="stylesheet">
   <!-- Bump ?v= on deck.css and deck.js with each update so browsers fetch the new files -->
-  <link rel="stylesheet" href="deck.css?v=2026-11-02.13">
+  <link rel="stylesheet" href="deck.css?v=2026-11-02.14">
 </head>
 <body>
   <!-- Deck chrome: menu, slide counter, dot nav, progress -->
@@ -134,7 +134,7 @@
                   <li><img src="img/faces/hannah-webster.jpg?v=2" alt="" loading="lazy"><span>Hannah Webster</span></li>
                   <li><img src="img/faces/chad-meyer.jpg?v=2" alt="" loading="lazy"><span>Chad Meyer</span></li>
                   <li><img src="img/faces/kennedy-arundel.jpg?v=2" alt="" loading="lazy"><span>Kennedy Arundel</span></li>
-                  <li><img src="img/faces/alyssa-aucion.jpg?v=2" alt="" loading="lazy"><span>Alyssa Aucion</span></li>
+                  <li><img src="img/faces/alyssa-aucoin.jpg" alt="" loading="lazy"><span>Alyssa Aucoin</span></li>
                   <li><img src="img/faces/liz-megginson.jpg?v=2" alt="" loading="lazy"><span>Liz Megginson</span></li>
                 </ul>
               </div>
@@ -337,10 +337,10 @@
         <!-- Floor plans. To add the next plan, copy this <figure> (the second plan is still to come). -->
         <div class="plans">
           <figure class="plan" id="plan-1">
-            <button class="plan__zoom" data-zoom="img/plan-proposed-split.png" data-caption="Proposed Layout" aria-label="Enlarge the proposed layout floor plan">
-              <img src="img/plan-proposed-split.png" alt="Proposed split of Y, V and O (±147,000 SF): Unit 1 Y-North + V ±70,700 SF with 4 docks, Unit 2 Y-South ±41,500 SF on the south dock line, Unit 3 O ±35,500 SF as-is, with a new ±160 LF demising wall" width="1040" height="1280" loading="lazy">
-              <!-- Unit outlines drawn in the plan image's own pixel coordinates (1040 x 1280) -->
-              <svg class="plan__units" viewBox="0 0 1040 1280" aria-hidden="true">
+            <button class="plan__zoom" data-zoom="img/plan-proposed-split.png?v=2" data-caption="Proposed Layout" aria-label="Enlarge the proposed layout floor plan">
+              <img src="img/plan-proposed-split.png?v=2" alt="Proposed split of Y, V and O: Unit 1 Y-North + V ±70,700 SF with 4 docks, Unit 2 Y-South ±41,500 SF on the south docks, Unit 3 O ±35,500 SF as-is" width="1040" height="1126" loading="lazy">
+              <!-- Unit outlines drawn in the plan image's own pixel coordinates (1040 x 1126) -->
+              <svg class="plan__units" viewBox="0 0 1040 1126" aria-hidden="true">
                 <polygon class="plan__unit plan__unit--1" data-unit="1" points="380,468 766,468 766,714 776,714 776,786 731,786 731,714 380,714"/>
                 <polygon class="plan__unit plan__unit--2" data-unit="2" points="273,643 380,643 380,714 452,714 452,998 273,998"/>
                 <polygon class="plan__unit plan__unit--3" data-unit="3" points="452,714 625,714 625,998 452,998"/>
@@ -366,10 +366,11 @@
             <p class="lede">An internal industrial leasing dashboard that centralizes portfolio activity, tracks real-time leasing and marketing performance, and keeps teams aligned and accountable through clear, data-driven visibility into availabilities, deals, pipeline, and property momentum.</p>
             <!-- Match these to the dashboard's tabs -->
             <ul class="checks">
+              <li>Property Overview</li>
+              <li>Prospect Activity</li>
               <li>Competitive Set</li>
               <li>Lease Comps</li>
-              <li>Deals in the Market</li>
-              <li>Target Tenants</li>
+              <li>Tenant Information</li>
             </ul>
           </div>
           <a class="monitor" data-link="agencyDashboard" href="#" aria-label="Open the Stream Chicago Agency Dashboard">
@@ -494,6 +495,6 @@
   </div>
   <div class="toast" id="toast" role="status" hidden></div>
 
-  <script src="deck.js?v=2026-11-02.13"></script>
+  <script src="deck.js?v=2026-11-02.14"></script>
 </body>
 </html>
