@@ -317,7 +317,6 @@ em { font-style: italic; }
 .screens li { display: flex; flex-direction: column; align-items: center; gap: 12px; color: var(--muted); font-style: italic; font-weight: 300; font-size: clamp(.95rem, calc(1.1 * var(--vw)), 1.15rem); }
 
 /* ---------- SWOT ---------- */
-.slide--navy .todo { min-width: min(100%, 520px); padding: min(1.6em, calc(2.6 * var(--vh))) 2em; }
 .swot { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(12px, min(calc(2.4 * var(--vw)), calc(3 * var(--vh))), 36px); margin-top: clamp(12px, calc(2.4 * var(--vh)), 36px); }
 .swot__card { padding: clamp(14px, calc(2.2 * var(--vh)), 28px) 0 clamp(8px, calc(1.2 * var(--vh)), 16px); border-top: 1px solid rgba(255,255,255,.22); transition: border-color .3s; }
 .swot__card:hover { border-color: rgba(255,255,255,.8); }
