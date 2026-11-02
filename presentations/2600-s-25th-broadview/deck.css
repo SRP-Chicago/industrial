@@ -39,6 +39,9 @@ button { font: inherit; color: inherit; }
 ul, ol { margin: 0; padding: 0; list-style: none; }
 h1, h2, h3, p { margin: 0; }
 em { font-style: italic; }
+/* No widows: balance headings, avoid a lone last word in running text (deck.js also ties the last two words) */
+h1, h2, h3, .title, .cover__title, .thanks__title { text-wrap: balance; }
+p, li, figcaption, td { text-wrap: pretty; }
 
 /* Stage mode: every slide is a fixed 1920 x 1080 artboard, scaled to fit the
    screen (deck.js sets --scale and wraps each slide in a .frame). Design in px

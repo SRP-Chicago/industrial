@@ -28,6 +28,25 @@ const LINKS = {
   const pad = n => String(n).padStart(2, "0");
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  // ---- No widows: join the last two words of each text block with a no-break space
+  const WIDOW_SEL = "p, li, h1, h2, h3, figcaption, td, .toc a, .stat__label";
+  document.querySelectorAll(WIDOW_SEL).forEach(el => {
+    if (el.querySelector(WIDOW_SEL)) return;                 // only the innermost blocks
+    if (el.textContent.trim().split(/\s+/).length < 3) return; // two-word labels (names, tags) may wrap freely
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    let seenWord = false;
+    for (let i = nodes.length - 1; i >= 0; i--) {
+      const t = nodes[i].nodeValue;
+      for (let j = t.length - 1; j >= 0; j--) {
+        if (/\s/.test(t[j])) {
+          if (seenWord) { nodes[i].nodeValue = t.slice(0, j) + "\u00a0" + t.slice(j + 1); return; }
+        } else seenWord = true;
+      }
+    }
+  });
+
   // ---- Links -------------------------------------------------------------
   const toastEl = document.getElementById("toast");
   let toastTimer;
