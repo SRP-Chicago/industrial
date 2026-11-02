@@ -330,10 +330,43 @@
     </section>
 
     <!-- 07 · Our Recommendations -->
-    <section class="slide slide--light slide--placeholder" id="recommendations" data-label="Our Recommendations">
-      <div class="placeholder-stage">
-        <p class="todo todo--block">Team to Provide</p>
+    <section class="slide slide--light" id="recommendations" data-label="Proposed Layouts">
+      <div class="slide__inner layouts">
+        <div class="layouts__text">
+          <p class="eyebrow">Our Recommendations</p>
+          <h2 class="title">Proposed <em>Layouts</em></h2>
+
+          <h3 class="layouts__head">Proposed Layout</h3>
+          <p class="layouts__lead">Divide Unit Y into two separate floor plans: 68,500 SF and 41,500 SF.</p>
+          <ul class="layouts__list">
+            <li data-unit="1" tabindex="0"><span class="unit-dot unit-dot--1" aria-hidden="true"></span>For Unit 1 (68,500 SF), demolish Unit V within it to create a contiguous floor plan.</li>
+            <li data-unit="2" tabindex="0"><span class="unit-dot unit-dot--2" aria-hidden="true"></span>For Unit 2, build a small office and bathroom near the south docks and add a corridor door to meet life safety requirements.</li>
+            <li data-unit="3" tabindex="0"><span class="unit-dot unit-dot--3" aria-hidden="true"></span>For Unit 3-0, add a corridor through Unit M to meet life safety requirements.</li>
+          </ul>
+
+          <h3 class="layouts__head">General Comments:</h3>
+          <ul class="layouts__list layouts__list--plain">
+            <li>Mark each overhead door with its corresponding unit number or letter.</li>
+            <li>Reconfigure trailer parking and clearly label each space by unit and spot.</li>
+          </ul>
+        </div>
+
+        <!-- Floor plans. To add the next plan, copy this <figure> (the second plan is still to come). -->
+        <div class="plans">
+          <figure class="plan" id="plan-1">
+            <button class="plan__zoom" data-zoom="img/plan-unit-y-split.png" data-caption="Proposed Layout" aria-label="Enlarge the proposed layout floor plan">
+              <img src="img/plan-unit-y-split.png" alt="Floor plan: Unit 1 (Y-North + V, ±68,500 SF) with east-wall loading, Unit 2 (Y-South, ±41,500 SF) and Unit 3 (O, ±35,500 SF as-is) with south docks" width="1802" height="1912" loading="lazy">
+              <!-- Unit outlines drawn in the plan image's own pixel coordinates (1802 x 1912) -->
+              <svg class="plan__units" viewBox="0 0 1802 1912" aria-hidden="true">
+                <polygon class="plan__unit plan__unit--1" data-unit="1" points="664,778 1323,778 1323,1195 664,1195"/>
+                <polygon class="plan__unit plan__unit--2" data-unit="2" points="483,1075 664,1075 664,1195 788,1195 788,1680 483,1680"/>
+                <polygon class="plan__unit plan__unit--3" data-unit="3" points="788,1195 1082,1195 1082,1680 788,1680"/>
+              </svg>
+            </button>
+          </figure>
+        </div>
       </div>
+      <div class="water-band" aria-hidden="true"></div>
     </section>
 
     <!-- 08 · Competitive Set -->

@@ -98,7 +98,8 @@ const LINKS = {
 
   // ---- Reveal on enter ---------------------------------------------------
   const revealSel = ".eyebrow, .title, .cover__title, .toc li, .person, .timeline__count, .faces li, .numbers__org, " +
-    ".panel, .stat, .pillars li, .flow__step, .org, .screens li, .swot__card, .kicker, .lede, .monitor, .todo, .thanks__title, .thanks__logos";
+    ".panel, .stat, .pillars li, .flow__step, .org, .screens li, .swot__card, .kicker, .lede, .monitor, .todo, .thanks__title, .thanks__logos, " +
+    ".layouts__head, .layouts__lead, .layouts__list, .plan";
   slides.forEach(s => s.querySelectorAll(revealSel).forEach((el, i) => {
     el.classList.add("reveal");
     el.style.setProperty("--i", Math.min(i, 14));
@@ -142,6 +143,18 @@ const LINKS = {
     else if (e.key === "Home") { e.preventDefault(); go(0); }
     else if (e.key === "End") { e.preventDefault(); go(slides.length - 1); }
     else if (e.key.toLowerCase() === "m") setMenu(true);
+  });
+
+  // ---- Proposed Layouts: bullet <-> unit outline on the plan --------------
+  document.querySelectorAll(".layouts").forEach(wrap => {
+    const items = wrap.querySelectorAll("[data-unit]");
+    const set = unit => items.forEach(el => el.classList.toggle("is-active", el.dataset.unit === unit));
+    items.forEach(el => {
+      el.addEventListener("mouseenter", () => set(el.dataset.unit));
+      el.addEventListener("mouseleave", () => set(null));
+      el.addEventListener("focus", () => set(el.dataset.unit));
+      el.addEventListener("blur", () => set(null));
+    });
   });
 
   // ---- Lightbox for screenshots -----------------------------------------
