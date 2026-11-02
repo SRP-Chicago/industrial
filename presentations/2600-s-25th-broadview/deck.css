@@ -382,6 +382,7 @@ em { font-style: italic; }
 .lightbox[hidden] { display: none; }
 .lightbox__inner { position: relative; margin: 0; max-width: min(1400px, 100%); }
 .lightbox__inner img { max-height: 82vh; width: auto; margin: 0 auto; box-shadow: 0 20px 60px rgba(0,0,0,.5); }
+.lightbox__inner video { display: block; width: min(1280px, 92vw, calc(82vh * 16 / 9)); aspect-ratio: 16 / 9; margin: 0 auto; border-radius: 6px; background: #000; box-shadow: 0 20px 60px rgba(0,0,0,.5); }
 .lightbox__inner figcaption { margin-top: 12px; text-align: center; color: #fff; font-style: italic; }
 .lightbox__close { position: absolute; top: -48px; right: 0; width: 40px; height: 40px; border: 0; border-radius: 50%; background: rgba(255,255,255,.15); color: #fff; font-size: 1.6rem; cursor: pointer; }
 .toast { position: fixed; z-index: 60; left: 50%; bottom: 28px; transform: translateX(-50%); padding: 12px 20px; border-radius: 6px; background: var(--todo); color: #fff; font-weight: 700; letter-spacing: .04em; box-shadow: 0 8px 24px rgba(0,0,0,.25); }

@@ -2,7 +2,6 @@
 // Paste URLs into LINKS as the team provides them. Until a link is filled in,
 // clicking that button shows a "link needed" notice instead of going anywhere.
 const LINKS = {
-  getToKnowKennedy: "",   // In the Room → "Get to Know Me"
   agencyDashboard: "",    // Accountability → monitor (Comps & Dims)
   competitiveSet: ""      // Competitive Set → monitor
 };
@@ -162,16 +161,35 @@ const LINKS = {
   const lbImg = document.getElementById("lightbox-img");
   const lbCap = document.getElementById("lightbox-cap");
   let lastShot = null;
+  const lbVideo = document.getElementById("lightbox-video");
   document.querySelectorAll("[data-zoom]").forEach(btn => btn.addEventListener("click", () => {
     lastShot = btn;
+    lbVideo.hidden = true;
+    lbImg.hidden = false;
     lbImg.src = btn.dataset.zoom;
     lbImg.alt = btn.querySelector("img")?.alt || "";
     lbCap.textContent = btn.dataset.caption || "";
     lightbox.hidden = false;
     document.getElementById("lightbox-close").focus();
   }));
+  // Videos (e.g. "Get to Know Me") play in the same overlay instead of leaving the deck.
+  document.querySelectorAll("[data-video]").forEach(link => link.addEventListener("click", e => {
+    e.preventDefault();
+    lastShot = link;
+    lbImg.hidden = true;
+    lbVideo.hidden = false;
+    lbVideo.poster = link.dataset.poster || "";
+    lbVideo.src = link.dataset.video;
+    lbCap.textContent = link.dataset.caption || "";
+    lightbox.hidden = false;
+    lbVideo.play().catch(() => {});
+    document.getElementById("lightbox-close").focus();
+  }));
   function closeLightbox() {
     if (lightbox.hidden) return;
+    lbVideo.pause();
+    lbVideo.removeAttribute("src");
+    lbVideo.load();
     lightbox.hidden = true;
     lastShot?.focus();
   }
