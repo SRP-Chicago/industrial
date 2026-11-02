@@ -340,8 +340,14 @@ p, li, figcaption, td { text-wrap: pretty; }
 .swot__panel li::before { content: ""; position: absolute; left: -22px; top: .72em; width: 10px; height: 1px; background: #111; opacity: .5; }
 .swot__panel li.is-key { font-weight: 700; color: var(--stream-blue); }
 .swot__panel li.is-key::before { background: var(--stream-blue); opacity: 1; height: 2px; }
-.swot__plan { margin: clamp(24px, calc(4 * var(--vh)), 48px) 0 0; justify-self: end; }
-.swot__plan .plan__zoom img { width: min(100%, calc(76 * var(--vh) * 1500 / 1529)); height: auto; }  /* keep the plan's aspect ratio */
+.swot__plan { margin: 0; justify-self: stretch; }
+.swot__plan .plan__zoom { width: fit-content; margin-left: auto; }
+.swot__plan .plan__zoom img { width: min(100%, calc(84 * var(--vh) * 1500 / 1529)); height: auto; }  /* keep the plan's aspect ratio */
+/* On the 1920x1080 artboard the plan runs into the empty right margin so it can be larger */
+@media (min-width: 861px) {
+  .swotx { gap: 48px; }
+  .swot__plan { margin-right: -150px; align-self: center; }
+}
 
 /* Accountability: checklist matching the dashboard tabs */
 .checks { display: grid; grid-template-columns: repeat(2, max-content); gap: 14px 16px; margin-top: clamp(24px, calc(3.6 * var(--vh)), 40px); }
