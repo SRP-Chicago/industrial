@@ -341,8 +341,8 @@ em { font-style: italic; }
 @keyframes ping { from { transform: scale(.85); opacity: 1; } to { transform: scale(1.5); opacity: 0; } }
 
 /* ---------- Competitive Set: Excel chart placeholder ---------- */
-.sheet { display: flex; flex-direction: column; height: calc(66 * var(--vh)); margin: clamp(24px, calc(4 * var(--vh)), 48px) 0 0; border: 1.5px dashed rgba(29,111,66,.5); border-radius: 8px; overflow: hidden; background: #fff; box-shadow: 0 30px 60px -40px rgba(15,31,71,.45); }
-.sheet__bar { display: flex; align-items: center; gap: 14px; padding: 14px 22px; background: #1d6f42; color: #fff; font-size: clamp(.78rem, calc(.9 * var(--vw)), .95rem); font-weight: 700; letter-spacing: .24em; text-transform: uppercase; }
+.sheet { display: flex; flex-direction: column; height: calc(66 * var(--vh)); margin: clamp(24px, calc(4 * var(--vh)), 48px) 0 0; border: 1.5px dashed rgba(35,80,170,.45); border-radius: 8px; overflow: hidden; background: #fff; box-shadow: 0 30px 60px -40px rgba(15,31,71,.45); }
+.sheet__bar { display: flex; align-items: center; gap: 14px; padding: 14px 22px; background: var(--stream-blue); color: #fff; font-size: clamp(.78rem, calc(.9 * var(--vw)), .95rem); font-weight: 700; letter-spacing: .24em; text-transform: uppercase; }
 .sheet__bar img { width: auto; height: 22px; }
 /* Faux spreadsheet: header row, row-number column, then 40px rows and 200px columns */
 .sheet__grid { flex: 1; background:
