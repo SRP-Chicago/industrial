@@ -240,8 +240,8 @@ p, li, figcaption, td { text-wrap: pretty; }
 .timeline__count strong { font-size: clamp(1.8rem, calc(2.6 * var(--vw)), 2.7rem); color: var(--accent); font-weight: 300; letter-spacing: 0; }
 .faces { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(12px, calc(2 * var(--vh)), 20px) 6px; margin-top: 18px; }
 .faces li { display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; font-size: clamp(.8rem, calc(.92 * var(--vw)), .98rem); letter-spacing: 0; white-space: nowrap; color: var(--ink); }
-.faces img { width: clamp(44px, min(calc(4.6 * var(--vw)), calc(8 * var(--vh))), 88px); aspect-ratio: 1; border-radius: 50%; object-fit: cover; transform: scale(1); transition: transform .25s var(--ease), box-shadow .25s; box-shadow: 0 0 0 0 var(--accent); }
-.faces li:hover img { transform: scale(1.12); box-shadow: 0 0 0 3px var(--accent); }
+.faces img { width: clamp(44px, min(calc(4.6 * var(--vw)), calc(8 * var(--vh))), 88px); aspect-ratio: 1; border-radius: 50%; object-fit: cover; transform: scale(1); transition: transform .25s var(--ease), box-shadow .25s; box-shadow: 0 0 0 3px #fff, 0 10px 20px -8px rgba(15,31,71,.55); }
+.faces li:hover img { transform: scale(1.08); box-shadow: 0 0 0 3px var(--accent), 0 12px 24px -8px rgba(15,31,71,.6); }
 .numbers__org { position: relative; margin: 0; width: 100%; }
 .numbers__org img { width: 100%; height: auto; }
 @media (min-width: 861px) { .numbers__org { left: 100px; } }   /* nudge the circle into the right margin */
