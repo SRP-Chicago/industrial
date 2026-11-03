@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,200;1,6..12,300;1,6..12,400&display=swap" rel="stylesheet">
   <!-- Bump ?v= on deck.css and deck.js with each update so browsers fetch the new files -->
-  <link rel="stylesheet" href="deck.css?v=2026-11-03.2">
+  <link rel="stylesheet" href="deck.css?v=2026-11-03.3">
 </head>
 <body>
   <!-- Deck chrome: menu, slide counter, dot nav, progress -->
@@ -25,7 +25,7 @@
   <div class="menu" id="menu" hidden>
     <div class="menu__panel" role="dialog" aria-modal="true" aria-labelledby="menu-title">
       <button class="menu__close" id="menu-close" aria-label="Close contents">&times;</button>
-      <p class="eyebrow eyebrow--light">Contents</p>
+      <p class="eyebrow eyebrow--light">Today’s Conversation</p>
       <h2 class="menu__title" id="menu-title">The <em>Rundown</em></h2>
       <ol class="menu__list" id="menu-list"></ol>
     </div>
@@ -50,31 +50,31 @@
     </section>
 
     <!-- Contents -->
-    <section class="slide slide--contents" id="contents" data-label="Contents">
+    <section class="slide slide--contents" id="contents" data-label="Today’s Conversation">
       <div class="contents__photo">
         <img src="img/contents-door.jpg" alt="Overhead loading door" width="769" height="1102" loading="lazy">
       </div>
       <div class="contents__body">
-        <p class="eyebrow">Contents</p>
+        <p class="eyebrow">Today’s Conversation</p>
         <h2 class="title">The <em>Rundown</em></h2>
         <ol class="toc" id="toc">
-          <li><a href="#in-the-room"><span>01</span>In the Room</a></li>
-          <li><a href="#reintroduce"><span>02</span>Allow Us to Reintroduce Ourselves</a></li>
+          <li><a href="#in-the-room"><span>01</span>The Stream Team</a></li>
+          <li><a href="#reintroduce"><span>02</span>Allow Us to Introduce Ourselves</a></li>
           <li><a href="#effort"><span>03</span>Effort and Hustle</a></li>
-          <li><a href="#tools"><span>04</span>Tools</a></li>
+          <li><a href="#tools"><span>04</span>Technology &amp; Tools</a></li>
           <li><a href="#swot"><span>05</span>SWOT</a></li>
           <li><a href="#recommendations"><span>06</span>Our Recommendations</a></li>
           <li><a href="#accountability"><span>07</span>Accountability</a></li>
           <li><a href="#vacant-suites"><span>08</span>Vacant Suites</a></li>
-          <li><a href="#next-steps"><span>09</span>Next Steps</a></li>
+          <li><a href="#next-steps"><span>09</span>We’re Ready When You Are</a></li>
         </ol>
       </div>
     </section>
 
-    <!-- 01 · In the Room -->
-    <section class="slide slide--light" id="in-the-room" data-label="In the Room">
+    <!-- 01 · The Stream Team -->
+    <section class="slide slide--light" id="in-the-room" data-label="The Stream Team">
       <div class="slide__inner">
-        <p class="eyebrow">In the Room</p>
+        <p class="eyebrow">The Stream Team</p>
         <h2 class="title">Who’s in the <em>Room</em></h2>
         <ul class="people">
           <li class="person">
@@ -103,11 +103,11 @@
       <div class="water-band" aria-hidden="true"></div>
     </section>
 
-    <!-- 02 · Allow Us to Reintroduce Ourselves -->
-    <section class="slide slide--light" id="reintroduce" data-label="Allow Us to Reintroduce Ourselves">
+    <!-- 02 · Allow Us to Introduce Ourselves -->
+    <section class="slide slide--light" id="reintroduce" data-label="Allow Us to Introduce Ourselves">
       <div class="slide__inner numbers">
         <div class="numbers__left">
-          <p class="eyebrow">Allow Us to Reintroduce Ourselves</p>
+          <p class="eyebrow">Allow Us to Introduce Ourselves</p>
           <h2 class="title">Strength in <em>numbers</em></h2>
           <ol class="timeline">
             <li class="timeline__year">
@@ -141,7 +141,7 @@
           </ol>
         </div>
         <figure class="numbers__org">
-          <img src="img/org-circle.jpg?v=2" alt="Stream Chicago platform: Industrial Brokerage, Research &amp; Marketing, Property &amp; Construction Management, Development Services, Investment Management and National Investor Services" width="1800" height="1734" loading="lazy">
+          <img src="img/org-circle.jpg?v=3" alt="Stream Chicago platform: Industrial Brokerage, Research &amp; Marketing, Property &amp; Construction Management, Development Services, Investment Management and National Investor Services" width="1800" height="1734" loading="lazy">
         </figure>
       </div>
       <div class="water-band" aria-hidden="true"></div>
@@ -191,9 +191,9 @@
     </section>
 
     <!-- 04 · Tools -->
-    <section class="slide slide--light slide--tools" id="tools" data-label="Tools">
+    <section class="slide slide--light slide--tools" id="tools" data-label="Technology &amp; Tools">
       <div class="slide__inner slide__inner--head">
-        <p class="eyebrow">Tools</p>
+        <p class="eyebrow">Technology &amp; Tools</p>
         <h2 class="title">The <em>Toolkit</em></h2>
       </div>
       <div class="toolkit">
@@ -437,10 +437,10 @@
       <div class="water-band" aria-hidden="true"></div>
     </section>
 
-    <!-- 09 · Next Steps (discussion items) -->
-    <section class="slide slide--light" id="next-steps" data-label="Next Steps">
+    <!-- 09 · We’re Ready When You Are (discussion items) -->
+    <section class="slide slide--light" id="next-steps" data-label="We’re Ready When You Are">
       <div class="slide__inner">
-        <p class="eyebrow">Next Steps</p>
+        <p class="eyebrow">We’re Ready When You Are</p>
         <h2 class="title">The Path <em>Forward</em></h2>
         <ol class="steps">
           <li class="steps__item">
@@ -494,6 +494,6 @@
   </div>
   <div class="toast" id="toast" role="status" hidden></div>
 
-  <script src="deck.js?v=2026-11-03.2"></script>
+  <script src="deck.js?v=2026-11-03.3"></script>
 </body>
 </html>
