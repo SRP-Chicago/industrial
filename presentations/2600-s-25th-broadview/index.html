@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,200;1,6..12,300;1,6..12,400&display=swap" rel="stylesheet">
   <!-- Bump ?v= on deck.css and deck.js with each update so browsers fetch the new files -->
-  <link rel="stylesheet" href="deck.css?v=2026-11-03.1">
+  <link rel="stylesheet" href="deck.css?v=2026-11-03.2">
 </head>
 <body>
   <!-- Deck chrome: menu, slide counter, dot nav, progress -->
@@ -33,20 +33,19 @@
 
   <main class="deck" id="deck">
 
-    <!-- 00 · Cover -->
+    <!-- 00 · Cover: full-bleed aerial; title sits in the sky, logos in a bar along the bottom -->
     <section class="slide slide--cover" id="cover" data-label="Cover">
       <div class="cover__photo">
         <img src="img/cover.jpg?v=2" alt="Aerial view of 2600 S 25th Ave, Broadview, with the Chicago skyline in the distance" width="2000" height="1332">
       </div>
-      <div class="cover__band">
-        <div class="cover__badge"><img src="img/lightstone-white.png" alt="Lightstone" width="960" height="104"></div>
-      </div>
       <div class="cover__body">
-        <div>
-          <p class="eyebrow">Working Analysis | November 2026</p>
-          <h1 class="cover__title">2600 S 25<sup>TH</sup> <em>Broadview</em></h1>
-        </div>
-        <img class="cover__stream" src="img/stream-blue.png" alt="Stream Realty Partners" width="846" height="246">
+        <p class="eyebrow eyebrow--light">Working Analysis | November 2026</p>
+        <h1 class="cover__title">2600 S 25<sup>TH</sup> <em>Broadview</em></h1>
+      </div>
+      <div class="cover__bar">
+        <img class="cover__lightstone" src="img/lightstone-white.png" alt="Lightstone" width="960" height="104">
+        <span class="cover__rule" aria-hidden="true"></span>
+        <img class="cover__stream" src="img/stream-white.png" alt="Stream Realty Partners" width="846" height="246">
       </div>
     </section>
 
@@ -495,6 +494,6 @@
   </div>
   <div class="toast" id="toast" role="status" hidden></div>
 
-  <script src="deck.js?v=2026-11-03.1"></script>
+  <script src="deck.js?v=2026-11-03.2"></script>
 </body>
 </html>

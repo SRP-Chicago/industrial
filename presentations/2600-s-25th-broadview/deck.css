@@ -23,7 +23,7 @@
   --vw: 19.2px;               /* 1% of 1920 */
   --vh: 10.8px;               /* 1% of 1080 */
 }
-@media (max-width: 860px) { :root { --vw: calc(1 * var(--vw)); --vh: calc(1 * var(--vh)); } }
+@media (max-width: 860px) { :root { --vw: 1vw; --vh: 1vh; } }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -178,26 +178,22 @@ p, li, figcaption, td { text-wrap: pretty; }
 .menu__list a:hover, .menu__list a[aria-current="true"] { color: #b8c4ea; }
 
 /* ---------- Cover ---------- */
-.slide--cover { background: linear-gradient(var(--topo-wash), var(--topo-wash)), var(--paper) url("img/topo-light-bold.jpg") center bottom / 100% auto no-repeat; }
-.cover__photo { height: calc(60 * var(--vh)); min-height: 260px; }
-.cover__photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 54%; }  /* frames the building with the skyline above */
-.cover__band { position: relative; height: clamp(8px, calc(1.2 * var(--vh)), 14px); background: var(--stream-blue); }
-.cover__badge {
-  position: absolute; left: var(--gutter); bottom: -10px;
-  padding: clamp(14px, calc(2.2 * var(--vh)), 26px) clamp(24px, calc(3 * var(--vw)), 52px);
-  background: var(--stream-blue) url("img/water.jpg") center 45% / cover;
-  box-shadow: inset 0 0 0 7px var(--stream-blue), 0 18px 40px -18px rgba(15,31,71,.5);
-}
-.cover__badge::before { content: ""; position: absolute; inset: 7px; background: rgba(30,70,160,.93); }  /* near-solid blue so the logo reads; water shows only in the frame */
-.cover__badge img { position: relative; width: clamp(180px, calc(19 * var(--vw)), 360px); filter: drop-shadow(0 1px 2px rgba(8,20,60,.45)); }
-.cover__body {
-  flex: 1; display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap;
-  padding: clamp(48px, calc(8 * var(--vh)), 96px) var(--gutter) clamp(36px, calc(6 * var(--vh)), 72px);
-}
-.cover__title { margin-top: .5em; font-size: clamp(2.6rem, calc(6.4 * var(--vw)), 6.6rem); font-weight: 200; line-height: 1; letter-spacing: -.015em; color: var(--ink); }
+/* Cover: the 3:2 photo fills the 1920x1080 artboard (only ~15% trimmed, mostly sky).
+   A navy fade at the top holds the title; a frosted bar at the bottom holds the logos. */
+.slide--cover { background: var(--navy); color: #fff; }
+.cover__photo { position: absolute; inset: 0; }
+.cover__photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 78%; }
+.cover__photo::after { content: ""; position: absolute; inset: 0; background:
+  linear-gradient(180deg, rgba(10,24,62,.82) 0%, rgba(10,24,62,.55) 22%, rgba(10,24,62,0) 40%),
+  linear-gradient(0deg, rgba(10,24,62,.55) 0%, rgba(10,24,62,0) 22%); }
+.cover__body { position: relative; z-index: 1; padding: clamp(56px, calc(8 * var(--vh)), 100px) var(--gutter) 0; }
+.cover__title { margin-top: .35em; font-size: clamp(2.6rem, calc(6 * var(--vw)), 6.6rem); font-weight: 200; line-height: 1; letter-spacing: -.015em; color: #fff; text-shadow: 0 2px 24px rgba(8,18,46,.35); }
 .cover__title sup { font-size: .42em; vertical-align: 1.1em; margin-right: .2em; letter-spacing: .04em; }
-.cover__title em { color: var(--accent); }
-.cover__stream { width: clamp(140px, calc(11 * var(--vw)), 210px); }
+.cover__title em { color: #c9d6ff; }
+.cover__bar { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; display: flex; align-items: center; gap: clamp(20px, calc(2.4 * var(--vw)), 44px); padding: clamp(18px, calc(2.6 * var(--vh)), 30px) var(--gutter); background: rgba(16,36,88,.62); backdrop-filter: blur(10px); border-top: 3px solid var(--stream-blue); }
+.cover__lightstone { width: clamp(170px, calc(14 * var(--vw)), 270px); }
+.cover__rule { width: 1px; align-self: stretch; background: rgba(255,255,255,.4); }
+.cover__stream { width: clamp(110px, calc(8 * var(--vw)), 150px); }
 
 /* ---------- Contents ---------- */
 .slide--contents { flex-direction: row; background: linear-gradient(var(--topo-wash), var(--topo-wash)), var(--paper) url("img/topo-light.jpg") right center / cover no-repeat; }
@@ -445,7 +441,6 @@ p, li, figcaption, td { text-wrap: pretty; }
 :focus-visible { outline: 3px solid #6c8ae0; outline-offset: 3px; }
 
 /* ---------- Smaller screens ---------- */
-}
 @media (max-width: 860px) {
   .dots { display: none; }
   .numbers { grid-template-columns: 1fr; }
@@ -471,7 +466,11 @@ p, li, figcaption, td { text-wrap: pretty; }
   .toolkit { background: linear-gradient(180deg, rgba(12,30,82,.9), rgba(28,68,165,.75)), var(--navy) url("img/water.jpg") center / cover; }
   .screens li { color: #fff; }
   .person__photo { height: calc(56 * var(--vw)); }
-  .cover__photo { height: calc(42 * var(--vh)); }
+  .slide--cover { min-height: 0; }
+  .cover__photo { position: relative; height: auto; aspect-ratio: 3 / 2; order: 2; }
+  .cover__photo::after { background: none; }
+  .cover__body { order: 1; padding-bottom: 28px; background: var(--navy); }
+  .cover__bar { position: relative; order: 3; }
   .faces { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .faces li { font-size: .68rem; letter-spacing: 0; }
   .timeline__year { grid-template-columns: 1fr; gap: 8px; }
