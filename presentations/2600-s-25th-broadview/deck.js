@@ -3,7 +3,7 @@
 // clicking that button shows a "Coming soon" notice instead of going anywhere.
 const LINKS = {
   agencyDashboard: "https://srp-pbi-hxbmayh2fvebh2ga.southcentralus-01.azurewebsites.net/markets/chicago/login",  // Accountability → monitor
-  swotWhy: ""            // SWOT → "The Why Behind Our Recommendation" (PDF from Ben)
+  swotWhy: "lease-comps.html"   // SWOT → "The Why Behind Our Recommendation" (lease comp summary)
 };
 
 (function () {
