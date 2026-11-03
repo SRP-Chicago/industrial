@@ -200,15 +200,16 @@ p, li, figcaption, td { text-wrap: pretty; }
 .contents__photo { position: relative; flex: 0 0 40%; }
 .contents__photo::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0; width: 18px; background: var(--navy-deep) url("img/water.jpg") 40% center / cover; }
 .contents__photo img { width: 100%; height: 100%; object-fit: cover; }
-.contents__body { flex: 1; padding: clamp(64px, calc(10 * var(--vh)), 140px) var(--gutter) 60px clamp(32px, calc(5 * var(--vw)), 96px); }
-.toc { margin-top: clamp(24px, calc(4 * var(--vh)), 48px); max-width: 920px; border-bottom: 1px solid var(--hair); }
+.contents__body { flex: 1; display: flex; flex-direction: column; padding: clamp(64px, calc(10 * var(--vh)), 140px) var(--gutter) clamp(48px, calc(9 * var(--vh)), 110px) clamp(32px, calc(5 * var(--vw)), 96px); }
+.toc { flex: 1; display: flex; flex-direction: column; margin-top: clamp(24px, calc(5 * var(--vh)), 64px); max-width: 1000px; border-bottom: 1px solid var(--hair); }
+.toc li { flex: 1; display: flex; }   /* rows share the slide height */
 .toc a {
-  display: flex; align-items: baseline; gap: clamp(24px, calc(4 * var(--vw)), 56px);
-  padding: clamp(8px, calc(1.6 * var(--vh)), 20px) 0; border-top: 1px solid var(--hair);
-  color: var(--ink); text-decoration: none; font-size: clamp(1rem, calc(1.4 * var(--vw)), 1.4rem); font-weight: 300; letter-spacing: .01em;
+  flex: 1; display: flex; align-items: center; gap: clamp(24px, calc(3.4 * var(--vw)), 64px);
+  padding: clamp(10px, calc(1.6 * var(--vh)), 20px) 0; border-top: 1px solid var(--hair);
+  color: var(--ink); text-decoration: none; font-size: clamp(1.4rem, calc(2.9 * var(--vw)), 3.4rem); font-weight: 200; letter-spacing: -.01em;
   transition: padding .3s var(--ease), color .2s;
 }
-.toc a span { color: var(--accent); min-width: 1.6em; font-size: .72em; font-weight: 600; letter-spacing: .12em; font-variant-numeric: tabular-nums; }
+.toc a span { color: var(--accent); min-width: 2.2em; font-size: .42em; font-weight: 700; letter-spacing: .14em; font-variant-numeric: tabular-nums; }
 .toc a::after { content: "→"; margin-left: auto; color: var(--accent); opacity: 0; transform: translateX(-8px); transition: opacity .25s, transform .3s var(--ease); }
 .toc a:hover, .toc a:focus-visible { padding-left: 10px; color: var(--accent); }
 .toc a:hover::after, .toc a:focus-visible::after { opacity: 1; transform: none; }
