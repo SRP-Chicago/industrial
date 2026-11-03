@@ -1,8 +1,9 @@
 // 2600 S 25th Broadview — interactive deck behaviour.
 // Paste URLs into LINKS as the team provides them. Until a link is filled in,
-// clicking that button shows a "link needed" notice instead of going anywhere.
+// clicking that button shows a "Coming soon" notice instead of going anywhere.
 const LINKS = {
-  agencyDashboard: "https://srp-pbi-hxbmayh2fvebh2ga.southcentralus-01.azurewebsites.net/markets/chicago/login"  // Accountability → monitor
+  agencyDashboard: "https://srp-pbi-hxbmayh2fvebh2ga.southcentralus-01.azurewebsites.net/markets/chicago/login",  // Accountability → monitor
+  swotWhy: ""            // SWOT → "The Why Behind Our Recommendation" (PDF from Ben)
 };
 
 (function () {
@@ -63,7 +64,7 @@ const LINKS = {
       el.target = "_blank";
       el.rel = "noopener";
     } else {
-      el.addEventListener("click", e => { e.preventDefault(); toast("Link needed: add it in deck.js"); });
+      el.addEventListener("click", e => { e.preventDefault(); toast("Coming soon"); });
     }
   });
 
