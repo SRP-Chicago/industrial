@@ -447,6 +447,16 @@ p, li, figcaption, td { text-wrap: pretty; }
 .thanks__photo { flex: 1; }
 .thanks__photo img { width: 100%; height: 100%; object-fit: cover; }
 
+/* ---------- Pop-out page ---------- */
+.popout { position: fixed; inset: 0; z-index: 55; display: grid; place-items: center; padding: max(16px, 3vh) max(16px, 3vw); background: rgba(8,16,40,.78); backdrop-filter: blur(4px); }
+.popout[hidden] { display: none; }
+.popout__panel { position: relative; width: min(1240px, 100%); height: 100%; border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 30px 80px rgba(0,0,0,.5); animation: popIn .3s var(--ease); }
+@keyframes popIn { from { transform: translateY(14px) scale(.98); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .popout__panel { animation: none; } }
+.popout__frame { display: block; width: 100%; height: 100%; border: 0; }
+.popout__close { position: absolute; z-index: 2; top: 14px; right: 14px; width: 44px; height: 44px; border: 0; border-radius: 50%; background: rgba(255,255,255,.95); color: var(--navy); font-size: 1.7rem; line-height: 1; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,.25); }
+.popout__close:hover, .popout__close:focus-visible { background: #fff; }
+
 /* ---------- Lightbox / toast ---------- */
 .lightbox { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: 24px; background: rgba(8,16,40,.85); }
 .lightbox[hidden] { display: none; }

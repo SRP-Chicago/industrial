@@ -59,7 +59,10 @@ const LINKS = {
   }
   document.querySelectorAll("[data-link]").forEach(el => {
     const url = LINKS[el.dataset.link];
-    if (url) {
+    if (url && el.hasAttribute("data-popout")) {
+      el.href = url;
+      el.addEventListener("click", e => { e.preventDefault(); openPopout(url, el); });
+    } else if (url) {
       el.href = url;
       el.target = "_blank";
       el.rel = "noopener";
@@ -67,6 +70,25 @@ const LINKS = {
       el.addEventListener("click", e => { e.preventDefault(); toast("Coming soon"); });
     }
   });
+
+  // ---- Pop-out: shows a page (e.g. the lease comp summary) over the deck ----
+  const popout = document.getElementById("popout");
+  const popFrame = document.getElementById("popout-frame");
+  let popOpener = null;
+  function openPopout(url, opener) {
+    popOpener = opener;
+    if (popFrame.getAttribute("src") !== url) popFrame.src = url;
+    popout.hidden = false;
+    document.getElementById("popout-close").focus();
+  }
+  function closePopout() {
+    if (popout.hidden) return;
+    popout.hidden = true;
+    popOpener?.focus();
+  }
+  document.getElementById("popout-close").addEventListener("click", closePopout);
+  popout.addEventListener("click", e => { if (e.target === popout) closePopout(); });
+  window.addEventListener("message", e => { if (e.data === "close-popout") closePopout(); });
 
   // ---- Dot nav + contents menu ------------------------------------------
   const dots = document.getElementById("dots");
@@ -151,8 +173,8 @@ const LINKS = {
   document.addEventListener("keydown", e => {
     if (e.target.closest("input, textarea, select") || e.metaKey || e.ctrlKey || e.altKey) return;
     if ((e.key === " " || e.key === "Enter") && e.target.closest("button, a")) return;  // let buttons handle their own keys
-    if (!lightbox.hidden || !menu.hidden) {
-      if (e.key === "Escape") { closeLightbox(); if (!menu.hidden) setMenu(false); }
+    if (!lightbox.hidden || !menu.hidden || !popout.hidden) {
+      if (e.key === "Escape") { closeLightbox(); closePopout(); if (!menu.hidden) setMenu(false); }
       return;
     }
     const next = ["ArrowDown", "ArrowRight", "PageDown", " "];

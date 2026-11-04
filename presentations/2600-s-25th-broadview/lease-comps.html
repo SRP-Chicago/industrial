@@ -160,5 +160,14 @@
       <a href="index.html#swot">← Back to the deck</a>
     </div>
   </footer>
+  <script>
+    // Inside the deck's pop-out: "Back to the deck" closes the pop-out
+    if (window.self !== window.top) {
+      document.querySelectorAll('a[href="index.html#swot"]').forEach(a => {
+        a.textContent = "\u2190 Back to the deck";
+        a.addEventListener("click", e => { e.preventDefault(); window.parent.postMessage("close-popout", "*"); });
+      });
+    }
+  </script>
 </body>
 </html>
