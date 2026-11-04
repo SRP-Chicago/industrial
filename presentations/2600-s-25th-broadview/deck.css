@@ -381,7 +381,7 @@ p, li, figcaption, td { text-wrap: pretty; }
 .title--sm { font-size: clamp(2rem, min(calc(4.2 * var(--vw)), calc(6.6 * var(--vh))), 4.2rem); }
 .mla__table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: clamp(.85rem, calc(.92 * var(--vw)), 1.1rem); font-variant-numeric: tabular-nums; color: var(--ink); background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 30px 60px -44px rgba(15,31,71,.5); }
 .mla__table tbody td:nth-child(2), .mla__table tbody td:nth-child(4) { white-space: nowrap; }
-.mla__table th, .mla__table td { padding: clamp(6px, calc(.95 * var(--vh)), 11px) 8px; text-align: left; vertical-align: middle; border-bottom: 1px solid var(--hair); }
+.mla__table th, .mla__table td { padding: clamp(5px, calc(.78 * var(--vh)), 10px) 8px; text-align: left; vertical-align: middle; border-bottom: 1px solid var(--hair); }
 .mla__table .num { text-align: right; }
 .mla__table thead th { background: var(--navy); color: #fff; font-weight: 700; font-size: .7em; letter-spacing: .06em; line-height: 1.25; text-transform: uppercase; border-bottom: 0; }
 .mla__table thead .mla__groups th { padding-top: 12px; padding-bottom: 6px; background: var(--navy-deep); color: #9fb2ea; font-size: .74em; letter-spacing: .24em; text-align: left; }
@@ -393,6 +393,12 @@ p, li, figcaption, td { text-wrap: pretty; }
 .mla__table tbody tr:not(.mla__section):hover th, .mla__table tbody tr:not(.mla__section):hover td { background: rgba(35,80,170,.09); }
 .mla__section th { padding-top: 14px !important; background: #f4f6fa; color: var(--accent); font-size: .74em; font-weight: 700; letter-spacing: .26em; text-transform: uppercase; }
 .mla__na { color: rgba(26,43,94,.3); }
+/* Competitive set benchmark row, above the suites */
+.mla__table tr.mla__comp > * { background: var(--navy-deep); color: #fff; font-weight: 700; border-bottom: 0; }
+.mla__table tr.mla__comp th { font-size: .82em; letter-spacing: .2em; text-transform: uppercase; color: #c9d3f2; }
+.mla__table tr.mla__comp td.mkt { background: #1c3a80; }
+.mla__table tr.mla__comp td.mkt--key { background: var(--stream-blue); color: #fff; }
+.mla__table tbody tr.mla__comp:hover > * { background: var(--navy-deep); }
 .mla__notes { display: flex; flex-wrap: wrap; gap: 6px 28px; margin-top: clamp(12px, calc(1.8 * var(--vh)), 20px); font-size: clamp(.78rem, calc(.82 * var(--vw)), .92rem); font-style: italic; font-weight: 300; color: var(--muted); }
 .mla__notes li::before { content: "*"; margin-right: 4px; color: var(--accent); font-style: normal; }
 
